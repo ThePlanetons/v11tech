@@ -2,15 +2,15 @@ import './App.css'
 //// import { motion } from "framer-motion";
 import PricingSection from './box';
 import ShopsSection from './ShopsSection';
-import './App.css'
-//import { motion } from "framer-motion";
-import PricingSection from './box';
-import ShopsSection from './ShopsSection';
+import './App.css';
+import TestimonialCarousel from './carousel';
+//import { 
 function App() {
   
 
   return (
-    <><ShopsSection></ShopsSection><PricingSection></PricingSection></>
+    <><ShopsSection></ShopsSection><PricingSection></PricingSection><TestimonialCarousel/></>
+  
   
   )
 }
