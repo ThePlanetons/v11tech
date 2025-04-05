@@ -6,7 +6,7 @@ function App() {
   
 
   return (
-    <><PricingSection></PricingSection><ShopsSection></ShopsSection></>
+    <><ShopsSection></ShopsSection><PricingSection></PricingSection></>
   
   )
 }
