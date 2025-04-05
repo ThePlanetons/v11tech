@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +65,50 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+
+.bg{
+  background-color: #c9f9da;
+}
+
+.bg-dark{
+  color: #06b453;
+}
+@keyframes runAcross {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.animate-bob-run {
+  animation: bobUpDown 2s ease-in-out infinite, runAcross 9s linear infinite;
+  position: absolute;
+  top: 10%;
+    transform: translateY(-10%);
+}
+
+@keyframes scrollLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.runner-container {
+  overflow: hidden;
+  /* white-space: nowrap; */
+  position: relative;
+  width: 100%;
+}
+
+.runner-track {
+  display: inline-block;
+  /* white-space: nowrap; */
+  animation: scrollLoop 20s linear infinite;
 }
