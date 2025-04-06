@@ -167,7 +167,7 @@ const V11QRLanding: React.FC = () => {
 
       <div className="container mx-auto px-4 z-10 relative">
         {/* Header */}
-        <div id="header" ref={headerRef} className="text-center mb-32 pt-16 invisible-element">
+        <div id="header" ref={headerRef} className="text-center mb-32 pt-16 invisible-element text-gray-800 v11-roboto tracking-wide">
           <h1 className="text-5xl font-bold inline-block group">
             <span className="relative inline-block transition-all cursor-pointer duration-500 group-hover:text-green-500">
               V11QR

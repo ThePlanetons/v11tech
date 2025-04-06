@@ -26,6 +26,7 @@
 1. Typography
 ----------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&family=Viga&display=swap'); 
 body,
 html {
   font-size: 16px;
@@ -37,7 +38,9 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.v11-roboto {
+  font-family: "Viga", sans-serif;
+}
 h1,
 h3,
 h4,

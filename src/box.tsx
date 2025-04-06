@@ -155,7 +155,7 @@ const PricingSection: React.FC = () => {
                 transition: { type: 'spring', stiffness: 100, delay: 0.2 }
               }
             }}
-            className="text-4xl md:text-5xl font-extrabold leading-tight text-black"
+            className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-800 v11-roboto tracking-wide"
           >
             Transparent Plans for Every Need Transparent Pricing Plans, Find the
             Perfect Fit for Your Needs
