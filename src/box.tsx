@@ -78,10 +78,10 @@ const PricingSection: React.FC = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const fadeIn = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
+  // const fadeIn = {
+  //   hidden: { opacity: 0 },
+  //   visible: { opacity: 1 },
+  // };
 
   const staggeredCards = {
     hidden: {},
@@ -115,7 +115,7 @@ const PricingSection: React.FC = () => {
   return (
     <section
       id="pricing"
-      className="py-20 relative overflow-hidden bg-gradient-to-br from-green-200 to-green-100"
+      className="py-20 relative overflow-hidden bg"
     >
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
@@ -142,7 +142,7 @@ const PricingSection: React.FC = () => {
                 transition: { type: 'spring', stiffness: 100 }
               }
             }}
-            className="font-semibold text-lg mb-2 text-black"
+            className="font-semibold text-lg mb-2 bg-dark"
           >
             Our Pricing
           </motion.p>

@@ -25,19 +25,23 @@ const HeroSection = () => {
           backgroundAttachment: "fixed",
           backgroundPosition: `center ${-backgroundY}px`,
           backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
           transition: "background-position 0.2s ease-out",
         }}
       >
+        {/* Overlay for green tint */}
+        <div className="absolute inset-0 bg-[#06b453] opacity-80 z-0" />
+
         <div
           style={{
             transform: `scale(${scale})`,
             opacity: opacity,
             transition: "transform 0.2s ease-out, opacity 0.2s ease-out",
           }}
-          className="text-center text-white backdrop-blur-sm p-6 rounded-xl"
+          className="text-center text-white backdrop-blur-sm p-6 rounded-xl relative z-10"
         >
           <p className="text-lg mb-2">Our Pricing</p>
-          <h1 className="text-4xl sm:text-6xl font-bold max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl font-bold max-w-4xl mx-auto bg">
             Transparent Plans for Every Need <br />
             Transparent Pricing Plans, Find the Perfect Fit for Your Needs
           </h1>

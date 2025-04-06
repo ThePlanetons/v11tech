@@ -1,6 +1,7 @@
-import React from "react";
-import avatar from "./assets/img/avatar.jpeg";
+// import React from "react";
+// import avatar from "./assets/img/avatar.jpeg";
 import "./index.css";
+import { motion } from 'framer-motion';
 
 const reviews = [
   {
@@ -139,11 +140,48 @@ const TestimonialCarousel = () => {
 
       {/* Heading */}
       <h5 className='bg-dark mt-8 font-bold'>
-        Clients Feedback
       </h5>
+       <motion.div
+                className="text-center mb-16"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={{
+                  hidden: {},
+                  visible: { transition: { staggerChildren: 0.2 } },
+                }}
+              >
+                <motion.p
+                  variants={{
+                    hidden: { opacity: 0, x: -50 },
+                    visible: {
+                      opacity: 1,
+                      x: 0,
+                      transition: { type: 'spring', stiffness: 100 }
+                    }
+                  }}
+                  className="font-semibold text-lg mb-2 bg-dark"
+                >
+                         Clients Feedback
+
+                </motion.p>
+                <motion.h2
+                  variants={{
+                    hidden: { opacity: 0, x: 50 },
+                    visible: {
+                      opacity: 1,
+                      x: 0,
+                      transition: { type: 'spring', stiffness: 100, delay: 0.2 }
+                    }
+                  }}
+                  className="text-4xl md:text-5xl font-extrabold leading-tight text-black"
+                >
+                  Voices of Delights Testimonials That <br />
+                  Speak to Our Excellence
+                </motion.h2>
+              </motion.div>
       <h1 className="text-black text-4xl mb-4 font-extrabold text-center relative z-10">
-        Voices of Delights Testimonials That <br />
-        Speak to Our Excellence
+       
       </h1>
 
       {/* Carousel Content */}
