@@ -4,12 +4,13 @@ import PricingSection from './box';
 import ShopsSection from './ShopsSection';
 import './App.css';
 import TestimonialCarousel from './carousel';
+import HeroSection from './demo';
 //import { 
 function App() {
   
 
   return (
-    <><ShopsSection></ShopsSection><PricingSection></PricingSection><TestimonialCarousel/></>
+    <><ShopsSection></ShopsSection><PricingSection></PricingSection><TestimonialCarousel/><HeroSection/></>
   
   
   )
