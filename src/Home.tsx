@@ -191,7 +191,7 @@ const HomePage: React.FC = () => {
                             <div className="relative w-full pt-6 md:pt-8 pb-2 px-2 rounded-2xl overflow-hidden z-20 bg-white">
                                 {/* App screenshot */}
                                 <img
-                                    src="/public/assets/img/Product1.png"
+                                    src="/assets/img/Product1.png"
                                     alt="Mobile food ordering app interface"
                                     className="w-full h-auto rounded-xl shadow-md"
                                 />
