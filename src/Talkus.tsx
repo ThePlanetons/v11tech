@@ -33,7 +33,7 @@ function TalkUs() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-50 to-gray-50 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-200 rounded-full opacity-20 blur-3xl -translate-y-1/2 translate-x-1/3"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-200 rounded-full opacity-20 blur-3xl translate-y-1/2 -translate-x-1/3"></div>
@@ -48,13 +48,13 @@ function TalkUs() {
           {/* Left column */}
           <div className="space-y-12">
             <div className="transition-all duration-700 delay-300">
-              <p className="text-emerald-600 font-medium mb-4 flex items-center">
-                <span className="inline-block w-12 h-0.5 bg-emerald-500 mr-3"></span>
+              <p className="text-green-500 font-medium mb-4 flex items-center">
+                <span className="inline-block w-12 h-0.5 bg-green-500 mr-3"></span>
                 Our QR Code System reached everywhere
               </p>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 v11-roboto tracking-wide leading-tight mb-6">
                 Our Software platform used by{" "}
-                <span className="text-emerald-600 relative">
+                <span className="text-green-500 relative">
                   Wide Range...
                   <span className="absolute bottom-1 left-0 w-full h-1 bg-emerald-200"></span>
                 </span>
@@ -72,14 +72,14 @@ function TalkUs() {
                   key={index} 
                   className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 cursor-pointer ${
                     activeFeature === index 
-                      ? 'bg-emerald-50 border-l-4 border-emerald-500' 
+                      ? 'bg-emerald-50 border-l-4 border-green-500' 
                       : 'hover:bg-emerald-50 border-l-4 border-transparent'
                   }`}
                   onMouseEnter={() => setActiveFeature(index)}
                   onMouseLeave={() => setActiveFeature(null)}
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
-                  <feature.icon className={`w-5 h-5 text-emerald-500 transition-transform duration-300 ${
+                  <feature.icon className={`w-5 h-5 text-green-500 transition-transform duration-300 ${
                     activeFeature === index ? 'scale-125' : ''
                   }`} />
                   <span className="text-gray-700 font-medium">{feature.text}</span>
@@ -89,10 +89,10 @@ function TalkUs() {
             
             {/* Call to action button with animation */}
             <div className="transition-all duration-700 delay-700">
-              <button className="group relative bg-emerald-600 text-white px-8 py-4 rounded-lg hover:bg-emerald-700 transition-all duration-300 shadow-lg hover:shadow-emerald-200 flex items-center space-x-2 overflow-hidden">
+              <button className="group relative bg-green-500 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-emerald-200 flex items-center space-x-2 overflow-hidden">
                 <span className="text-white relative z-10">Talk to Us</span>
                 <MessageSquare className="w-5 h-5 relative z-10 text-white transition-transform group-hover:rotate-12" />
-                <div className="absolute top-0 -right-10 w-20 h-full bg-emerald-500 skew-x-12 group-hover:right-full transition-all duration-500 ease-in-out"></div>
+                <div className="absolute top-0 -right-10 w-20 h-full bg-green-500 skew-x-12 group-hover:right-full transition-all duration-500 ease-in-out"></div>
               </button>
             </div>
           </div>
@@ -136,9 +136,9 @@ function TalkUs() {
                   <div className={`relative transition-all duration-700 ${animateQR ? 'scale-110' : 'scale-100'}`}>
                     <div className="absolute inset-0 bg-yellow-400 opacity-30 rounded-lg blur-md"></div>
                     <img 
-                      src="/api/placeholder/128/128"
+                      src="/assets/img/What to Know Before Scanning a QR Code.jpeg"
                       alt="QR code scanning"
-                      className="w-32 h-32 object-cover rounded-lg relative z-10 hover:rotate-3 transition-transform duration-300"
+                      className="w-80 h-44 object-cover rounded-lg relative z-10 hover:rotate-3 transition-transform duration-300"
                     />
                     {/* Scanning effect */}
                     <div className={`absolute left-0 w-full h-1 bg-yellow-400 opacity-70 blur-sm z-20 transition-all duration-1500 ease-in-out ${
