@@ -5,8 +5,19 @@ const HomePage: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+    const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
+    
     const parallaxRef = useRef<HTMLDivElement>(null);
+    const productsDropdownRef = useRef<HTMLDivElement>(null);
+
+    const products = [
+        { name: "V11-QR", image: "/assets/img/v11-qr.jpeg" },
+        { name: "V11-KDS", image: "/assets/img/v11-kds.png" },
+        { name: "V11-Kiosk", image: "/assets/img/v11-kiosk.png" },
+        { name: "V11-Conect", image: "/assets/img/v11-conect.png" },
+        { name: "V11-Queueing System", image: "/assets/img/v11-queue.png" },
+        { name: "V11-Ticket System", image: "/assets/img/v11-ticket.png" }
+    ];
 
     // Handle scroll effects
     useEffect(() => {
@@ -27,14 +38,30 @@ const HomePage: React.FC = () => {
         }, 300);
 
         window.addEventListener('scroll', handleScroll);
+        
+        // Close dropdown when clicking outside
+        const handleClickOutside = (event: MouseEvent) => {
+            if (productsDropdownRef.current && !productsDropdownRef.current.contains(event.target as Node)) {
+                setProductsDropdownOpen(false);
+            }
+        };
+        
+        document.addEventListener('mousedown', handleClickOutside);
+        
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            document.removeEventListener('mousedown', handleClickOutside);
             clearTimeout(timer);
         };
     }, []);
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
+    };
+    
+    const toggleProductsDropdown = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setProductsDropdownOpen(!productsDropdownOpen);
     };
 
     return (
@@ -60,7 +87,7 @@ const HomePage: React.FC = () => {
             <header
                 className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-6 py-4 transition-all duration-300 ${
                     scrolled
-                    ? 'bg-white bg-opacity-95 shadow-lg backdrop-blur-sm'
+                    ? 'bg-white shadow-lg backdrop-blur-sm'
                     : 'bg-transparent'
                 }`}
             >
@@ -81,7 +108,72 @@ const HomePage: React.FC = () => {
 
                 {/* Desktop Nav Links */}
                 <nav className="hidden md:flex space-x-6">
-                    {['Products', 'About Us', 'Services', 'Customers', 'Contact Us'].map((item) => (
+                    {/* Products with mega dropdown */}
+                    <div className="relative" ref={productsDropdownRef}>
+                        <a
+                            href="#products"
+                            className="hover:text-green-400 transition-colors duration-300 relative group font-medium flex items-center"
+                            onClick={toggleProductsDropdown}
+                        >
+                            Products
+                            <svg xmlns="http://www.w3.org/2000/svg" className={`h-4 w-4 ml-1 transition-transform duration-300 ${productsDropdownOpen ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                            <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        
+                        {/* Products Mega Menu Dropdown */}
+                        <div 
+                            className={`absolute left-56 transform -translate-x-1/2 mt-7 bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-500 origin-top z-50 ${
+                                productsDropdownOpen 
+                                ? 'opacity-100 scale-y-100 translate-y-0' 
+                                : 'opacity-0 scale-y-0 -translate-y-4 pointer-events-none'
+                            }`}
+                            style={{ width: 'max(80vw, 800px)', maxWidth: '2000px' }}
+                        >
+                            <div className="p-6">
+                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+                                    {products.map((product, index) => (
+                                        <a
+                                            key={product.name}
+                                            href={`#${product.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className={`flex flex-col items-center group transition-all duration-300 transform ${
+                                                productsDropdownOpen ? `opacity-100 translate-y-0 delay-${index * 50}` : 'opacity-0 translate-y-4'
+                                            }`}
+                                        >
+                                            <div className="bg-gray-100 w-full aspect-square rounded-lg mb-3 flex items-center justify-center p-4 overflow-hidden group-hover:bg-green-50 transition-colors duration-300">
+                                                {/* Replace with actual product images when available */}
+                                                <div className="w-full h-full rounded-lg bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                                                    <img 
+                                                        src={product.image} 
+                                                        alt={product.name}
+                                                        className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-110"
+                                                        onError={(e) => {
+                                                            // Fallback if image doesn't load
+                                                            const target = e.target as HTMLImageElement;
+                                                            target.onerror = null;
+                                                            target.src = "/assets/img/placeholder.png";
+                                                        }}
+                                                    />
+                                                </div>
+                                            </div>
+                                            <span className="text-center text-sm font-medium text-gray-700 group-hover:text-green-600 transition-colors duration-300 relative">
+                                                {product.name}
+                                                <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                                            </span>
+                                            {product.name.toLowerCase().includes("new") && (
+                                                <span className="bg-green-500 text-white px-2 py-0.5 rounded-full text-xs mt-1">NEW</span>
+                                            )}
+                                        </a>
+                                    ))}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/* Other nav links */}
+                    {['About Us', 'Services', 'Customers', 'Contact Us'].map((item) => (
                         <a
                             key={item}
                             href={`#${item.toLowerCase().replace(' ', '')}`}
@@ -106,7 +198,7 @@ const HomePage: React.FC = () => {
                     mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}
             >
-                <div className="flex flex-col h-full px-6 py-20">
+                <div className="flex flex-col h-full px-6 py-20 overflow-y-auto">
                     <button 
                         className="absolute top-4 right-4 p-2 rounded-md text-gray-800 hover:text-green-500 focus:outline-none"
                         onClick={toggleMobileMenu}
@@ -116,7 +208,55 @@ const HomePage: React.FC = () => {
                         </svg>
                     </button>
                     <div className="flex flex-col space-y-6">
-                        {['Products', 'About Us', 'Services', 'Customers', 'Contact Us'].map((item) => (
+                        {/* Mobile Products with accordion */}
+                        <div className="border-b border-gray-200">
+                            <button
+                                className="flex justify-between items-center w-full py-3 text-xl font-medium hover:text-green-500 transition-colors duration-300"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setProductsDropdownOpen(!productsDropdownOpen);
+                                }}
+                            >
+                                Products
+                                <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 transition-transform duration-300 ${productsDropdownOpen ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="currentColor">
+                                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                            </button>
+                            <div className={`overflow-hidden transition-all duration-300 ${productsDropdownOpen ? 'max-h-96' : 'max-h-0'}`}>
+                                <div className="grid grid-cols-2 gap-4 pl-4 pb-3">
+                                    {products.map((product, index) => (
+                                        <a
+                                            key={product.name}
+                                            href={`#${product.name.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className={`flex items-center py-2 text-gray-600 hover:text-green-500 transition-all duration-300 transform ${
+                                                productsDropdownOpen ? `opacity-100 translate-y-0 delay-${index * 50}` : 'opacity-0 -translate-y-4'
+                                            }`}
+                                            onClick={toggleMobileMenu}
+                                        >
+                                            <div className="w-8 h-8 bg-gray-100 rounded-full mr-2 flex items-center justify-center">
+                                                <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                                                    <img 
+                                                        src={product.image} 
+                                                        alt={product.name}
+                                                        className="w-full h-auto object-contain"
+                                                        onError={(e) => {
+                                                            // Fallback if image doesn't load
+                                                            const target = e.target as HTMLImageElement;
+                                                            target.onerror = null;
+                                                            target.src = "/assets/img/placeholder.png";
+                                                        }}
+                                                    />
+                                                </div>
+                                            </div>
+                                            <span className="text-sm">{product.name}</span>
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {/* Other mobile nav links */}
+                        {['About Us', 'Services', 'Customers', 'Contact Us'].map((item) => (
                             <a
                                 key={item}
                                 href={`#${item.toLowerCase().replace(' ', '')}`}
@@ -255,6 +395,14 @@ const HomePage: React.FC = () => {
         .animate-glow {
           animation: pulse-glow 4s ease-in-out infinite;
         }
+        
+        /* Product dropdown animations */
+        .delay-50 { transition-delay: 50ms; }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-150 { transition-delay: 150ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-250 { transition-delay: 250ms; }
+        .delay-300 { transition-delay: 300ms; }
         
         /* Disable animations on small screens for better performance */
         @media (max-width: 640px) {
