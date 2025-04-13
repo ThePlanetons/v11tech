@@ -1,6 +1,6 @@
 // import React from "react";
 // import avatar from "./assets/img/avatar.jpeg";
-import "./index.css";
+import "../../index.css";
 import { motion } from 'framer-motion';
 
 const reviews = [

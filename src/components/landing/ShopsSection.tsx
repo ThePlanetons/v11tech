@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import teaShopImg from './assets/img/TeaShops.jpeg';
-import groceryShopImg from './assets/img/GroceryShop.jpeg';
-import fashionShopImg from './assets/img/FashionsShop.jpeg';
-import stationaryShopImg from './assets/img/StationaryShop.jpeg';
-
-import './styles.1.css'
+import teaShopImg from '../../assets/img/TeaShops.jpeg';
+import groceryShopImg from '../../assets/img/GroceryShop.jpeg';
+import fashionShopImg from '../../assets/img/FashionsShop.jpeg';
+import stationaryShopImg from '../../assets/img/StationaryShop.jpeg';
+import '../../styles.1.css'
 
 interface ShopItem {
   title: string;
