@@ -77,7 +77,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
             >
               Products
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                 xmlns="http://www.w3.org/2000/svg"
                 className={`h-4 w-4 ml-1 transition-transform duration-300 ${
                   productsDropdownOpen ? 'rotate-180' : ''
                 }`}
@@ -170,7 +170,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
             className="absolute top-4 right-4 p-2 rounded-md text-gray-800 hover:text-green-500 focus:outline-none"
             onClick={toggleMobileMenu}
           >
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
               fill="none"
@@ -183,7 +183,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
                 strokeWidth={2}
                 d="M6 18L18 6M6 6l12 12"
               />
-            </svg>
+            </svg> */}
           </button>
           <div className="flex flex-col space-y-6">
             {/* Mobile Products Accordion */}
