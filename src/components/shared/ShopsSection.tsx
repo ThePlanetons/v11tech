@@ -1,8 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import teaShopImg from '../../assets/img/TeaShops.jpeg';
-import groceryShopImg from '../../assets/img/GroceryShop.jpeg';
-import fashionShopImg from '../../assets/img/FashionsShop.jpeg';
-import stationaryShopImg from '../../assets/img/StationaryShop.jpeg';
+import { useEffect, useRef } from 'react';
+
 import '../../styles.1.css';
 
 interface ShopItem {
@@ -12,35 +9,8 @@ interface ShopItem {
   description: string;
 }
 
-const ShopsSection: React.FC = () => {
+function ShopsSection({ shops }: { shops: ShopItem[] }) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  
-  const shops: ShopItem[] = [
-    {
-      title: "Restaurants & Tea Shops",
-      imgSrc: teaShopImg,
-      altText: "Restaurants & Tea Shops",
-      description: "Discover local flavors and cozy atmospheres",
-    },
-    {
-      title: "Grocery Shop",
-      imgSrc: groceryShopImg,
-      altText: "Grocery Shop",
-      description: "Fresh produce and everyday essentials",
-    },
-    {
-      title: "Clothing & Fashions Shop",
-      imgSrc: fashionShopImg,
-      altText: "Clothing & Fashions Shop",
-      description: "Stay trendy with the latest styles",
-    },
-    {
-      title: "Stationary Shop",
-      imgSrc: stationaryShopImg,
-      altText: "Stationary Shop",
-      description: "Quality supplies for work and school",
-    },
-  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -53,10 +23,10 @@ const ShopsSection: React.FC = () => {
       },
       { threshold: 0.1 }
     );
-    
+
     const shopCards = document.querySelectorAll('.shop-card');
     shopCards.forEach((card) => observer.observe(card));
-    
+
     // Cleanup observer on unmount
     return () => {
       shopCards.forEach((card) => observer.unobserve(card));
@@ -69,7 +39,7 @@ const ShopsSection: React.FC = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800 v11-roboto tracking-wide">
           Featured Shops
         </h2>
-        
+
         {/* Mobile view (horizontal scroll) */}
         <div className="flex overflow-x-auto pb-6 md:hidden">
           <div className="flex gap-4 snap-x snap-mandatory">
@@ -101,7 +71,7 @@ const ShopsSection: React.FC = () => {
             ))}
           </div>
         </div>
-        
+
         {/* Desktop/tablet view (grid) */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8">
           {shops.map((shop, index) => (

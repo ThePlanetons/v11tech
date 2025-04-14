@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import NavigationBar from './Navigation';
 import HeroSection from './HeroSection';
 
-const HomePage: React.FC = () => {
+const NavBar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -13,12 +13,12 @@ const HomePage: React.FC = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   const products = [
-    { name: 'V11-QR', image: '/assets/img/v11-qr.jpeg' },
-    { name: 'V11-KDS', image: '/assets/img/v11-kds.png' },
-    { name: 'V11-Kiosk', image: '/assets/img/v11-kiosk.png' },
-    { name: 'V11-Conect', image: '/assets/img/v11-conect.png' },
-    { name: 'V11-Queueing System', image: '/assets/img/v11-queue.png' },
-    { name: 'V11-Ticket System', image: '/assets/img/v11-ticket.png' }
+    { name: 'V11-QR', image: '/assets/img/v11-qr.jpeg', link: 'products/qr-ordering' },
+    { name: 'V11-KDS', image: '/assets/img/v11-kds.png', link: 'products/kds' },
+    { name: 'V11-Kiosk', image: '/assets/img/v11-kiosk.png', link: 'products/kiosk' },
+    { name: 'V11-Conect', image: '/assets/img/v11-conect.png', link: 'qr-ordering' },
+    { name: 'V11-Queueing System', image: '/assets/img/v11-queue.png', link: 'qr-ordering' },
+    { name: 'V11-Ticket System', image: '/assets/img/v11-ticket.png', link: 'qr-ordering' }
   ];
 
   useEffect(() => {
@@ -127,4 +127,4 @@ const HomePage: React.FC = () => {
   );
 };
 
-export default HomePage;
+export default NavBar

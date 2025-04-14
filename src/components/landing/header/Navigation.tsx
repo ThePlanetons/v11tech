@@ -8,7 +8,7 @@ interface NavigationBarProps {
   toggleMobileMenu: () => void;
   toggleProductsDropdown: (e: React.MouseEvent) => void;
   setProductsDropdownOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  products: { name: string; image: string }[];
+  products: { name: string; image: string, link: string }[];
 }
 
 const NavigationBar: React.FC<NavigationBarProps> = ({
@@ -107,7 +107,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
                   {products.map((product, index) => (
                     <a
                       key={product.name}
-                      href={`#${product.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      href={product.link}
                       className={`flex flex-col items-center group transition-all duration-300 transform ${
                         productsDropdownOpen
                           ? `opacity-100 translate-y-0 delay-${index * 50}`
@@ -143,7 +143,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
           {['About Us', 'Services', 'Customers', 'Contact Us'].map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase().replace(' ', '')}`}
+              href={'/products/qr-ordering'}
               className="hover:text-green-400 transition-colors duration-300 relative group font-medium"
             >
               {item}
