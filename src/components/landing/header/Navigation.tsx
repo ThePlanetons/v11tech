@@ -1,5 +1,6 @@
 // NavigationBar.tsx
-import React, { useRef } from 'react';
+import React, { forwardRef } from 'react';
+import { Link } from 'react-router-dom';
 
 interface NavigationBarProps {
   scrolled: boolean;
@@ -11,7 +12,7 @@ interface NavigationBarProps {
   products: { name: string; image: string, link: string }[];
 }
 
-const NavigationBar: React.FC<NavigationBarProps> = ({
+const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
   scrolled,
   mobileMenuOpen,
   productsDropdownOpen,
@@ -19,18 +20,15 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
   toggleProductsDropdown,
   setProductsDropdownOpen,
   products,
-}) => {
-  const productsDropdownRef = useRef<HTMLDivElement>(null);
+}, ref) => {
 
   // This effect is moved to HomePage so that state management stays in one place.
   // However, you can always add a click-outside effect here if you prefer to keep it localized.
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-6 py-4 transition-all duration-300 ${
-          scrolled ? 'bg-white shadow-lg backdrop-blur-sm' : 'bg-transparent'
-        }`}
+      <div
+        className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-6 py-4 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg backdrop-blur-sm' : 'bg-transparent'}`}
       >
         {/* Logo */}
         <div className="transition-all duration-300 hover:scale-105">
@@ -69,7 +67,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
           {/* Products with Mega Dropdown */}
-          <div className="relative" ref={productsDropdownRef}>
+          <div className="relative" ref={ref}>
             <a
               href="#products"
               className="hover:text-green-400 transition-colors duration-300 relative group font-medium flex items-center"
@@ -77,10 +75,8 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
             >
               Products
               <svg
-                 xmlns="http://www.w3.org/2000/svg"
-                className={`h-4 w-4 ml-1 transition-transform duration-300 ${
-                  productsDropdownOpen ? 'rotate-180' : ''
-                }`}
+                xmlns="http://www.w3.org/2000/svg"
+                className={`h-4 w-4 ml-1 transition-transform duration-300 ${productsDropdownOpen ? 'rotate-180' : ''}`}
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -95,24 +91,23 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
 
             {/* Products Mega Menu Dropdown */}
             <div
-              className={`absolute left-56 transform -translate-x-1/2 mt-7 pb-10 px-7 bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-500 origin-top z-50 ${
-                productsDropdownOpen
-                  ? 'opacity-100 scale-y-100 translate-y-0'
-                  : 'opacity-0 scale-y-0 -translate-y-4 pointer-events-none'
-              }`}
+              className={`absolute left-56 transform -translate-x-1/2 mt-7 pb-4 px-4 bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-500 origin-top z-50 ${productsDropdownOpen
+                ? 'opacity-100 scale-y-100 translate-y-0'
+                : 'opacity-0 scale-y-0 -translate-y-4 pointer-events-none'
+                }`}
               style={{ width: 'max(97vw, 800px)', maxWidth: '2000px' }}
             >
               <div className="p-6">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
                   {products.map((product, index) => (
-                    <a
+                    <Link
                       key={product.name}
-                      href={product.link}
-                      className={`flex flex-col items-center group transition-all duration-300 transform ${
-                        productsDropdownOpen
+                      to={`/${product.link}`}
+                      className={`flex flex-col items-center group transition-all duration-300 transform ${productsDropdownOpen
                           ? `opacity-100 translate-y-0 delay-${index * 50}`
                           : 'opacity-0 translate-y-4'
-                      }`}
+                        }`
+                      }
                     >
                       <div className="bg-gray-100 w-full aspect-square rounded-lg mb-3 flex items-center justify-center p-4 overflow-hidden group-hover:bg-green-50 transition-colors duration-300">
                         <div className="w-full h-full rounded-lg bg-white shadow-sm flex items-center justify-center overflow-hidden">
@@ -132,7 +127,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
                         {product.name}
                         <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
                       </span>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -157,13 +152,11 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
           <span className="z-10 text-white relative">Book a Demo</span>
           <span className="absolute left-0 top-0 w-full h-full bg-green-700 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 z-0"></span>
         </button>
-      </header>
+      </div>
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-white z-40 transform transition-transform duration-300 ease-in-out ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed top-0 left-0 w-full h-full bg-white z-40 transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="flex flex-col h-full px-6 py-20 overflow-y-auto">
           <button
@@ -198,9 +191,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
                 Products
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`h-5 w-5 transition-transform duration-300 ${
-                    productsDropdownOpen ? 'rotate-180' : ''
-                  }`}
+                  className={`h-5 w-5 transition-transform duration-300 ${productsDropdownOpen ? 'rotate-180' : ''}`}
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -212,20 +203,17 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
                 </svg>
               </button>
               <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  productsDropdownOpen ? 'max-h-96' : 'max-h-0'
-                }`}
+                className={`overflow-hidden transition-all duration-300 ${productsDropdownOpen ? 'max-h-96' : 'max-h-0'}`}
               >
                 <div className="grid grid-cols-2 gap-4 pl-4 pb-3">
                   {products.map((product, index) => (
                     <a
                       key={product.name}
                       href={`#${product.name.toLowerCase().replace(/\s+/g, '-')}`}
-                      className={`flex items-center py-2 text-gray-600 hover:text-green-500 transition-all duration-300 transform ${
-                        productsDropdownOpen
-                          ? `opacity-100 translate-y-0 delay-${index * 50}`
-                          : 'opacity-0 -translate-y-4'
-                      }`}
+                      className={`flex items-center py-2 text-gray-600 hover:text-green-500 transition-all duration-300 transform ${productsDropdownOpen
+                        ? `opacity-100 translate-y-0 delay-${index * 50}`
+                        : 'opacity-0 -translate-y-4'
+                        }`}
                       onClick={toggleMobileMenu}
                     >
                       <div className="w-8 h-8 bg-gray-100 rounded-full mr-2 flex items-center justify-center">
@@ -271,6 +259,6 @@ const NavigationBar: React.FC<NavigationBarProps> = ({
       </div>
     </>
   );
-};
+});
 
 export default NavigationBar;
