@@ -75,10 +75,10 @@ const NavBar: React.FC = () => {
           transform: `translateY(${scrollY * 0.5}px)`
         }}
       >
-        {/* <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-green-500 opacity-10 blur-xl"></div>
+        <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-green-500 opacity-10 blur-xl"></div>
         <div className="absolute bottom-40 right-20 w-96 h-96 rounded-full bg-blue-500 opacity-10 blur-xl"></div>
         <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-purple-500 opacity-10 blur-xl"></div>
-        <div className="absolute top-1/2 left-1/4 w-48 h-48 rounded-full bg-yellow-400 opacity-10 blur-xl"></div> */}
+        <div className="absolute top-1/2 left-1/4 w-48 h-48 rounded-full bg-yellow-400 opacity-10 blur-xl"></div>
       </div>
 
       {/* Navigation */}

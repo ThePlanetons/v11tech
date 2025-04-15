@@ -98,9 +98,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isVisible, scrollY }) => {
               Order<br />Now
             </span>
           </div>
-          {/* <div className="absolute top-1/2 -right-8 md:-right-12 w-16 h-16 md:w-24 md:h-24 bg-gray-200 rounded-full blur-xl opacity-30"></div>
+          <div className="absolute top-1/2 -right-8 md:-right-12 w-16 h-16 md:w-24 md:h-24 bg-gray-200 rounded-full blur-xl opacity-30"></div>
           <div className="absolute bottom-1/4 -left-8 md:-left-16 w-20 h-20 md:w-32 md:h-32 bg-green-300 rounded-full blur-xl opacity-20"></div>
-          <div className="absolute inset-x-8 md:inset-x-12 top-10 h-16 md:h-24 bg-white opacity-10 transform -rotate-45 blur-md"></div> */}
+          <div className="absolute inset-x-8 md:inset-x-12 top-10 h-16 md:h-24 bg-white opacity-10 transform -rotate-45 blur-md"></div>
         </div>
       </div>
     </main>
