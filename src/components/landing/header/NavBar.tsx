@@ -3,7 +3,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import NavigationBar from './Navigation';
 import HeroSection from './HeroSection';
 
-const HomePage: React.FC = () => {
+const NavBar: React.FC = () => {
+  const productsDropdownRef = useRef<HTMLDivElement>(null);
+
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -13,12 +15,12 @@ const HomePage: React.FC = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   const products = [
-    { name: 'V11-QR', image: '/assets/img/v11-qr.jpeg' },
-    { name: 'V11-KDS', image: '/assets/img/v11-kds.png' },
-    { name: 'V11-Kiosk', image: '/assets/img/v11-kiosk.png' },
-    { name: 'V11-Conect', image: '/assets/img/v11-conect.png' },
-    { name: 'V11-Queueing System', image: '/assets/img/v11-queue.png' },
-    { name: 'V11-Ticket System', image: '/assets/img/v11-ticket.png' }
+    { name: 'V11-QR', image: '/assets/img/v11-qr.jpeg', link: 'products/qr-ordering' },
+    { name: 'V11-KDS', image: '/assets/img/v11-kds.png', link: 'products/kds' },
+    { name: 'V11-Kiosk', image: '/assets/img/v11-kiosk.png', link: 'products/kiosk' },
+    { name: 'V11-Conect', image: '/assets/img/v11-conect.png', link: 'qr-ordering' },
+    { name: 'V11-Queueing System', image: '/assets/img/v11-queue.png', link: 'qr-ordering' },
+    { name: 'V11-Ticket System', image: '/assets/img/v11-ticket.png', link: 'qr-ordering' }
   ];
 
   useEffect(() => {
@@ -39,7 +41,7 @@ const HomePage: React.FC = () => {
     const handleClickOutside = () => {
       // Here you might check if the click target is outside your dropdown ref.
       // In this example, we simply close the dropdown.
-      setProductsDropdownOpen(false);
+      // setProductsDropdownOpen(false);
     };
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -57,6 +59,7 @@ const HomePage: React.FC = () => {
 
   const toggleProductsDropdown = (e: React.MouseEvent) => {
     e.preventDefault();
+    console.log(e)
     setProductsDropdownOpen(!productsDropdownOpen);
   };
 
@@ -80,6 +83,7 @@ const HomePage: React.FC = () => {
 
       {/* Navigation */}
       <NavigationBar
+        ref={productsDropdownRef}
         scrolled={scrolled}
         mobileMenuOpen={mobileMenuOpen}
         productsDropdownOpen={productsDropdownOpen}
@@ -93,38 +97,40 @@ const HomePage: React.FC = () => {
       <HeroSection isVisible={isVisible} scrollY={scrollY} />
 
       {/* Embedded CSS for Animations */}
-      <style>{`
-        @keyframes float {
-          0% { transform: translateY(0px) rotate(0deg); }
-          25% { transform: translateY(-8px) rotate(0.5deg); }
-          50% { transform: translateY(-12px) rotate(0deg); }
-          75% { transform: translateY(-8px) rotate(-0.5deg); }
-          100% { transform: translateY(0px) rotate(0deg); }
-        }
-        .animate-float {
-          animation: float 8s ease-in-out infinite;
-        }
-        @keyframes pulse-glow {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 0.6; }
-        }
-        .animate-glow {
-          animation: pulse-glow 4s ease-in-out infinite;
-        }
-        .delay-50 { transition-delay: 50ms; }
-        .delay-100 { transition-delay: 100ms; }
-        .delay-150 { transition-delay: 150ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-250 { transition-delay: 250ms; }
-        .delay-300 { transition-delay: 300ms; }
-        @media (max-width: 640px) {
-          .animate-float {
-            animation: none;
+      <style>
+        {`
+          @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-8px) rotate(0.5deg); }
+            50% { transform: translateY(-12px) rotate(0deg); }
+            75% { transform: translateY(-8px) rotate(-0.5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
           }
-        }
-      `}</style>
+          .animate-float {
+            animation: float 8s ease-in-out infinite;
+          }
+          @keyframes pulse-glow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+          }
+          .animate-glow {
+            animation: pulse-glow 4s ease-in-out infinite;
+          }
+          .delay-50 { transition-delay: 50ms; }
+          .delay-100 { transition-delay: 100ms; }
+          .delay-150 { transition-delay: 150ms; }
+          .delay-200 { transition-delay: 200ms; }
+          .delay-250 { transition-delay: 250ms; }
+          .delay-300 { transition-delay: 300ms; }
+          @media (max-width: 640px) {
+            .animate-float {
+              animation: none;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };
 
-export default HomePage;
+export default NavBar
