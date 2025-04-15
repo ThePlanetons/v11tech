@@ -1,12 +1,12 @@
 // src/components/Landing.tsx
 
 import React, { useEffect, useState } from 'react';
-import NavBar from './header/NavBar';
-import HeroSection from '../landing/header/HeroSection';
+import NavBar from '../shared/header/NavBar';
+import Carousel from './carousel';
 import ShopsSection from '../shared/ShopsSection';
 import TalkUs from './Talkus';
-import PricingSection from './box';
-import TestimonialCarousel from './carousel';
+import PricingSection from './PricingSection';
+import Comment from './Comment';
 import V11QRLanding from './V11tech';
 import ClientLogosSection from './ClientLogosSection';
 import CTASection from './CtaSection';
@@ -33,6 +33,8 @@ interface ShopItem {
 }
 
 const Landing: React.FC = () => {
+
+  //  this is for Carousel
   const [isVisible, setIsVisible] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [, setScrolled] = useState(false);
@@ -63,6 +65,7 @@ const Landing: React.FC = () => {
       clearTimeout(timer);
     };
   }, []);
+  //end
 
   const shops: ShopItem[] = [
     {
@@ -103,9 +106,9 @@ const Landing: React.FC = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar /> 
 
-      <HeroSection isVisible={isVisible} scrollY={scrollY} />
+      <Carousel isVisible={isVisible} scrollY={scrollY} />
 
       <ShopsSection shops={shops} />
 
@@ -113,7 +116,7 @@ const Landing: React.FC = () => {
 
       <PricingSection />
 
-      <TestimonialCarousel />
+      <Comment />
 
       <V11QRLanding />
 
