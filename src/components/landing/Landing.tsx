@@ -8,9 +8,9 @@ import TalkUs from './Talkus';
 import PricingSection from './PricingSection';
 import Comment from './Comment';
 import V11QRLanding from './V11tech';
-import ClientLogosSection from './ClientLogosSection';
-import CTASection from './CtaSection';
-import Footer from './Footer';
+import ClientLogosSection from '../shared/ClientLogosSection';
+import CTASection from '../shared/CtaSection';
+import Footer from '../shared/Footer';
 
 import teaShopImg from '../../assets/img/TeaShops.jpeg';
 import groceryShopImg from '../../assets/img/GroceryShop.jpeg';
@@ -93,7 +93,7 @@ const Landing: React.FC = () => {
       description: 'Quality supplies for work and school',
     },
   ];
-
+   
   const clientLogos = [
     { src: bhavika, alt: 'Bhavika' },
     { src: buddy_boy, alt: 'Buddy Boy' },

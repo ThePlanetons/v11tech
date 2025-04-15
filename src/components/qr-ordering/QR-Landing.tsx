@@ -6,6 +6,17 @@ import groceryShopImg from '../../assets/img/GroceryShop.jpeg';
 import fashionShopImg from '../../assets/img/FashionsShop.jpeg';
 import stationaryShopImg from '../../assets/img/StationaryShop.jpeg';
 import NavBar from '../shared/header/NavBar';
+import ClientLogosSection from '../shared/ClientLogosSection';
+import CTASection from '../shared/CtaSection';
+import Footer from '../shared/Footer';
+
+import bhavika from '../../assets/img/clients/Bhavika_LogoF.png';
+import buddy_boy from '../../assets/img/clients/thalappakatti.gif';
+import iyengar from '../../assets/img/clients/IBS.png';
+import pudong_metro from '../../assets/img/clients/Kurunji Metro.png';
+import university_logo from '../../assets/img/clients/LOGO_Karaikudi.png';
+import together from '../../assets/img/clients/Together_Restaurant - Copy.png';
+import heritage from '../../assets/img/clients/thalappakatti.gif';
 
 interface ShopItem {
   title: string;
@@ -53,11 +64,28 @@ const QRLanding = () => {
     },
   ];
 
+  const clientLogos = [
+    { src: bhavika, alt: 'Bhavika' },
+    { src: buddy_boy, alt: 'Buddy Boy' },
+    { src: iyengar, alt: 'Iyengar' },
+    { src: pudong_metro, alt: 'Pudong Metro' },
+    { src: university_logo, alt: 'University' },
+    { src: together, alt: 'Together' },
+    { src: heritage, alt: 'Heritage' },
+  ];
+
+
   return (
     <>
       <NavBar></NavBar>
 
       <ShopsSection shops={shops}></ShopsSection>
+
+      <ClientLogosSection clientLogos={clientLogos} />
+
+      <CTASection product="V11 QR" siteIndex="/" />
+      
+      <Footer></Footer>
     </>
   );
 };
