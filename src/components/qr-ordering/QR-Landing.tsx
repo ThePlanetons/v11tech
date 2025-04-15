@@ -5,7 +5,7 @@ import teaShopImg from '../../assets/img/TeaShops.jpeg';
 import groceryShopImg from '../../assets/img/GroceryShop.jpeg';
 import fashionShopImg from '../../assets/img/FashionsShop.jpeg';
 import stationaryShopImg from '../../assets/img/StationaryShop.jpeg';
-// import NavBar from '../landing/header/NavBar';
+import NavBar from '../landing/header/NavBar';
 
 interface ShopItem {
   title: string;
@@ -55,7 +55,7 @@ const QRLanding = () => {
 
   return (
     <>
-      {/* <NavBar></NavBar> */}
+      <NavBar></NavBar>
 
       <ShopsSection shops={shops}></ShopsSection>
     </>
