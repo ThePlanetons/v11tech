@@ -1,18 +1,20 @@
 // HomePage.tsx
-import React, { useEffect, useState, useRef } from 'react';
+// import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import NavigationBar from './Navigation';
-import HeroSection from './HeroSection';
+//import HeroSection from './HeroSection';
 
 const NavBar: React.FC = () => {
   const productsDropdownRef = useRef<HTMLDivElement>(null);
 
-  const [scrolled, setScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  const [scrolled] = useState(false);
+  // const [scrolled, setScrolled] = useState(false);
+  //const [isVisible, setIsVisible] = useState(false);
+  //const [scrollY, setScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
 
-  const parallaxRef = useRef<HTMLDivElement>(null);
+  //const parallaxRef = useRef<HTMLDivElement>(null);
 
   const products = [
     { name: 'V11-QR', image: '/assets/img/v11-qr.jpeg', link: 'products/qr-ordering' },
@@ -23,50 +25,50 @@ const NavBar: React.FC = () => {
     { name: 'V11-Ticket System', image: '/assets/img/v11-ticket.png', link: 'qr-ordering' }
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrollY(currentScrollY);
-      setScrolled(currentScrollY > 50);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScrollY = window.scrollY;
+  //     //setScrollY(currentScrollY);
+  //     setScrolled(currentScrollY > 50);
+  //   };
 
-    // Animation delay on load
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 300);
+  //   // Animation delay on load
+  //   const timer = setTimeout(() => {
+  //     //setIsVisible(true);
+  //   }, 300);
 
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
 
-    // Close products dropdown when clicking outside the navigation area
-    const handleClickOutside = () => {
-      // Here you might check if the click target is outside your dropdown ref.
-      // In this example, we simply close the dropdown.
-      // setProductsDropdownOpen(false);
-    };
+  //   // Close products dropdown when clicking outside the navigation area
+  //   const handleClickOutside = () => {
+  //     // Here you might check if the click target is outside your dropdown ref.
+  //     // In this example, we simply close the dropdown.
+  //     // setProductsDropdownOpen(false);
+  //   };
 
-    document.addEventListener('mousedown', handleClickOutside);
+  //   document.addEventListener('mousedown', handleClickOutside);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('mousedown', handleClickOutside);
-      clearTimeout(timer);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //     clearTimeout(timer);
+  //   };
+  // }, []);
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
+   const toggleMobileMenu = () => {
+     setMobileMenuOpen(!mobileMenuOpen);
+   };
 
   const toggleProductsDropdown = (e: React.MouseEvent) => {
-    e.preventDefault();
-    console.log(e)
-    setProductsDropdownOpen(!productsDropdownOpen);
-  };
+     e.preventDefault();
+     console.log(e)
+     setProductsDropdownOpen(!productsDropdownOpen);
+   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gra text-black relative overflow-hidden">
+    <div className=" flex flex-col bg-gra text-black relative overflow-hidden">
       {/* Parallax Background */}
-      <div
+      {/* <div
         ref={parallaxRef}
         className="fixed top-0 left-0 w-full h-full bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 z-0"
         style={{
@@ -79,7 +81,7 @@ const NavBar: React.FC = () => {
         <div className="absolute bottom-40 right-20 w-96 h-96 rounded-full bg-blue-500 opacity-10 blur-xl"></div>
         <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-purple-500 opacity-10 blur-xl"></div>
         <div className="absolute top-1/2 left-1/4 w-48 h-48 rounded-full bg-yellow-400 opacity-10 blur-xl"></div>
-      </div>
+      </div> */}
 
       {/* Navigation */}
       <NavigationBar
@@ -94,7 +96,7 @@ const NavBar: React.FC = () => {
       />
 
       {/* Hero Section */}
-      <HeroSection isVisible={isVisible} scrollY={scrollY} />
+    {/* <HeroSection isVisible={isVisible} scrollY={scrollY} /> */}
 
       {/* Embedded CSS for Animations */}
       <style>
