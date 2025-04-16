@@ -111,14 +111,14 @@ const Landing: React.FC = () => {
       <Carousel isVisible={isVisible} scrollY={scrollY} />
 
       <ShopsSection shops={shops} />
-
+  
       <TalkUs />
+
+      <V11QRLanding />
 
       <PricingSection />
 
       <Comment />
-
-      <V11QRLanding />
 
       <ClientLogosSection clientLogos={clientLogos} />
 

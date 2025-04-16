@@ -31,13 +31,15 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
         className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-6 py-4 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg backdrop-blur-sm' : 'bg-transparent'}`}
       >
         {/* Logo */}
-        <div className="transition-all duration-300 hover:scale-105">
-          <img
-            src="/assets/img/Logo_Last.png"
-            alt="logo"
-            className="w-36 md:w-52 pl-2 md:pl-20"
-          />
-        </div>
+        <Link to="/">
+          <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+            <img
+              src="/assets/img/Logo_Last.png"
+              alt="logo"
+              className="w-36 md:w-52 pl-2 md:pl-20"
+            />
+          </div>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -104,8 +106,8 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
                       key={product.name}
                       to={`/${product.link}`}
                       className={`flex flex-col items-center group transition-all duration-300 transform ${productsDropdownOpen
-                          ? `opacity-100 translate-y-0 delay-${index * 50}`
-                          : 'opacity-0 translate-y-4'
+                        ? `opacity-100 translate-y-0 delay-${index * 50}`
+                        : 'opacity-0 translate-y-4'
                         }`
                       }
                     >

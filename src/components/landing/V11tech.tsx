@@ -25,7 +25,7 @@ const V11QRLanding: React.FC = () => {
     { icon: "cloud-kitchen", text: "Cloud kitchens" },
     { icon: "food-court", text: "Food Courts" },
     { icon: "canteen", text: "Canteens" },
-    { icon: "buffet", text: "All-you-can-eat", subtext: "Restaurants" },
+    { icon: "buffet", text: "All-you-can-eat Restaurants" },
     { icon: "grocery", text: "Food Retail" },
     { icon: "popup-store", text: "Pop-up Stores" },
   ];
@@ -181,7 +181,7 @@ const V11QRLanding: React.FC = () => {
         <div 
           id="service-grid" 
           ref={gridRef} 
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 invisible-element"
+          className="lg:pl-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 invisible-element"
         >
           {serviceItems.map((item, index) => (
             <div

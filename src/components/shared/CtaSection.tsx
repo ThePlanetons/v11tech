@@ -41,8 +41,8 @@ const CTASection: React.FC<CTASectionProps> = ({
       <div className="container mx-auto px-20 py-7">
         <div className=" bg-green-500 rounded-3xl text-center relative px-6 py-16 overflow-hidden shadow-xl transform transition-all duration-700 hover:shadow-2xl">
           {/* Animated particles */}
-          <div className="particle-container absolute inset-0 overflow-hidden opacity-30">
-            {[...Array(15)].map((_, i) => (
+          <div className="particle-container absolute inset-0 overflow-hidden opacity-30 ">
+            {/* {[...Array(15)].map((_, i) => (
               <div
                 key={i}
                 className="absolute rounded-full bg-white"
@@ -55,7 +55,7 @@ const CTASection: React.FC<CTASectionProps> = ({
                   animation: `float ${Math.random() * 10 + 10}s linear infinite`
                 }}
               ></div>
-            ))}
+            ))} */}
           </div>
 
           <div className="relative z-10 max-w-4xl mx-auto">
@@ -98,6 +98,7 @@ const CTASection: React.FC<CTASectionProps> = ({
           {/* Additional decorative elements */}
           <div className="absolute top-4 left-4 w-32 h-32 bg-gradient-to-br from-green-400 to-emerald-300 rounded-full filter blur-3xl opacity-20"></div>
           <div className="absolute bottom-4 right-4 w-32 h-32 bg-gradient-to-br from-green-400 to-emerald-300 rounded-full filter blur-3xl opacity-20"></div>
+      
         </div>
       </div>
 
