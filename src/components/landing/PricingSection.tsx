@@ -135,8 +135,8 @@ const PricingSection: React.FC = () => {
       className="py-16 md:py-20 relative overflow-hidden bg"
     >
       {/* Background elements */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-green-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+      {/* <div className="absolute top-0 right-0 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-green-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div> */}
 
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
