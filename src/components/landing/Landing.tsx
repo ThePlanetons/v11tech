@@ -8,7 +8,7 @@ import Carousel from './carousel';
 import ShopsSection from '../shared/ShopsSection';
 import TalkUs from './Talkus';
 import PricingSection, { PricingPlan } from '../shared/PricingSection';
-import Comment from './Comment';
+import Comment from '../shared/Comment';
 import V11QRLanding from './V11tech';
 import ClientLogosSection from '../shared/ClientLogosSection';
 import CTASection from '../shared/CtaSection';
@@ -149,7 +149,7 @@ const Landing: React.FC = () => {
 
   const shops: ShopItem[] = [
     {
-      title: 'Restaurants & Tea Shops',
+      title: 'Restaurants',
       imgSrc: teaShopImg,
       altText: 'Restaurants & Tea Shops',
       description: 'Discover local flavors and cozy atmospheres',
@@ -161,7 +161,7 @@ const Landing: React.FC = () => {
       description: 'Fresh produce and everyday essentials',
     },
     {
-      title: 'Clothing & Fashions Shop',
+      title: 'Clothing Shop',
       imgSrc: fashionShopImg,
       altText: 'Clothing & Fashions Shop',
       description: 'Stay trendy with the latest styles',
