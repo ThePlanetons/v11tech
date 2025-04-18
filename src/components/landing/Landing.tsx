@@ -224,9 +224,9 @@ const Landing: React.FC = () => {
                 hidden: { opacity: 0, x: 50 },
                 visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 100, delay: 0.2 } },
               }}
-              className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-800 tracking-wide"
+              className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-800 v11-roboto tracking-wide "
             >
-              Transparent Pricing Plans, Find the Perfect Fit for Your Needs
+              Transparent Pricing Plans, Find the Perfect <br/>Fit for Your Needs
             </motion.h2>
           </motion.div>
 
