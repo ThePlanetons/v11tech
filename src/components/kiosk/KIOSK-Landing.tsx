@@ -21,6 +21,7 @@ import TalkUs from './Talkus';
 import PricingSection, { PricingPlan } from '../shared/PricingSection';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import Setup from './Setup';
 // interface ShopItem {
 //   title: string;
 //   imgSrc: string;
@@ -175,6 +176,8 @@ const KIOSKLanding = () => {
       <NavBar></NavBar>
       
       {/* <ShopsSection shops={shops}></ShopsSection> */}
+
+      <Setup/>
 
       <TalkUs></TalkUs>
 

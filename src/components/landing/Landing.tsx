@@ -47,8 +47,7 @@ interface ShopItem {
 const Landing: React.FC = () => {
 
   //  this is for Carousel
-  const [isVisible, setIsVisible] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+
   const [, setScrolled] = useState(false);
   const [isYearly, setIsYearly] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -122,12 +121,12 @@ const Landing: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setScrollY(currentScrollY);
+      //setScrollY(currentScrollY);
       setScrolled(currentScrollY > 50);
     };
 
     const timer = setTimeout(() => {
-      setIsVisible(true);
+      //setIsVisible(true);
     }, 300);
 
     window.addEventListener('scroll', handleScroll);
@@ -188,7 +187,7 @@ const Landing: React.FC = () => {
     <>
       <NavBar />
 
-      <Carousel isVisible={isVisible} scrollY={scrollY} />
+      <Carousel />
 
       <ShopsSection shops={shops} />
 
