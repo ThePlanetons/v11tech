@@ -6,6 +6,7 @@ import Landing from './components/landing/Landing'
 import QRLanding from './components/qr-ordering/QR-Landing'
 import KDSLanding from './components/kds/KDS-Landing'
 import KIOSKLanding from './components/kiosk/KIOSK-Landing'
+import About from './components/about/About-Landing'
 
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
 
           {/* KIOSK Landing */}
           <Route path="/products/kiosk" element={<KIOSKLanding />} />
+
+          {/* About */}
+          <Route path="/about" element={<About/>} />
 
         </Routes>
       </BrowserRouter>
