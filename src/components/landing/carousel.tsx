@@ -29,7 +29,7 @@ export default function MobileQROrderingSystem() {
           <p>OVERALL REVENUE.</p>
         </div>
 
-        <button className="bg-green-500 text-white py-3 px-8 rounded-md flex items-center font-medium">
+        <button className="bg-green-500 hover:bg-green-600 hover:scale-110 text-white py-3 px-8 rounded-md flex items-center font-medium ">
           Get Started
           <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -45,14 +45,14 @@ export default function MobileQROrderingSystem() {
         {/* Hand and phones container */}
         <div className="relative h-full flex items-center justify-center">
           <div 
-            className={`relative ${animate ? 'translate-y-0' : 'translate-y-1'} transition-all duration-1000 ease-in-out`}
-            style={{ width: '80%', height: 'auto', zIndex: 10 }}
+            className={`relative ${animate ? 'translate-y-0' : 'translate-y-1'} transition-all duration-1000 ease-in-out overflow-hidden`}
+            style={{ width: '100%', height: '100%', zIndex: 10 }}
           >
             {/* Image from the message - showing hand holding phones with QR code and food app */}
             <img 
               src="/assets/img/ui.png" 
               alt="Hand holding two smartphones showing QR code and food ordering app" 
-              className="object-contain w-full h-full"
+              className="object-contain w-full h-full "
             />
           </div>
         </div>
