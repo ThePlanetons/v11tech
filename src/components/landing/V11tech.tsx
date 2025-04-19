@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
 
+
 interface ServiceItem {
   icon: string;
   text: string;
@@ -82,7 +83,7 @@ const V11QRLanding: React.FC = () => {
       case "beer-mug":
         return (
           <img
-          src="/public/assets/img/pos/Bars.png"
+          src="/assets/img/pos/Bars.png"
           alt="Icon"
           className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
         />
@@ -90,7 +91,7 @@ const V11QRLanding: React.FC = () => {
       case "burger":
         return (
           <img
-  src="/public/assets/img/pos/QSR.png"
+  src="/assets/img/pos/QSR.png"
   alt="Icon"
   className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
 />
@@ -98,7 +99,7 @@ const V11QRLanding: React.FC = () => {
       case "hotel":
         return (
           <img
-  src="/public/assets/img/pos/HotelsResorts.png"
+  src="/assets/img/pos/HotelsResorts.png"
   alt="Icon"
   className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
 />
@@ -106,7 +107,7 @@ const V11QRLanding: React.FC = () => {
         case "bakery":
         return (
           <img
-  src="/public/assets/img/pos/BakeryShops.png"
+  src="/assets/img/pos/BakeryShops.png"
   alt="Icon"
   className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
 />
@@ -115,7 +116,7 @@ const V11QRLanding: React.FC = () => {
         case "chain":
         return (
           <img
-  src="/public/assets/img/pos/Chains.png"
+  src="/assets/img/pos/Chains.png"
   alt="Icon"
   className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
 />
@@ -123,7 +124,7 @@ const V11QRLanding: React.FC = () => {
         case "restaurant":
         return (
           <img
-  src="/public/assets/img/pos/FSR.png"
+  src="/assets/img/pos/FSR.png"
   alt="Icon"
   className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
 />
@@ -131,7 +132,7 @@ const V11QRLanding: React.FC = () => {
         case "cloud-kitchen":
         return (
           <img
-  src="/public/assets/img/pos/CloudKitchens.png"
+  src="/assets/img/pos/CloudKitchens.png"
   alt="Icon"
   className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
 />
@@ -140,7 +141,7 @@ const V11QRLanding: React.FC = () => {
         case "food-court":
         return (
           <img
-  src="/public/assets/img/pos/FoodCourts.png"
+  src="/assets/img/pos/FoodCourts.png"
   alt="Icon"
   className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
 />
@@ -149,7 +150,7 @@ const V11QRLanding: React.FC = () => {
         case "canteen":
         return (
           <img
-  src="/public/assets/img/pos/Canteens.png"
+  src="/assets/img/pos/Canteens.png"
   alt="Icon"
   className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
 />
@@ -158,7 +159,7 @@ const V11QRLanding: React.FC = () => {
         case "buffet":
         return (
           <img
-  src="/public/assets/img/pos/AIBuffet.png"
+  src="/assets/img/pos/AIBuffet.png"
   alt="Icon"
   className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
 />
@@ -167,7 +168,7 @@ const V11QRLanding: React.FC = () => {
         case "grocery":
           return (
             <img
-    src="/public/assets/img/pos/FoodRetail.png"
+    src="/assets/img/pos/FoodRetail.png"
     alt="Icon"
     className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
   />
@@ -176,7 +177,7 @@ const V11QRLanding: React.FC = () => {
           case "popup-store":
             return (
               <img
-      src="/public/assets/img/pos/PopUpStores.png"
+      src="/assets/img/pos/PopUpStores.png"
       alt="Icon"
       className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
     />
