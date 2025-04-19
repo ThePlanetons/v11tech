@@ -9,14 +9,6 @@ import ClientLogosSection from '../shared/ClientLogosSection';
 import CTASection from '../shared/CtaSection';
 import Footer from '../shared/Footer';
 import Comment from '../shared/Comment';
-
-import bhavika from '../../assets/img/clients/Bhavika_LogoF.png';
-import buddy_boy from '../../assets/img/clients/thalappakatti.gif';
-import iyengar from '../../assets/img/clients/IBS.png';
-import pudong_metro from '../../assets/img/clients/Kurunji Metro.png';
-import university_logo from '../../assets/img/clients/LOGO_Karaikudi.png';
-import together from '../../assets/img/clients/Together_Restaurant - Copy.png';
-import heritage from '../../assets/img/clients/thalappakatti.gif';
 import TalkUs from './Talkus';
 import PricingSection, { PricingPlan } from '../shared/PricingSection';
 import { useEffect, useState } from 'react';
@@ -159,15 +151,7 @@ const KDSLanding = () => {
   //   },
   // ];
 
-  const clientLogos = [
-    { src: bhavika, alt: 'Bhavika' },
-    { src: buddy_boy, alt: 'Buddy Boy' },
-    { src: iyengar, alt: 'Iyengar' },
-    { src: pudong_metro, alt: 'Pudong Metro' },
-    { src: university_logo, alt: 'University' },
-    { src: together, alt: 'Together' },
-    { src: heritage, alt: 'Heritage' },
-  ];
+
 
 
   return (
@@ -279,7 +263,7 @@ const KDSLanding = () => {
 
       <Comment/>
 
-      <ClientLogosSection clientLogos={clientLogos} />
+      <ClientLogosSection  />
 
       <CTASection product="V11 KDS" siteIndex="/" />
       

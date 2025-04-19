@@ -85,7 +85,7 @@ const Comment = () => {
           return (
             <div
               key={i}
-              className="absolute rounded-full "
+              className="absolute rounded-full"
               style={{
                 width: size,
                 height: size,
@@ -101,8 +101,6 @@ const Comment = () => {
       </div>
 
       {/* Heading */}
-      <h5 className="bg-dark mt-8 font-bold"></h5>
-
       <motion.div
         className="text-center mb-16"
         initial="hidden"
@@ -143,28 +141,26 @@ const Comment = () => {
         </motion.h2>
       </motion.div>
 
-      <h1 className="text-black text-4xl mb-4 font-extrabold text-center relative z-10">
-
-      </h1>
-
       {/* Carousel Content */}
-      {/* {reviews.map((review, index) => ( */}
       <div className="w-full h-110 relative z-10">
-        <div className="animate-bob-run runner-track overflow py-5 px-4">
-          <div className="flex gap-6 transition-transform duration-700 ease-out">
+        <div className="group overflow py-5 px-4">
+          <div className="runner-track flex gap-6 transition-transform duration-700 ease-out group-hover:pause-animation">
             {[...reviews, ...reviews].map((review, index) => (
               <div
                 key={index}
-                className="flex-none w-72 bg-white rounded-2xl p-5 shadow-lg flex flex-col justify-between min-h-64 transition-all duration-500 hover:scale-105  animate-bob"
+                className="flex-none w-72 bg-white rounded-2xl p-5 shadow-lg flex flex-col justify-between min-h-64 transition-all duration-500 hover:scale-105 animate-bob"
               >
                 <div className="stars text-2xl mb-4">
-                  <div className="flex flex-row"><img
-                    src={review.avatar}
-                    alt="avatar"
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                  />
-                    <div> <p className="bg-dark font-semibold text-base">{review.name}</p>
-                      <p className=" text-sm ">{review.company}</p></div>
+                  <div className="flex flex-row">
+                    <img
+                      src={review.avatar}
+                      alt={`Avatar of ${review.name}`}
+                      className="w-12 h-12 rounded-full object-cover mr-4"
+                    />
+                    <div>
+                      <p className="bg-dark font-semibold text-base">{review.name}</p>
+                      <p className="text-sm">{review.company}</p>
+                    </div>
                   </div>
                 </div>
 
@@ -172,22 +168,16 @@ const Comment = () => {
                   {review.text}
                 </div>
 
-                <div className=' text-yellow-400'>{"★★★★★"
-                  .split("")
-                  .map((star, i) => (
-                    <span key={i}>{i < review.stars ? star : "☆"}</span>
+                <div className="text-yellow-400 flex">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i}>{i < review.stars ? "★" : "☆"}</span>
                   ))}
-                </div>
-
-                <div className="flex items-center mt-3">
-
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
-      {/* <div className="text-6xl font-serif text-gray-200 h-10 leading-none mt-5">,,</div> */}
 
       {/* Animation Keyframes */}
       <style>
@@ -208,6 +198,10 @@ const Comment = () => {
             animation: scrollLoop 20s linear infinite;
           }
 
+          .group:hover .runner-track {
+            animation-play-state: paused;
+          }
+
           @keyframes float {
             0% {
               transform: translateY(0) rotate(0);
@@ -216,19 +210,19 @@ const Comment = () => {
               transform: translateY(-20px) rotate(10deg);
             }
             100% {
-              transform: translateY(0) rotate(10);
+              transform: translateY(0) rotate(10deg);
             }
           }
+
           @keyframes bobUpDown {
-            0%,
-            100% {
-              transform: translateY(20);
+            0%, 100% {
+              transform: translateY(10px);
             }
             50% {
-              transform: translateY(-15px);
+              transform: translateY(-10px);
             }
           }
-            
+
           .animate-bob {
             animation: bobUpDown 3s ease-in-out infinite;
           }
