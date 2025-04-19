@@ -20,7 +20,7 @@ import heritage from '../../assets/img/clients/thalappakatti.gif';
 
 import { useEffect, useState } from 'react';
 import TalkUs from './Talkus';
-// import SoftwareApproach from './SoftwareApproach';
+import SoftwareApproach from './SoftwareApproach';
 interface ShopItem {
   title: string;
   imgSrc: string;
@@ -88,7 +88,7 @@ const About = () => {
     
        <TalkUs></TalkUs>
        
-       {/* <SoftwareApproach/> */}
+       <SoftwareApproach/>
 
       <Comment/>
 

@@ -1,194 +1,144 @@
-// import { useState, useEffect, JSX } from 'react';
-// import { Zap, BarChart2, Layers } from 'lucide-react';
+import { useEffect } from "react";
+import { CheckCircle, Calendar, ShoppingCart, Globe } from "lucide-react";
 
-// type Step = {
-//   id: string;
-//   title: string;
-//   duration: string;
-//   subtitle: string;
-//   icon: JSX.Element;
-//   items: string[];
-//   action: string;
-//   color: string;
-// };
+const steps = [
+    {
+        title: "Step 1",
+        subtitle: "Understand Business Need",
+        icon: <Calendar size={32} className="text-green-500" />,
+        highlightText: "60 Min",
+        highlightSubtext: "Discussion",
+        items: [
+            "Sign-up your details",
+            "How we solve the problem",
+            "How much we charge for solution",
+            "Explain our scope of work",
+            "Transparent service offering",
+            "Q & A Sessions",
+        ],
+    },
+    {
+        title: "Step 2",
+        subtitle: "Order your Machine",
+        icon: <ShoppingCart size={32} className="text-green-500" />,
+        highlightText: "Make 50%",
+        highlightSubtext: "advance",
+        items: [
+            "We build your system",
+            "Test your system E2E",
+            "Offer potential passive earning",
+            "Demo session invite",
+            "Satisfaction & Evaluation",
+            "Schedule time for Installation",
+        ],
+    },
+    {
+        title: "Final",
+        subtitle: "Run your business digitally",
+        icon: <Globe size={32} className="text-green-500" />,
+        highlightText: "30 Min",
+        highlightSubtext: "Installation",
+        items: [
+            "Lifetime support",
+            "Regular revenue",
+            "No manpower shortage",
+            "Fully digital payments",
+            "Zero error possibility",
+            "Monitor from anywhere",
+        ],
+    },
+];
 
-// export default function ModernSoftwareApproach() {
-//   const [activeStep, setActiveStep] = useState(0);
-//   const [isVisible, setIsVisible] = useState(false);
+export default function SoftwareApproach() {
+    useEffect(() => {
+        // Animation for cards on scroll
+        const cards = document.querySelectorAll('.step-card');
 
-//   useEffect(() => {
-//     setIsVisible(true);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, { threshold: 0.1 });
 
-//     const interval = setInterval(() => {
-//       setActiveStep((prev) => (prev === 2 ? 0 : prev + 1));
-//     }, 4000);
+        cards.forEach(card => {
+            observer.observe(card);
+        });
 
-//     return () => clearInterval(interval);
-//   }, []);
+        return () => {
+            cards.forEach(card => {
+                observer.unobserve(card);
+            });
+        };
+    }, []);
 
-//   const steps: Step[] = [
-//     {
-//       id: "step1",
-//       title: "Understand Business Need",
-//       duration: "60 Min",
-//       subtitle: "Discussion",
-//       icon: <Zap size={24} className="text-indigo-500" />,
-//       items: [
-//         "Sign-up your details",
-//         "How we solve the problem",
-//         "How much we charge for solution",
-//         "Explain our scope of work",
-//         "Transparent service offering",
-//         "Q & A Sessions"
-//       ],
-//       action: "Book a Call",
-//       color: "indigo"
-//     },
-//     {
-//       id: "step2",
-//       title: "Order your Machine",
-//       duration: "Make 50%",
-//       subtitle: "advance",
-//       icon: <BarChart2 size={24} className="text-teal-500" />,
-//       items: [
-//         "We build your system",
-//         "Test your system E2E",
-//         "Offer potential passive earning",
-//         "Demo session invite",
-//         "satisfaction & Evaluation",
-//         "Schedule time for Installation"
-//       ],
-//       action: "Book a call",
-//       color: "teal"
-//     },
-//     {
-//       id: "final",
-//       title: "Run your business digitally",
-//       duration: "30 Min",
-//       subtitle: "Installation",
-//       icon: <Layers size={24} className="text-purple-500" />,
-//       items: [
-//         "Life time support",
-//         "Regular revenue",
-//         "No manpower shortage",
-//         "Fully digital payments",
-//         "Zero error possibility",
-//         "Monitor from anywhere"
-//       ],
-//       action: "Video Testimonial",
-//       color: "purple"
-//     }
-//   ];
+    return (
+        <section className="bg-gradient-to-b from-gray-50 to-green-50 pb-24 px-36">
+            <div className="container mx-auto px-4">
+                <div className="text-center mb-3">
+                    <h2 className="text-4xl font-bold text-gray-800 v11-roboto tracking-wide mb-4">
+                        Our <span className="text-green-500 v11-roboto tracking-wide">Approach</span>
+                    </h2>
+                    <div className="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
+                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                        Transparent Plans, Find the perfect software fit for your needs
+                    </p>
+                </div>
 
-//   // <-- Fix: gradients as a Record<string,string> -->
-//   const gradients: Record<string, string> = {
-//     indigo: "from-indigo-500 to-blue-600",
-//     teal:   "from-teal-400 to-emerald-500",
-//     purple: "from-purple-500 to-pink-500"
-//   };
+                <div className="grid gap-8 md:grid-cols-3">
+                    {steps.map((step, idx) => (
+                        <div
+                            key={idx}
+                            className="step-card opacity-0 transform translate-y-8 transition-all duration-700 bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start hover:shadow-2xl border-t-4 border-green-500"
+                            style={{ transitionDelay: `${idx * 100}ms` }}
+                        >
+                            {/* Green highlight banner */}
 
-//   const getGradient = (color: string): string => {
-//     return gradients[color] ?? "from-gray-700 to-gray-800";
-//   };
+                            <div className="flex items-center mb-6">
+                                <div className="p-3 bg-green-100 rounded-full">
+                                    {step.icon}
+                                </div>
+                                <div className="ml-4">
+                                    <h3 className="text-2xl font-bold text-gray-800">{step.title}</h3>
+                                    <p className="text-green-500 font-medium text-lg">{step.subtitle}</p>
+                                </div>
+                            </div>
 
-//   return (
-//     <div className="min-h-screen bg-gray-50 font-sans p-6">
-//       {/* Background Elements */}
-//       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-//         <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 -translate-y-1/4 translate-x-1/4"></div>
-//         <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 translate-y-1/4 -translate-x-1/4"></div>
-//       </div>
+                            <div className="w-full -mx-8 -mt-8 pl-7 py-2">
+                                <div className="  p-4 flex items-center">
+                                    <span className="text-3xl text-gray-700 font-bold mr-2">{step.highlightText}</span>
+                                    <span className="text-xl text-green-500">{step.highlightSubtext}</span>
+                                </div>
+                            </div>
 
-//       <div className="max-w-6xl mx-auto relative">
-//         {/* Header */}
-//         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-//           <h3 className="text-lg font-medium text-indigo-600 mb-2">Our Approach</h3>
-//           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-//             Transparent Plans, Find the 
-//             <span className="block mt-1">Perfect Software Fit for Your Needs</span>
-//           </h1>
-//         </div>
+                            <ul className="space-y-3 flex-1 w-full">
+                                {step.items.map((item, i) => (
+                                    <li key={i} className="flex items-start group">
+                                        <CheckCircle className="mt-1 mr-3 text-green-500 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" size={20} />
+                                        <span className="text-gray-700 group-hover:text-green-700 transition-colors duration-300">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <div className="w-full">
+                                <div className="h-1 w-0 bg-green-500 group-hover:w-full transition-all duration-300 step-progress"></div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
 
-//         {/* Step Indicators */}
-//         <div className="flex justify-center mb-16">
-//           <div className="flex items-center space-x-4">
-//             {steps.map((step, idx) => (
-//               <div key={step.id} className="flex items-center">
-//                 {idx > 0 && (
-//                   <div
-//                     className={`h-0.5 w-12 transition-colors duration-500 ${
-//                       idx <= activeStep
-//                         ? `bg-${steps[activeStep].color}-500`
-//                         : 'bg-gray-300'
-//                     }`}
-//                   ></div>
-//                 )}
-//                 <button
-//                   onClick={() => setActiveStep(idx)}
-//                   className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-500 ${
-//                     idx === activeStep
-//                       ? `bg-${step.color}-500 text-white shadow-lg shadow-${step.color}-200`
-//                       : 'bg-white border-2 border-gray-300 text-gray-400'
-//                   }`}
-//                 >
-//                   {idx + 1}
-//                 </button>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* Content */}
-//         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-//           {steps.map((step, idx) => (
-//             <div
-//               key={step.id}
-//               className={`rounded-2xl overflow-hidden transition-all duration-700 transform ${
-//                 idx === activeStep ? 'ring-2 ring-offset-2 scale-105' : 'opacity-80 hover:opacity-95'
-//               } ${idx === activeStep ? `ring-${step.color}-400` : ''}`}
-//               onClick={() => setActiveStep(idx)}
-//             >
-//               <div className={`bg-gradient-to-br ${getGradient(step.color)} p-6`}>
-//                 <div className="flex items-center mb-4">
-//                   <div className="bg-white/20 backdrop-blur-sm rounded-lg p-2 mr-3">
-//                     {step.icon}
-//                   </div>
-//                   <div>
-//                     <p className="text-white font-semibold">
-//                       {idx === 2 ? "Final" : `Step ${idx + 1}`}
-//                     </p>
-//                     <h3 className="text-white text-lg">{step.title}</h3>
-//                   </div>
-//                 </div>
-                
-//                 <div className="mb-4">
-//                   <p className="text-white font-bold text-2xl flex items-baseline">
-//                     {step.duration} 
-//                     <span className="text-sm font-normal ml-2 opacity-80">{step.subtitle}</span>
-//                   </p>
-//                 </div>
-//               </div>
-
-//               <div className="bg-white p-6">
-//                 <ul className="space-y-3 mb-6">
-//                   {step.items.map((item, i) => (
-//                     <li key={i} className="flex items-start">
-//                       <div className={`mt-1.5 flex-shrink-0 h-2 w-2 rounded-full bg-${step.color}-500 mr-3`}></div>
-//                       <span className="text-gray-600">{item}</span>
-//                     </li>
-//                   ))}
-//                 </ul>
-
-//                 <button 
-//                   className={`w-full py-3 px-4 rounded-lg bg-${step.color}-500 hover:bg-${step.color}-600 text-white font-medium transition-all duration-300 transform hover:scale-[1.02]`}
-//                 >
-//                   {step.action}
-//                 </button>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
+            <style>{`
+        .step-card.animate-in {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+      `}</style>
+        </section>
+    );
+}
