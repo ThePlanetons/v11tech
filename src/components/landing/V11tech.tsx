@@ -81,60 +81,122 @@ const V11QRLanding: React.FC = () => {
     switch (iconName) {
       case "beer-mug":
         return (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-12 h-12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M17 6V20H7V6M7 16H4V12H7M17 16H20V12H17M11 6V3H13V6" />
-          </svg>
+          <img
+          src="/public/assets/img/pos/Bars.png"
+          alt="Icon"
+          className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+        />
         );
       case "burger":
         return (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-12 h-12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M4 10h16M4 14h16M18 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2z" />
-            <path d="M6 16.5h12" />
-            <path d="M7 12l.5 2M12 12l.5 2M17 12l.5 2" />
-          </svg>
+          <img
+  src="/public/assets/img/pos/QSR.png"
+  alt="Icon"
+  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+/>
         );
       case "hotel":
         return (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-12 h-12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16M1 9h22M1 16h22M9 5v16M15 5v16" />
-          </svg>
+          <img
+  src="/public/assets/img/pos/HotelsResorts.png"
+  alt="Icon"
+  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+/>
         );
-      // For brevity, simplified icons for other cases
-      default:
+        case "bakery":
         return (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-12 h-12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <rect x="4" y="4" width="16" height="16" rx="2" />
-            <path d="M9 9h6v6H9z" />
-          </svg>
+          <img
+  src="/public/assets/img/pos/BakeryShops.png"
+  alt="Icon"
+  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+/>
         );
+
+        case "chain":
+        return (
+          <img
+  src="/public/assets/img/pos/Chains.png"
+  alt="Icon"
+  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+/>
+        );
+        case "restaurant":
+        return (
+          <img
+  src="/public/assets/img/pos/FSR.png"
+  alt="Icon"
+  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+/>
+        );
+        case "cloud-kitchen":
+        return (
+          <img
+  src="/public/assets/img/pos/CloudKitchens.png"
+  alt="Icon"
+  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+/>
+        );
+        
+        case "food-court":
+        return (
+          <img
+  src="/public/assets/img/pos/FoodCourts.png"
+  alt="Icon"
+  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+/>
+        );
+
+        case "canteen":
+        return (
+          <img
+  src="/public/assets/img/pos/Canteens.png"
+  alt="Icon"
+  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+/>
+        );
+        
+        case "buffet":
+        return (
+          <img
+  src="/public/assets/img/pos/AIBuffet.png"
+  alt="Icon"
+  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+/>
+        );
+
+        case "grocery":
+          return (
+            <img
+    src="/public/assets/img/pos/FoodRetail.png"
+    alt="Icon"
+    className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+  />
+          );
+
+          case "popup-store":
+            return (
+              <img
+      src="/public/assets/img/pos/PopUpStores.png"
+      alt="Icon"
+      className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+    />
+            );
+        
+      // // For brevity, simplified icons for other cases
+      // // default:
+      // //   return (
+      // //     <svg
+      // //       xmlns="http://www.w3.org/2000/svg"
+      // //       className="w-12 h-12"
+      // //       viewBox="0 0 24 24"
+      // //       fill="none"
+      // //       stroke="currentColor"
+      // //       strokeWidth="2"
+      // //     >
+      // //       <rect x="4" y="4" width="16" height="16" rx="2" />
+      // //       <path d="M9 9h6v6H9z" />
+      // //     </svg>
+      //   );
     }
   };
 
@@ -181,7 +243,7 @@ const V11QRLanding: React.FC = () => {
         <div 
           id="service-grid" 
           ref={gridRef} 
-          className="lg:pl-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 invisible-element"
+          className="lg:pl-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 invisible-element"
         >
           {serviceItems.map((item, index) => (
             <div
