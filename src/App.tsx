@@ -26,10 +26,13 @@ function App() {
 
           {/* KIOSK Landing */}
           <Route path="/products/kiosk" element={<KIOSKLanding />} />
-          <Route path="/Contact" element={<ContactPage />} />
 
           {/* About */}
-          <Route path="/about" element={<About/>} />
+          <Route path="/about" element={<About></About>} />
+
+          <Route path="/Contact" element={<ContactPage />} />
+
+
 
         </Routes>
       </BrowserRouter>
