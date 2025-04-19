@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center">
               <div className="text-white pt-4 md:pt-10">
                 <span className="font-bold text-lg"></span>
-                <img src="/assets/img/Logo_Last.png" alt="V11 logo" className="h-10 w-65 md:h-20 pb-4 md:pb-10" />
+                <img src="/assets/img/Logo_Last.png" alt="V11 logo" className="h-10 w-65  pb-6 pl-16 pr-16" />
                 <div className="text-xs"></div>
               </div>
             </div>
