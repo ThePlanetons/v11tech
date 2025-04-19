@@ -6,6 +6,7 @@ import Kurunji_Metro from '../../../src/assets/img/clients/Kurunji_Metro.png'
 import LOGO_Karaikudi from '../../../src/assets/img/clients/LOGO_Karaikudi.png'
 import thalappakatti from '../../../src/assets/img/clients/thalappakatti.gif'
 import Together_Restaurant from '../../../src/assets/img/clients/Together_Restaurant.png'
+// import worldmap from '../../../public/assets/img/worldmap.png'
 
 
 
@@ -70,18 +71,18 @@ export default function WorldwideCustomers() {
     <div className="w-full py-12 bg overflow-hidden">
       {/* Header */}
       <div className="text-center mb-10">
-        <h2 className="text-3xl font-semibold text-gray-800 relative inline-block">
+        <h2 className="text-5xl font-semibold text-gray-800 v11-roboto tracking-wide relative inline-block">
           Our worldwide reputed customers
           <div className="absolute left-0 right-0 mx-auto w-20 h-1  bottom-0"></div>
         </h2>
       </div>
       
       {/* Main content with world map background */}
-      <div className="relative max-w-full mx-auto px-4">
+      <div className="relative h-90 max-w-full mx-auto px-4">
         {/* World map background */}
-        <div className="absolute inset-0 z-0 opacity-20">
+        <div className="absolute inset-0 z-0 opacity-50">
           <div className="w-full h-full bg-contain bg-center bg-no-repeat" style={{ 
-            backgroundImage: 'url("/api/placeholder/1000/500")', 
+            backgroundImage: 'url("/assets/img/worldmap.png")', 
             backgroundSize: 'contain'
           }}></div>
         </div>
@@ -91,7 +92,7 @@ export default function WorldwideCustomers() {
           ref={scrollContainerRef}
           className="relative z-10 flex overflow-x-hidden"
         >
-          <div className="flex space-x-8 py-12">
+          <div className="flex space-x-8 pt-30 py-12">
             {customers.map((customer) => (
               <div 
                 key={customer.id} 
