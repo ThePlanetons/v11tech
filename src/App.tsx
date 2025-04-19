@@ -6,6 +6,8 @@ import Landing from './components/landing/Landing'
 import QRLanding from './components/qr-ordering/QR-Landing'
 import KDSLanding from './components/kds/KDS-Landing'
 import KIOSKLanding from './components/kiosk/KIOSK-Landing'
+import About from './components/about/About-Landing'
+import ContactPage from './components/contact/ContactPage'
 
 
 function App() {
