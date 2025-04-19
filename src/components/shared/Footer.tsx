@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center">
               <div className="text-white pt-4 md:pt-10">
                 <span className="font-bold text-lg"></span>
-                <img src="/assets/img/Logo_Last.png" alt="V11 logo" className="h-16 w-80 md:h-20 pb-4 md:pb-10" />
+                <img src="/assets/img/Logo_Last.png" alt="V11 logo" className="h-10 w-65 md:h-20 pb-4 md:pb-10" />
                 <div className="text-xs"></div>
               </div>
             </div>
@@ -80,8 +80,8 @@ const Footer: React.FC = () => {
           </nav>
 
           {/* Right-Aligned Payment Image */}
-          <div className="md:ml-auto w-full md:w-1/3 flex justify-center md:justify-end md:pr-4 lg:pr-8">
-            <img src="/assets/img/payment.png" alt="Payment Methods" className="h-8 w-auto" />
+          <div className="md:ml-auto w-full md:w-1/3 flex justify-center md:justify-end">
+            <img src="/assets/img/payment.png" alt="Payment Methods" className="h-8 w-85" />
           </div>
         </div>
 
