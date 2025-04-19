@@ -52,7 +52,7 @@ function TalkUs() {
                 <span className="inline-block w-12 h-0.5 bg-green-500 mr-3"></span>
                 Our software experts are doing R & D in many industries
               </p>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 v11-roboto tracking-wide leading-tight mb-6">
+              <h1 className="text-3xl md:text-5xl font-bold text-gray-800 v11-roboto tracking-wide leading-tight mb-6">
               Our Software Capable for Wide Range of Business and Industries{" "}
                 <span className="text-green-500 relative">
                   <span className="absolute bottom-1 left-0 w-full h-1 bg-emerald-200"></span>

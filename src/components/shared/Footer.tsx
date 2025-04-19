@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Right - App Download */}
-          <div className="text-center md:text-right w-full md:w-auto">
+          <div className="text-center md:text-right w-auto md:w-auto">
             <p className="font-medium mb-3 md:pr-6 lg:pr-24">Download our App</p>
             <div className="flex flex-col sm:flex-row justify-center md:justify-end space-y-2 sm:space-y-0 sm:space-x-2">
               <a href="#" className="inline-block transform transition-transform hover:scale-105">
@@ -62,19 +62,19 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Centered Navigation */}
-          <nav className="mb-4 md:mb-0 md:absolute md:left-1/2 md:-translate-x-1/2 w-full md:w-auto">
-            <ul className="flex flex-wrap justify-center space-x-4 md:space-x-8">
+          <nav className="mb-0 md:mb-0 md:absolute md:left-1/2 md:-translate-x-1/2 w-full md:w-auto">
+            <ul className="flex flex-auto justify-center  md:justify-center space-x-8 md:space-x-8">
               <li>
-                <a href="#" className="hover:underline transition-all duration-200">Home</a>
+                <a href="#" className="hover:underline transition-all duration-200 text-xs md:text-base ">Home</a>
               </li>
               <li>
-                <a href="#" className="hover:underline transition-all duration-200 text-xs sm:text-base">Terms and Condition</a>
+                <a href="#" className="hover:underline transition-all duration-200 text-xs md:text-base">Terms and Condition</a>
               </li>
               <li>
-                <a href="#" className="hover:underline transition-all duration-200">Privacy Policy</a>
+                <a href="#" className="hover:underline transition-all duration-200 text-xs md:text-base">Privacy Policy</a>
               </li>
               <li>
-                <a href="#" className="hover:underline transition-all duration-200">Contact Us</a>
+                <a href="#" className="hover:underline transition-all duration-200 text-xs md:text-base">Contact Us</a>
               </li>
             </ul>
           </nav>

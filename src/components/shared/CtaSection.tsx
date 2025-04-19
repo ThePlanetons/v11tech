@@ -38,7 +38,7 @@ const CTASection: React.FC<CTASectionProps> = ({
 
   return (
     <section ref={sectionRef} className="py-16 bg-[#c9f9da] overflow-hidden">
-      <div className="container mx-auto px-20 py-7">
+      <div className="container mx-auto px-1.5 py-1 md:px-20 md:py-7">
         <div className=" bg-green-500 rounded-3xl text-center relative px-6 py-16 overflow-hidden shadow-xl transform transition-all duration-700 hover:shadow-2xl">
           {/* Animated particles */}
           <div className="particle-container absolute inset-0 overflow-hidden opacity-30 ">
@@ -60,7 +60,7 @@ const CTASection: React.FC<CTASectionProps> = ({
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <div className="animate-element title-element">
-              <h2 className="text-white v11-roboto tracking-wide text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-white v11-roboto tracking-wide text-2xl md:text-5xl font-bold mb-6">
                 Upgrade Your Business with Our
                 <br />
                 <span className="relative inline-block">
@@ -71,7 +71,7 @@ const CTASection: React.FC<CTASectionProps> = ({
             </div>
             
             <div className="animate-element subtitle-element">
-              <p className="text-white text-lg mb-12 max-w-2xl mx-auto opacity-90">
+              <p className="text-white text-lg  mb-12 max-w-2xl mx-auto opacity-90">
                 Experience the future of transactions! Schedule a demo today and
                 witness how our <span className="text-black font-semibold">{product}</span> solution can revolutionize your business.
               </p>
