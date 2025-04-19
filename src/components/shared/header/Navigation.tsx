@@ -140,7 +140,7 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
           {['About Us', 'Services', 'Customers', 'Contact Us'].map((item) => (
             <a
               key={item}
-              href={'/products/qr-ordering'}
+              href={'/about'}
               className="hover:text-green-400 transition-colors duration-300 relative group font-medium"
             >
               {item}

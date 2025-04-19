@@ -15,12 +15,12 @@ export default function MobileQROrderingSystem() {
   return (
     <div className="flex flex-col md:flex-row items-center bg-white min-h-screen">
       {/* Left section with text content */}
-      <div className="w-full md:w-1/2 px-6 py-12 md:px-12 md:py-16">
-        <h1 className="text-5xl md:text-6xl  leading-tight mb-8 text-gray-800 v11-roboto tracking-wide">
+      <div className="w-full md:w-1/2 px-6 py-16 md:px-12 md:py-16">
+        <h2 className="text-2xl md:text-6xl  leading-tight mb-8 text-gray-800 v11-roboto">
           INNOVATIVE MOBILE<br />
           ORDERING SYSTEM<br />
           THROUGH QR CODE
-        </h1>
+        </h2>
 
         <div className="text-base md:text-lg mb-12 text-gray-600">
           <p className="mb-1">WE BUILD A PLATFORM FOR SMALL BUSINESS OWNERS,</p>

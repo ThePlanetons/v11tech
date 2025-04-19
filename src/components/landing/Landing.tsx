@@ -63,13 +63,10 @@ const Landing: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const togglePricing = () => {
-    setIsYearly(!isYearly);
-  };
 
   // Theme colors (if needed for the header or toggle)
   const themeColor = "#06b453";
-  const greyText = "#4A5568";
+
 
   // Pricing plans data
   const pricingPlans: PricingPlan[] = [
@@ -194,7 +191,7 @@ const Landing: React.FC = () => {
       <TalkUs />
 
       <V11QRLanding />
-      
+
       {/* PricingSection */}
       <section id="pricing" className="py-16 md:py-20 relative overflow-hidden bg">
         <div className="container mx-auto px-4 md:px-6">
@@ -226,45 +223,33 @@ const Landing: React.FC = () => {
               }}
               className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-800 v11-roboto tracking-wide "
             >
-              Transparent Pricing Plans, Find the Perfect <br/>Fit for Your Needs
+              Transparent Pricing Plans, Find the Perfect <br />Fit for Your Needs
             </motion.h2>
           </motion.div>
 
           {/* Toggle Switch */}
-          <motion.div
-            className="flex justify-center mb-10 md:mb-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex items-center space-x-4 bg-white rounded-full p-1 shadow-md">
-              <span
-                className={`text-base md:text-lg ${!isYearly ? 'font-bold' : 'font-medium'}`}
-                style={{ color: !isYearly ? themeColor : greyText }}
+          <div className="flex justify-center mb-10 md:mb-12">
+            <div className="flex rounded-full overflow-hidden border border-gray-200 shadow-sm">
+              <button
+                className={`px-8 py-3 text-base md:text-lg font-medium transition-colors duration-300 ${!isYearly
+                    ? 'bg-green-500 text-white'
+                    : 'bg-gray-100 text-gray-400'
+                  }`}
+                onClick={() => setIsYearly(false)}
               >
                 Monthly
-              </span>
-              <div
-                className="w-12 md:w-16 h-7 md:h-8 flex items-center rounded-full cursor-pointer"
-                style={{ backgroundColor: "#daf7e3" }}
-                onClick={togglePricing}
-              >
-                <motion.div
-                  className="w-6 md:w-7 h-6 md:h-7 rounded-full shadow-sm"
-                  style={{ backgroundColor: themeColor }}
-                  animate={{ x: isYearly ? 24 : 0 }}
-                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                />
-              </div>
-              <span
-                className={`text-base md:text-lg ${isYearly ? 'font-bold' : 'font-medium'}`}
-                style={{ color: isYearly ? themeColor : greyText }}
+              </button>
+              <button
+                className={`px-8 py-3 text-base md:text-lg font-medium transition-colors duration-300 ${isYearly
+                    ? 'bg-green-500 text-white'
+                    : 'bg-gray-100 text-gray-400'
+                  }`}
+                onClick={() => setIsYearly(true)}
               >
                 Yearly
-              </span>
+              </button>
             </div>
-          </motion.div>
+          </div>
 
           {/* Pricing Cards */}
           <motion.div

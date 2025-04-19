@@ -52,13 +52,13 @@ function TalkUs() {
                 <span className="inline-block w-12 h-0.5 bg-green-500 mr-3"></span>
                 Our QR Code System reached everywhere
               </p>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 v11-roboto tracking-wide leading-tight mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 v11-roboto tracking-wide leading-tight mb-6">
                 Our Software platform used by{" "}
-                <span className="text-green-500 relative">
+                <span className="text-green-500 text-3xl md:text-5xl relative">
                   Wide Range...
                   <span className="absolute bottom-1 left-0 w-full h-1 bg-emerald-200"></span>
                 </span>
-              </h1>
+              </h2>
               <p className="text-gray-600 text-lg">
                 Revolutionize your business operations with our innovative QR ordering system 
                 designed for efficiency and growth.
