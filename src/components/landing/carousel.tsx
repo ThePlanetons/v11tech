@@ -7,7 +7,7 @@ export default function MobileQROrderingSystem() {
     setAnimate(true);
     const interval = setInterval(() => {
       setAnimate(prev => !prev);
-    }, 3000);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -43,18 +43,30 @@ export default function MobileQROrderingSystem() {
         <div className="absolute inset-0 bg-green-500 rounded-l-full"></div>
 
         {/* Hand and phones container */}
-        <div className="relative h-full flex items-center justify-center">
-          <div 
-            className={`relative ${animate ? 'translate-y-0' : 'translate-y-1'} transition-all duration-1000 ease-in-out overflow-hidden`}
+        <div className="relative h-full flex items-center justify-center overflow-hidden">
+          <div
+            className="relative"
             style={{ width: '100%', height: '100%', zIndex: 10 }}
           >
             {/* Image from the message - showing hand holding phones with QR code and food app */}
-            <img 
-              src="/assets/img/ui.png" 
-              alt="Hand holding two smartphones showing QR code and food ordering app" 
-              className="object-contain w-full h-full "
+            <img
+              src="/assets/img/mobile1.png"
+              alt="Hand holding two smartphones showing QR code and food ordering app"
+              className={`absolute top-0 left-36 z-20 object-contain w-full h-full  ${animate ? 'translate-y-0' : 'translate-y-4'}  duration-1000 ease-in-out`}
             />
+
+            <img
+              src="/assets/img/mobile2.png"
+              alt="Hand holding two smartphones showing QR code and food ordering app"
+              className={`absolute top-0 left-36 z-10 object-contain w-full h-full  ${animate ? 'translate-y-0' : 'translate-y-2 '}  duration-1000 ease-in-out`}
+            />
+
           </div>
+          <img
+            src="/assets/img/hand.png"
+            alt="Hand holding two smartphones showing QR code and food ordering app"
+            className="absolute top-0 left-36 z-0 object-contain w-full h-full "
+          />
         </div>
       </div>
     </div>
