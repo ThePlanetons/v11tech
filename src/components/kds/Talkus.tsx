@@ -132,7 +132,7 @@ function TalkUs() {
                   <div className={`relative transition-all duration-700 ${animateQR ? 'scale-110' : 'scale-100'}`}>
                     <div className="absolute inset-0 bg-yellow-400 opacity-30 rounded-lg blur-md"></div>
                     <img 
-                      src="/assets/img/What to Know Before Scanning a QR Code.jpeg"
+                      src="/assets/img/kds.png"
                       alt="QR code scanning"
                       className="w-80 h-44 object-cover rounded-lg relative z-10 hover:rotate-3 transition-transform duration-300"
                     />
