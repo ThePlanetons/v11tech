@@ -10,7 +10,7 @@ const reviews = [
     stars: 4,
     text:
       "Poze Software's AI solutions have transformed our operations. It's efficient, intuitive, and has significantly improved our workflow. Truly impressive support and performance.",
-    avatar: "./assets/img/avatar.jpeg",
+    avatar: "/assets/img/avatar.jpeg",
     date: "5 Apr 2023",
   },
   {
@@ -19,7 +19,7 @@ const reviews = [
     stars: 4,
     text:
       "Poze Software's AI solutions have transformed our operations. It's efficient, intuitive, and has significantly improved our workflow. Truly impressive support and performance.",
-    avatar: "./assets/img/avatar.jpeg",
+    avatar: "/assets/img/avatar.jpeg",
     date: "5 Apr 2023",
   },
   {
@@ -28,7 +28,7 @@ const reviews = [
     stars: 4,
     text:
       "Poze Software's AI solutions have transformed our operations. It's efficient, intuitive, and has significantly improved our workflow. Truly impressive support and performance.",
-    avatar: "./assets/img/avatar.jpeg",
+    avatar: "/assets/img/avatar.jpeg",
     date: "5 Apr 2023",
   },
   {
@@ -37,7 +37,7 @@ const reviews = [
     stars: 4,
     text:
       "Poze Software's AI solutions have transformed our operations. It's efficient, intuitive, and has significantly improved our workflow. Truly impressive support and performance.",
-    avatar: "./assets/img/avatar.jpeg",
+    avatar: "/assets/img/avatar.jpeg",
     date: "5 Apr 2023",
   },
   {
@@ -46,7 +46,7 @@ const reviews = [
     stars: 4,
     text:
       "Poze Software's AI solutions have transformed our operations. It's efficient, intuitive, and has significantly improved our workflow. Truly impressive support and performance.",
-    avatar: "./assets/img/avatar.jpeg",
+    avatar: "/assets/img/avatar.jpeg",
     date: "5 Apr 2023",
   },
   {
@@ -55,7 +55,7 @@ const reviews = [
     stars: 4,
     text:
       "Poze Software's AI solutions have transformed our operations. It's efficient, intuitive, and has significantly improved our workflow. Truly impressive support and performance.",
-    avatar: "./assets/img/avatar.jpeg",
+    avatar: "/assets/img/avatar.jpeg",
     date: "5 Apr 2023",
   },
   {
@@ -64,7 +64,7 @@ const reviews = [
     stars: 4,
     text:
       "Poze Software's AI solutions have transformed our operations. It's efficient, intuitive, and has significantly improved our workflow. Truly impressive support and performance.",
-    avatar: "./assets/img/avatar.jpeg",
+    avatar: "/assets/img/avatar.jpeg",
     date: "5 Apr 2023",
   }
 ];

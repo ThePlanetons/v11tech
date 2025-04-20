@@ -112,3 +112,20 @@ button:focus-visible {
   /* white-space: nowrap; */
   animation: scrollLoop 20s linear infinite;
 }
+
+
+.custom-btn {
+  background-color: #22c55e; /* Tailwind's green-500 */
+  color: white;
+  padding: 0.75rem 2rem; /* py-3 px-8 */
+  border-radius: 0.375rem; /* rounded-md */
+  display: flex;
+  align-items: center;
+  font-weight: 500; /* font-medium */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #16a34a; /* Tailwind's green-600 */
+  transform: scale(1.10);
+}

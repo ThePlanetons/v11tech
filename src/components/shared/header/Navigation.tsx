@@ -150,7 +150,7 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
         </nav>
 
         {/* Desktop Book a Demo Button */}
-        <button className="hidden md:block ml-4 font-semibold px-4 py-2 rounded-md bg-green-500 relative overflow-hidden transition-all duration-300 group">
+        <button className="hidden md:block ml-4 font-semibold px-4 py-2 rounded-md bg-green-950 relative overflow-hidden  hover:bg-green-600 hover:scale-110 text-white items-center">
           <span className="z-10 text-white relative">Book a Demo</span>
           <span className="absolute left-0 top-0 w-full h-full bg-green-700 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 z-0"></span>
         </button>
