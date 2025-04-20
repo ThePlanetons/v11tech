@@ -52,20 +52,20 @@ export default function MobileQROrderingSystem() {
             <img
               src="/assets/img/mobile1.png"
               alt="Hand holding two smartphones showing QR code and food ordering app"
-              className={`absolute top-0 left-36 z-20 object-contain w-full h-full  ${animate ? 'translate-y-0' : 'translate-y-4'}  duration-1000 ease-in-out`}
+              className={`absolute top-0 left-16 md:left-36 z-20 object-contain w-full h-full  ${animate ? 'translate-y-0' : 'translate-y-4'}  duration-1000 ease-in-out`}
             />
 
             <img
               src="/assets/img/mobile2.png"
               alt="Hand holding two smartphones showing QR code and food ordering app"
-              className={`absolute top-0 left-36 z-10 object-contain w-full h-full  ${animate ? 'translate-y-0' : 'translate-y-2 '}  duration-1000 ease-in-out`}
+              className={`absolute top-0 left-16 md:left-36 z-10 object-contain w-full h-full  ${animate ? 'translate-y-0' : 'translate-y-2 '}  duration-1000 ease-in-out`}
             />
 
           </div>
           <img
             src="/assets/img/hand.png"
             alt="Hand holding two smartphones showing QR code and food ordering app"
-            className="absolute top-0 left-36 z-0 object-contain w-full h-full "
+            className="absolute top-0 left-16 md:left-36 z-0 object-contain w-full h-full "
           />
         </div>
       </div>
