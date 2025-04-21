@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center">
               <div className="text-white pt-4 md:pt-10">
                 <span className="font-bold text-lg"></span>
-                <img src="/assets/img/Logo_Last.png" alt="V11 logo" className="h-10 w-65  pb-6 pl-0 pr-32" />
+                <img src="/assets/img/Logo_Last.png" alt="V11 logo" className="h-10 w-65  pb-6 pl-16 pr-16 md:pl-0 md:pr-32" />
                 <div className="text-xs"></div>
               </div>
             </div>
@@ -23,19 +23,19 @@ const Footer: React.FC = () => {
             <p className="text-center font-medium mb-3">Follow V11 Tech®</p>
             <div className="flex space-x-2 md:space-x-3 justify-center">
               <a href="#" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
-                <Instagram size={24} className="md:w-8 md:h-8" />
+                <Instagram size={24} className="md:w-8 md:h-8 text-white" />
               </a>
               <a href="#" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
-                <Facebook size={24} className="md:w-8 md:h-8" />
+                <Facebook size={24} className="md:w-8 md:h-8 text-white" />
               </a>
               <a href="#" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
-                <Linkedin size={24} className="md:w-8 md:h-8" />
+                <Linkedin size={24} className="md:w-8 md:h-8 text-white" />
               </a>
               <a href="#" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
-                <Twitter size={24} className="md:w-8 md:h-8" />
+                <Twitter size={24} className="md:w-8 md:h-8 text-white" />
               </a>
               <a href="#" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
-                <MessageCircle size={24} className="md:w-8 md:h-8" />
+                <MessageCircle size={24} className="md:w-8 md:h-8 text-white" />
               </a>
             </div>
           </div>
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row border-t border-green-400 pt-4">
           {/* Copyright */}
           <div className="mb-4 md:mb-0 text-sm flex justify-center w-full">
-            <p>©2025 V11Tech. All rights reserved</p>
+            <p>©2025 V11Tech. All rights reserved. Created by TP9</p>
           </div>
         </div>
       </div>
