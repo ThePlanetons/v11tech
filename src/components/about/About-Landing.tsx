@@ -8,12 +8,13 @@ import NavBar from '../shared/header/NavBar';
 import ClientLogosSection from '../shared/ClientLogosSection';
 import CTASection from '../shared/CtaSection';
 import Footer from '../shared/Footer';
-import Comment from '../shared/Comment';
+import Comment from '../shared/comment';
 
 
 import { useEffect, useState } from 'react';
 import TalkUs from './Talkus';
 import SoftwareApproach from './SoftwareApproach';
+import MobileQROrderingSystem from './carousel';
 interface ShopItem {
   title: string;
   imgSrc: string;
@@ -68,6 +69,8 @@ const About = () => {
   return (
     <>
       <NavBar></NavBar>
+
+      <MobileQROrderingSystem></MobileQROrderingSystem>
       
        <ShopsSection shops={shops}></ShopsSection> 
     
