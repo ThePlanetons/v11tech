@@ -37,6 +37,8 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
     { label: 'Contact Us', path: '/contact-us' },
   ];
 
+  const isActive = location.pathname.startsWith('/products');
+
   return (
     <>
       <div
@@ -82,7 +84,7 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
         <nav className="hidden md:flex space-x-6">
           {/* Products with Mega Dropdown */}
           <div className="relative" ref={ref}>
-            <a
+            {/* <a
               href="#products"
               className="hover:text-green-400 transition-colors duration-300 relative group font-medium flex items-center"
               onClick={toggleProductsDropdown}
@@ -101,6 +103,31 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
                 />
               </svg>
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+            </a> */}
+            <a
+              href="#products"
+              className={`relative group font-medium flex items-center transition-colors duration-300 ${isActive ? 'text-green-500' : 'hover:text-green-400'
+                }`}
+              onClick={toggleProductsDropdown}
+            >
+              Products
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className={`h-4 w-4 ml-1 transition-transform duration-300 ${productsDropdownOpen ? 'rotate-180' : ''
+                  }`}
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span
+                className={`absolute left-0 bottom-0 h-0.5 bg-green-500 transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+              ></span>
             </a>
 
             {/* Products Mega Menu Dropdown */}
@@ -240,9 +267,9 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
               >
                 <div className="grid grid-cols-2 gap-4 pl-4 pb-3">
                   {products.map((product, index) => (
-                    <a
+                    <Link
                       key={product.name}
-                      href={`#${product.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      to={`/${product.link}`}
                       className={`flex items-center py-2 text-gray-600 hover:text-green-500 transition-all duration-300 transform ${productsDropdownOpen
                         ? `opacity-100 translate-y-0 delay-${index * 50}`
                         : 'opacity-0 -translate-y-4'
@@ -265,25 +292,24 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
                         </div>
                       </div>
                       <span className="text-sm">{product.name}</span>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
             </div>
 
             {/* Other Mobile Nav Links */}
-            {['About Us', 'Services', 'Customers', 'Contact Us'].map(
-              (item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(' ', '')}`}
-                  className="text-xl font-medium border-b border-gray-200 py-3 hover:text-green-500 transition-colors duration-300"
-                  onClick={toggleMobileMenu}
-                >
-                  {item}
-                </a>
-              )
-            )}
+
+            {menuItems.map(({ label, path }) => (
+              <a
+                key={label}
+                href={path}
+                className="text-xl font-medium border-b border-gray-200 py-3 hover:text-green-500 transition-colors duration-300"
+                onClick={toggleMobileMenu}
+              >
+                {label}
+              </a>
+            ))}
           </div>
           <button className="mt-8 font-semibold px-4 py-3 rounded-md bg-green-500 text-white hover:bg-green-600 transition-all duration-300">
             Book a Demo

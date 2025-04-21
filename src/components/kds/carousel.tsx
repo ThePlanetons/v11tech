@@ -46,13 +46,13 @@ export default function MobileQROrderingSystem() {
         <div className="relative h-full flex items-center justify-center overflow-hidden">
           <div
             className="relative"
-            style={{ width: '94%', height: '94%', zIndex: 10 }}
+            style={{ width: '95%', height: '95%', zIndex: 10 }}
           >
             {/* Image from the message - showing hand holding phones with QR code and food app */}
             <img
               src="/assets/img/kdscar.png"
               alt="Hand holding two smartphones showing QR code and food ordering app"
-              className={`absolute top-16 z-20 object-contain w-full h-full  ${animate ? 'translate-y-0' : 'translate-y-2'}  duration-1000 ease-in-out`}
+              className={`absolute top-21 z-20 object-contain w-full h-full  ${animate ? 'translate-y-0' : 'translate-y-2'}  duration-1000 ease-in-out`}
             />
           </div>
         </div>

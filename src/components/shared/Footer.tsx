@@ -22,19 +22,19 @@ const Footer: React.FC = () => {
           <div className="mb-6 md:mb-0 text-center w-full md:w-auto">
             <p className="text-center font-medium mb-3">Follow V11 Tech®</p>
             <div className="flex space-x-2 md:space-x-3 justify-center">
-              <a href="#" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
+              <a href="https://www.instagram.com/v11tech/" target="_blank" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
                 <Instagram size={24} className="md:w-8 md:h-8 text-white" />
               </a>
-              <a href="#" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
+              <a href="https://www.facebook.com/v11tech/" target="_blank" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
                 <Facebook size={24} className="md:w-8 md:h-8 text-white" />
               </a>
-              <a href="#" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
+              <a href="https://www.linkedin.com/company/v11-tech/about/?viewAsMember=true" target="_blank" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
                 <Linkedin size={24} className="md:w-8 md:h-8 text-white" />
               </a>
-              <a href="#" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
+              <a href="https://x.com/" target="_blank" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
                 <Twitter size={24} className="md:w-8 md:h-8 text-white" />
               </a>
-              <a href="#" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
+              <a href="https://wa.me/+85268098597" target="_blank" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
                 <MessageCircle size={24} className="md:w-8 md:h-8 text-white" />
               </a>
             </div>
@@ -62,8 +62,8 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Centered Navigation */}
-          <nav className="mb-0 md:mb-0 md:absolute md:left-1/2 md:-translate-x-1/2 w-full md:w-auto">
-            <ul className="flex flex-auto justify-center  md:justify-center space-x-8 md:space-x-8">
+          <div className="mb-0 md:mb-0 md:absolute md:left-1/2 md:-translate-x-1/2 w-full md:w-auto">
+            <div className="list-none flex flex-auto justify-center  md:justify-center space-x-8 md:space-x-8">
               <li>
                 <a href="#" className="hover:underline transition-all duration-200 text-xs md:text-base ">Home</a>
               </li>
@@ -74,10 +74,10 @@ const Footer: React.FC = () => {
                 <a href="#" className="hover:underline transition-all duration-200 text-xs md:text-base">Privacy Policy</a>
               </li>
               <li>
-                <a href="/contact" className="hover:underline transition-all duration-200 text-xs md:text-base">contact</a>
+                <a href="/contact-us" className="hover:underline transition-all duration-200 text-xs md:text-base">Contact</a>
               </li>
-            </ul>
-          </nav>
+            </div>
+          </div>
 
           {/* Right-Aligned Payment Image */}
           <div className="md:ml-auto w-full md:w-1/3 flex justify-center md:justify-end">
