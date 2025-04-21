@@ -79,7 +79,7 @@ const About = () => {
 
       <ClientLogosSection  />
 
-      <CTASection product="V11 KDS" siteIndex="/" />
+      <CTASection product="V11-Tech" siteIndex="/" />
       
       <Footer></Footer>
     </>

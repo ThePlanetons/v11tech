@@ -8,6 +8,8 @@ import KDSLanding from './components/kds/KDS-Landing'
 import KIOSKLanding from './components/kiosk/KIOSK-Landing'
 import About from './components/about/About-Landing'
 import ContactPage from './components/contact/ContactPage'
+import Service from './components/service/service-Landing'
+import Customer from './components/customer/QR-Landing'
 
 
 function App() {
@@ -28,11 +30,16 @@ function App() {
           <Route path="/products/kiosk" element={<KIOSKLanding />} />
 
           {/* About */}
-          <Route path="/about" element={<About></About>} />
+          <Route path="/about" element={<About />} />
+ 
+          {/* service */}
+          <Route path="/service" element={<Service />} />
 
+          {/* customer */}
+          <Route path="/customer" element={<Customer />} />
+
+          {/* Contact */}
           <Route path="/Contact" element={<ContactPage />} />
-
-
 
         </Routes>
       </BrowserRouter>
