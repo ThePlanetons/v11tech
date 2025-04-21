@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+
 import Bhavika_LogoF from '../../../src/assets/img/clients/Bhavika_LogoF.png'
 import Dessert_Bossz from '../../../src/assets/img/clients/Dessert_Bossz.png'
 import IBS from '../../../src/assets/img/clients/IBS.png'
@@ -6,13 +7,12 @@ import Kurunji_Metro from '../../../src/assets/img/clients/Kurunji_Metro.png'
 import LOGO_Karaikudi from '../../../src/assets/img/clients/LOGO_Karaikudi.png'
 import thalappakatti from '../../../src/assets/img/clients/thalappakatti.gif'
 import Together_Restaurant from '../../../src/assets/img/clients/Together_Restaurant.png'
+
 // import worldmap from '../../../public/assets/img/worldmap.png'
-
-
 
 export default function WorldwideCustomers() {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
-  
+
   // Sample customer data
   const customers = [
     { id: 1, name: "Bhavika_LogoF", logo: Bhavika_LogoF },
@@ -21,15 +21,7 @@ export default function WorldwideCustomers() {
     { id: 4, name: "Kurunji_Metro", logo: Kurunji_Metro },
     { id: 5, name: "LOGO_Karaikudi", logo: LOGO_Karaikudi },
     { id: 6, name: "thalappakatti", logo: thalappakatti },
-    { id: 7, name: "Together_Restaurant", logo: Together_Restaurant },
-    // Additional customers to ensure continuous scrolling effect
-    { id: 8, name: "Bhavika_LogoF", logo: Bhavika_LogoF },
-    { id: 9, name: "Dessert_Bossz", logo: Dessert_Bossz },
-    { id: 10, name: "IBS", logo: IBS},
-    { id: 11, name: "Kurunji_Metro", logo: Kurunji_Metro },
-    { id: 12, name: "LOGO_Karaikudi", logo: LOGO_Karaikudi },
-    { id: 13, name: "thalappakatti", logo: thalappakatti },
-    { id: 14, name: "Together_Restaurant", logo: Together_Restaurant },
+    { id: 7, name: "Together_Restaurant", logo: Together_Restaurant }
   ];
 
   // Animation for horizontal scrolling and up/down movement
@@ -38,7 +30,7 @@ export default function WorldwideCustomers() {
     let animationFrameId: number;
     let scrollPosition = 0;
     const logoElements = scrollContainer?.querySelectorAll('.customer-logo');
-    
+
     const animate = () => {
       if (scrollContainer) {
         // Horizontal scrolling logic
@@ -47,7 +39,7 @@ export default function WorldwideCustomers() {
           scrollPosition = 0;
         }
         scrollContainer.scrollLeft = scrollPosition;
-        
+
         // Up and down movement for each logo
         if (logoElements) {
           logoElements.forEach((logo, index) => {
@@ -56,12 +48,12 @@ export default function WorldwideCustomers() {
           });
         }
       }
-      
+
       animationFrameId = requestAnimationFrame(animate);
     };
-    
+
     animationFrameId = requestAnimationFrame(animate);
-    
+
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
@@ -76,37 +68,89 @@ export default function WorldwideCustomers() {
           <div className="absolute left-0 right-0 mx-auto w-20 h-1  bottom-0"></div>
         </h2>
       </div>
-      
+
       {/* Main content with world map background */}
       <div className="relative h-90 max-w-full mx-auto px-4">
         {/* World map background */}
         <div className="absolute inset-0 z-0 opacity-50">
-          <div className="w-full h-full bg-contain bg-center bg-no-repeat" style={{ 
-            backgroundImage: 'url("/assets/img/worldmap.png")', 
+          <div className="w-full h-full bg-contain bg-center bg-no-repeat" style={{
+            backgroundImage: 'url("/assets/img/worldmap.png")',
             backgroundSize: 'contain'
           }}></div>
         </div>
-        
+
         {/* Customer logos with scrolling effect */}
-        <div 
+        <div
           ref={scrollContainerRef}
           className="relative z-10 flex overflow-x-hidden"
         >
-          <div className="flex space-x-8 pt-30 py-12">
+          {/* <div className="flex space-x-8 pt-30 py-12">
             {customers.map((customer) => (
-              <div 
-                key={customer.id} 
+              <div
+                key={customer.id}
                 className="customer-logo flex-shrink-0 w-32 h-32 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center p-4"
               >
-                <img 
-                  src={customer.logo} 
-                  alt={`${customer.name} logo`} 
+                <img
+                  src={customer.logo}
+                  alt={`${customer.name} logo`}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+            ))}
+          </div> */}
+
+          <div className="scrolling-logos space-x-8 pt-30">
+            {[...customers, ...customers, ...customers].map((customer, idx) => (
+              <div
+                key={`${customer.id}-${idx}`}
+                className="floating-logo flex-shrink-0 w-32 h-32 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center p-4"
+              >
+                <img
+                  src={customer.logo}
+                  alt={`${customer.name} logo`}
                   className="max-w-full max-h-full object-contain"
                 />
               </div>
             ))}
           </div>
         </div>
+
+        {/* Animation Keyframes */}
+        <style>
+          {`
+            @keyframes scrollLoop {
+              0% {
+                transform: translateX(0%);
+              }
+              100% {
+                transform: translateX(-50%);
+              }
+            }
+
+            .scrolling-logos {
+              display: flex;
+              width: max-content;
+              animation: scrollLoop 40s linear infinite;
+            }
+
+            .scrolling-logos:hover {
+              animation-play-state: paused;
+            }
+
+            @keyframes floatLogo {
+              0%, 100% {
+                transform: translateY(0);
+              }
+              50% {
+                transform: translateY(-10px);
+              }
+            }
+
+            .floating-logo {
+              animation: floatLogo 3s ease-in-out infinite;
+            }
+          `}
+        </style>
       </div>
     </div>
   );
