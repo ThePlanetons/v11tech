@@ -13,6 +13,7 @@ import TalkUs from './Talkus';
 import PricingSection, { PricingPlan } from '../shared/PricingSection';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import MobileQROrderingSystem from './carousel';
 // interface ShopItem {
 //   title: string;
 //   imgSrc: string;
@@ -157,6 +158,8 @@ const KDSLanding = () => {
       <NavBar></NavBar>
       
       {/* <ShopsSection shops={shops}></ShopsSection> */}
+
+      <MobileQROrderingSystem></MobileQROrderingSystem>
 
       <TalkUs></TalkUs>
 
