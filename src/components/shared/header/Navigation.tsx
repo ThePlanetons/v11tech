@@ -1,6 +1,9 @@
 // NavigationBar.tsx
 import React, { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
+
 
 interface NavigationBarProps {
   scrolled: boolean;
@@ -24,6 +27,15 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
 
   // This effect is moved to HomePage so that state management stays in one place.
   // However, you can always add a click-outside effect here if you prefer to keep it localized.
+
+  const location = useLocation();
+
+  const menuItems = [
+    { label: 'About Us', path: '/about-us' },
+    { label: 'Services', path: '/services' },
+    { label: 'Customers', path: '/customers' },
+    { label: 'Contact Us', path: '/contact-us' },
+  ];
 
   return (
     <>
@@ -137,7 +149,7 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
           </div>
 
           {/* Other Nav Links */}
-          {['About Us', 'Services', 'Customers', 'Contact Us'].map((item) => (
+          {/* {['About Us', 'Services', 'Customers', 'Contact Us'].map((item) => (
             <a
               key={item}
               href={'/about'}
@@ -146,12 +158,31 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
               {item}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
             </a>
-          ))}
+          ))} */}
+          <div className="flex space-x-6">
+            {menuItems.map(({ label, path }) => {
+              const isActive = location.pathname === path;
+              return (
+                <a
+                  key={label}
+                  href={path}
+                  className={`relative group font-medium transition-colors duration-300 ${isActive ? 'text-green-500' : 'hover:text-green-400'
+                    }`}
+                >
+                  {label}
+                  <span
+                    className={`absolute left-0 bottom-0 h-0.5 bg-green-500 transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                      }`}
+                  ></span>
+                </a>
+              );
+            })}
+          </div>
         </nav>
 
         {/* Desktop Book a Demo Button */}
-        <button className="hidden md:block ml-4 font-semibold px-4 py-2 rounded-md bg-green-950 relative overflow-hidden  hover:bg-green-600 hover:scale-110 text-white items-center">
-          <span className="z-10 text-white relative">Book a Demo</span>
+        <button className="hidden md:block ml-4 font-semibold px-4 py-2 rounded-md text-white bg-green-500 overflow-hidden transition-all duration-300  hover:shadow-lg hover:scale-105 transform hover:-translate-y-1">
+          <span className="z-10 relative">Book a Demo</span>
           <span className="absolute left-0 top-0 w-full h-full bg-green-700 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 z-0"></span>
         </button>
       </div>

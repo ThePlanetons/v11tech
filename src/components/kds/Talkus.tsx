@@ -85,10 +85,10 @@ function TalkUs() {
             
             {/* Call to action button with animation */}
             <div className="transition-all duration-700 delay-700">
-              <button className="group relative bg-green-500 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-emerald-200 flex items-center space-x-2 overflow-hidden">
+              <button className="group relative bg-green-500 text-white px-8 py-4 rounded-lg  flex items-center space-x-2 overflow-hidden transition-all duration-300 hover:bg-green-500 hover:shadow-lg hover:scale-105 transform hover:-translate-y-1">
                 <span className="text-white relative z-10">Talk to Us</span>
                 <MessageSquare className="w-5 h-5 relative z-10 text-white transition-transform group-hover:rotate-12" />
-                <div className="absolute top-0 -right-10 w-20 h-full bg-green-500 skew-x-12 group-hover:right-full transition-all duration-500 ease-in-out"></div>
+                <div className=""></div>
               </button>
             </div>
           </div>
@@ -97,7 +97,7 @@ function TalkUs() {
           <div className="relative transition-all duration-1000 delay-500 transform perspective-1000">
             <div className="absolute inset-0 bg-gradient-to-br from-teal-600 to-teal-900 rounded-2xl transform rotate-6 opacity-20 blur-md"></div>
             
-            <div className="bg-gradient-to-br from-teal-700 to-teal-900 rounded-2xl p-8 text-white shadow-2xl transform hover:rotate-1 transition-all duration-300 relative z-10">
+            <div className="bg-gradient-to-br from-teal-700 to-teal-900 rounded-2xl p-8 text-white shadow-2xl transform transition-all duration-300 relative z-10">
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-teal-400 rounded-full opacity-10 blur-2xl"></div>
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-emerald-400 rounded-full opacity-10 blur-2xl"></div>
@@ -134,7 +134,7 @@ function TalkUs() {
                     <img 
                       src="/assets/img/kds.png"
                       alt="QR code scanning"
-                      className="w-80 h-44 object-cover rounded-lg relative z-10 hover:rotate-3 transition-transform duration-300"
+                      className="w-80 h-44 object-cover rounded-lg relative z-10 transition-transform duration-300"
                     />
                     {/* Scanning effect */}
                     <div className={`absolute left-0 w-full h-1 bg-yellow-400 opacity-70 blur-sm z-20 transition-all duration-1500 ease-in-out ${

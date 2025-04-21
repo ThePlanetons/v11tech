@@ -80,7 +80,7 @@ const CTASection: React.FC<CTASectionProps> = ({
             <div className="animate-element button-element">
               <a
                 href={`${siteIndex}book-a-demo`}
-                className="inline-block px-8 py-4 bg-white text-emerald-700 font-bold rounded-xl transition-all duration-300 hover:bg-black hover:shadow-lg hover:scale-105 transform hover:-translate-y-1"
+                className="inline-block px-8 py-4 bg-white text-emerald-700 font-bold rounded-xl transition-all duration-300  hover:shadow-lg hover:scale-105 transform hover:-translate-y-1"
               >
                 Start Free Trial 
                 <svg className="w-5 h-5 inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

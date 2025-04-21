@@ -30,16 +30,16 @@ function App() {
           <Route path="/products/kiosk" element={<KIOSKLanding />} />
 
           {/* About */}
-          <Route path="/about" element={<About />} />
+          <Route path="/about-us" element={<About />} />
  
           {/* service */}
-          <Route path="/service" element={<Service />} />
+          <Route path="/services" element={<Service />} />
 
           {/* customer */}
-          <Route path="/customer" element={<Customer />} />
+          <Route path="/customers" element={<Customer />} />
 
           {/* Contact */}
-          <Route path="/Contact" element={<ContactPage />} />
+          <Route path="/contact-us" element={<ContactPage />} />
 
         </Routes>
       </BrowserRouter>

@@ -86,10 +86,10 @@ function TalkUs() {
             
             {/* Call to action button with animation */}
             <div className="transition-all duration-700 delay-700">
-              <button className="group relative bg-green-500 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-emerald-200 flex items-center space-x-2 overflow-hidden">
+              <button className="group relative bg-green-500 text-white px-8 py-4 rounded-lg  flex items-center space-x-2 overflow-hidden transition-all duration-300 hover:bg-green-500 hover:shadow-lg hover:scale-105 transform hover:-translate-y-1">
                 <span className="text-white relative z-10">Talk to Us</span>
                 <MessageSquare className="w-5 h-5 relative z-10 text-white transition-transform group-hover:rotate-12" />
-                <div className="absolute top-0 -right-10 w-20 h-full bg-green-500 skew-x-12 group-hover:right-full transition-all duration-500 ease-in-out"></div>
+                <div className=""></div>
               </button>
             </div>
           </div>
