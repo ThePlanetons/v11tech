@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row border-t border-green-400 pt-4">
           {/* Copyright */}
           <div className="mb-4 md:mb-0 text-sm flex justify-center w-full">
-            <p>©2025 V11Tech. All rights reserved. Created by TP9</p>
+            <p>©2025 V11Tech. All rights reserved. Designed By TP9</p>
           </div>
         </div>
       </div>
