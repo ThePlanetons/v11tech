@@ -256,9 +256,22 @@ const V11QRLanding: React.FC = () => {
                 transition: 'opacity 0.5s ease, transform 0.5s ease' 
               }}
             >
-              <div className="mr-4 text-green-400 transform transition-all duration-100 group-hover:text-green-600 group-hover:scale-95 group-hover:-rotate-360">
-                {renderIcon(item.icon)}
-              </div>
+             <div
+  className="
+    mr-4 
+    text-green-400 
+    transition 
+    duration-200 
+    transform 
+    group-hover:text-green-600 
+    group-hover:scale-95 
+    flex 
+    items-center
+  "
+>
+  {renderIcon(item.icon)}
+</div>
+
               <div className="transition-all duration-300 group-hover:translate-x-2">
                 <p className="font-bold text-gray-800 transition-colors duration-300 group-hover:text-green-500">
                   {item.text} {item.subtext && <span className="text-gray-600 group-hover:text-green-600">{item.subtext}</span>}
