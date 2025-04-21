@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center">
               <div className="text-white pt-4 md:pt-10">
                 <span className="font-bold text-lg"></span>
-                <img src="/assets/img/Logo_Last.png" alt="V11 logo" className="h-10 w-65  pb-6 pl-16 pr-16" />
+                <img src="/assets/img/Logo_Last.png" alt="V11 logo" className="h-10 w-65  pb-6 pl-0 pr-32" />
                 <div className="text-xs"></div>
               </div>
             </div>
@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
                 <a href="#" className="hover:underline transition-all duration-200 text-xs md:text-base">Privacy Policy</a>
               </li>
               <li>
-                <a href="#" className="hover:underline transition-all duration-200 text-xs md:text-base">Contact Us</a>
+                <a href="/contact" className="hover:underline transition-all duration-200 text-xs md:text-base">contact</a>
               </li>
             </ul>
           </nav>
