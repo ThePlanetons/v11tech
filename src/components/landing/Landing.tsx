@@ -8,7 +8,7 @@ import Carousel from './carousel';
 import ShopsSection from '../shared/ShopsSection';
 import TalkUs from './Talkus';
 import PricingSection, { PricingPlan } from '../shared/PricingSection';
-import Comment from '../shared/comment';
+import Comment from '../shared/Comment';
 import V11QRLanding from './V11tech';
 import ClientLogosSection from '../shared/ClientLogosSection';
 import CTASection from '../shared/CtaSection';

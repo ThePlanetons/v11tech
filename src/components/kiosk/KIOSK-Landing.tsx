@@ -8,7 +8,7 @@ import NavBar from '../shared/header/NavBar';
 import ClientLogosSection from '../shared/ClientLogosSection';
 import CTASection from '../shared/CtaSection';
 import Footer from '../shared/Footer';
-import Comment from '../shared/comment';
+import Comment from '../shared/Comment';
 
 
 import TalkUs from './Talkus';

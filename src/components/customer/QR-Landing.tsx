@@ -1,5 +1,5 @@
 import WorldwideCustomers from "../shared/ClientLogosSection";
-import Comment from "../shared/comment";
+import Comment from "../shared/Comment";
 import Footer from "../shared/Footer";
 import NavBar from "../shared/header/NavBar";
 
