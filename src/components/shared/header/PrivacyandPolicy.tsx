@@ -1,17 +1,17 @@
-import NavBar from './header/NavBar';
-import Footer from '../shared/Footer';
+import NavBar from '../header/NavBar';
+import Footer from '../../shared/Footer';
 
 
-const   Termsandcondition = () => {
+const PrivacyPolicy = () => {
   return (
     <>
     <NavBar />
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
-        <h1 className="text-3xl font-bold mb-6 text-gray-800 border-b pb-4">Terms & Condition</h1>
+        <h1 className="text-3xl font-bold mb-6 text-gray-800 border-b pb-4">Privacy Policy</h1>
         
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-gray-800">TERMS and CONDITIONS</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-gray-800">PRIVACY POLICY</h2>
           <p className="text-gray-700 mb-6">
             We care about data privacy and security. Please review our Privacy Policy: https://v11tech.com/privacy. By using the Services, you agree to be bound by our Privacy Policy, which is incorporated into these Legal Terms. Please be advised the Services are hosted in India. If you access the Services from any other region of the world with laws or other requirements governing personal data collection, use, or disclosure that differ from applicable laws in India, then through your continued use of the Services, you are transferring your data to India, and you expressly consent to have your data transferred to and processed in India.
           </p>
@@ -75,4 +75,4 @@ const   Termsandcondition = () => {
   );
 };
 
-export default Termsandcondition;
+export default PrivacyPolicy;

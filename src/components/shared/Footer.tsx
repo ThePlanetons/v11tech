@@ -68,10 +68,10 @@ const Footer: React.FC = () => {
                 <a href="#" className="hover:underline transition-all duration-200 text-xs md:text-base ">Home</a>
               </li>
               <li>
-                <a href="#" className="hover:underline transition-all duration-200 text-xs md:text-base">Terms and Condition</a>
+                <a href="/Termsandcondition" className="hover:underline transition-all duration-200 text-xs md:text-base">Terms and Condition</a>
               </li>
               <li>
-                <a href="#" className="hover:underline transition-all duration-200 text-xs md:text-base">Privacy Policy</a>
+                <a href="/PrivacyandPolicy" className="hover:underline transition-all duration-200 text-xs md:text-base">Privacy Policy</a>
               </li>
               <li>
                 <a href="/contact-us" className="hover:underline transition-all duration-200 text-xs md:text-base">Contact</a>

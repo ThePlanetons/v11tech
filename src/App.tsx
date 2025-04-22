@@ -10,6 +10,8 @@ import About from './components/about/About-Landing'
 import ContactPage from './components/contact/ContactPage'
 import Service from './components/service/service-Landing'
 import Customer from './components/customer/QR-Landing'
+import PrivacyPolicy from './components/shared/header/PrivacyandPolicy'
+import Termsandcondition from './components/shared/TermsandConditions'
 
 
 function App() {
@@ -40,6 +42,12 @@ function App() {
 
           {/* Contact */}
           <Route path="/contact-us" element={<ContactPage />} />
+
+          {/* Privacy&Policy */}
+          <Route path="/privacyandpolicy" element={<PrivacyPolicy />} />
+
+           {/* Terms&Conditions */}
+           <Route path="/TermsandCondition" element={<Termsandcondition />} />
 
         </Routes>
       </BrowserRouter>
