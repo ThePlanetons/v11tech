@@ -84,7 +84,7 @@ export default function WorldwideCustomers() {
           ref={scrollContainerRef}
           className="relative z-10 flex overflow-x-hidden"
         >
-          {/* <div className="flex space-x-8 pt-30 py-12">
+          <div className="flex space-x-8 pt-30 py-12">
             {customers.map((customer) => (
               <div
                 key={customer.id}
@@ -97,9 +97,9 @@ export default function WorldwideCustomers() {
                 />
               </div>
             ))}
-          </div> */}
+          </div>
 
-          <div className="scrolling-logos space-x-8 pt-30">
+          {/* <div className="scrolling-logos space-x-8 pt-30">
             {[...customers, ...customers, ...customers].map((customer, idx) => (
               <div
                 key={`${customer.id}-${idx}`}
@@ -112,7 +112,7 @@ export default function WorldwideCustomers() {
                 />
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Animation Keyframes */}
