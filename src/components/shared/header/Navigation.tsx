@@ -193,13 +193,15 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
                 <a
                   key={label}
                   href={path}
-                  className={`relative group font-medium transition-colors duration-300 ${isActive ? 'text-green-500' : 'hover:text-green-400'
-                    }`}
+                  className={`relative group font-medium transition-colors duration-300 ${
+                    isActive ? 'text-green-500' : 'hover:text-green-400'
+                  }`}
                 >
                   {label}
                   <span
-                    className={`absolute left-0 bottom-0 h-0.5 bg-green-500 transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                      }`}
+                   className={`absolute left-0 bottom-0 h-0.5 bg-green-500 transition-all duration-300 ${
+                    isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
                   ></span>
                 </a>
               );

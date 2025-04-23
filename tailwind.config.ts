@@ -22,3 +22,22 @@ export default {
     require["tailwindcss-animate"],
   ],
 };
+
+// tailwind.config.js
+module.exports = {
+  // …
+  purge: {
+    content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+    options: {
+      safelist: [
+        'text-green-500',
+        'hover:text-green-400',
+        'bg-green-500',
+        'w-0',
+        'w-full',
+        'group-hover:w-full'
+      ],
+    },
+  },
+  // …
+}
