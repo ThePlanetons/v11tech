@@ -262,7 +262,7 @@ const Landing: React.FC = () => {
 
       <ClientLogosSection  />
 
-      <CTASection product="V11 QR" siteIndex="/" />
+      <CTASection product="V11-QR" siteIndex="/" />
 
       <Footer />
     </>

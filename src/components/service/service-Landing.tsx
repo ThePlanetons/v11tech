@@ -16,6 +16,7 @@ import TalkUs from './Talkus';
 import { useEffect, useState } from 'react';
 //import { motion } from 'framer-motion';
 import Setup from './Setup';
+import MobileQROrderingSystem from './carousel';
 interface ShopItem {
   title: string;
   imgSrc: string;
@@ -157,6 +158,8 @@ const Service = () => {
   return (
     <>
       <NavBar></NavBar>
+
+      <MobileQROrderingSystem></MobileQROrderingSystem>
 
       <Setup />
 

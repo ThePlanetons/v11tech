@@ -257,7 +257,7 @@ const KIOSKLanding = () => {
 
       <ClientLogosSection  />
 
-      <CTASection product="V11 KIOSK" siteIndex="/" />
+      <CTASection product="V11-KIOSK" siteIndex="/" />
       
       <Footer></Footer>
     </>

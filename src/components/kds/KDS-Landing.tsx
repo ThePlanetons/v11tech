@@ -254,7 +254,7 @@ const KDSLanding = () => {
 
       <ClientLogosSection  />
 
-      <CTASection product="V11 KDS" siteIndex="/" />
+      <CTASection product="V11-KDS" siteIndex="/" />
       
       <Footer></Footer>
     </>
