@@ -17,7 +17,7 @@ const NavBar: React.FC = () => {
   //const parallaxRef = useRef<HTMLDivElement>(null);
 
   const products = [
-    { name: 'V11-QR', image: '/assets/img/v11-qr.jpeg', link: 'products/qr-ordering' },
+    { name: 'V11-QR', image: '/assets/img/v11-qr.png', link: 'products/qr-ordering' },
     { name: 'V11-KDS', image: '/assets/img/v11-kds.png', link: 'products/kds' },
     { name: 'V11-Kiosk', image: '/assets/img/v11-kiosk.png', link: 'products/kiosk' },
     { name: 'V11-Conect', image: '/assets/img/v11-conect.png', link: 'products/conect' },
