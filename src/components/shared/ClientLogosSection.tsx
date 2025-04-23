@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-
 import Bhavika_LogoF from '../../../src/assets/img/clients/Bhavika_LogoF.png'
 import Dessert_Bossz from '../../../src/assets/img/clients/Dessert_Bossz.png'
 import IBS from '../../../src/assets/img/clients/IBS.png'
@@ -7,8 +6,6 @@ import Kurunji_Metro from '../../../src/assets/img/clients/Kurunji_Metro.png'
 import LOGO_Karaikudi from '../../../src/assets/img/clients/LOGO_Karaikudi.png'
 import thalappakatti from '../../../src/assets/img/clients/thalappakatti.gif'
 import Together_Restaurant from '../../../src/assets/img/clients/Together_Restaurant.png'
-
-// import worldmap from '../../../public/assets/img/worldmap.png'
 
 export default function WorldwideCustomers() {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
@@ -30,13 +27,14 @@ export default function WorldwideCustomers() {
     let animationFrameId: number;
     let scrollPosition = 0;
     const logoElements = scrollContainer?.querySelectorAll('.customer-logo');
+    // const containerWidth = scrollContainer?.offsetWidth || 0;
 
     const animate = () => {
       if (scrollContainer) {
         // Horizontal scrolling logic
         scrollPosition += 0.5;
         if (scrollPosition >= scrollContainer.scrollWidth / 2) {
-          scrollPosition = 0;
+          scrollPosition = 0;  // Reset scroll position when halfway
         }
         scrollContainer.scrollLeft = scrollPosition;
 
@@ -85,7 +83,7 @@ export default function WorldwideCustomers() {
           className="relative z-10 flex overflow-x-hidden"
         >
           <div className="flex space-x-8 pt-30 py-12">
-            {customers.map((customer) => (
+            {customers.concat(customers).map((customer) => (
               <div
                 key={customer.id}
                 className="customer-logo flex-shrink-0 w-32 h-32 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center p-4"
@@ -98,59 +96,7 @@ export default function WorldwideCustomers() {
               </div>
             ))}
           </div>
-
-          {/* <div className="scrolling-logos space-x-8 pt-30">
-            {[...customers, ...customers, ...customers].map((customer, idx) => (
-              <div
-                key={`${customer.id}-${idx}`}
-                className="floating-logo flex-shrink-0 w-32 h-32 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center p-4"
-              >
-                <img
-                  src={customer.logo}
-                  alt={`${customer.name} logo`}
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-            ))}
-          </div> */}
         </div>
-
-        {/* Animation Keyframes */}
-        <style>
-          {`
-            @keyframes scrollLoop {
-              0% {
-                transform: translateX(0%);
-              }
-              100% {
-                transform: translateX(-50%);
-              }
-            }
-
-            .scrolling-logos {
-              display: flex;
-              width: max-content;
-              animation: scrollLoop 40s linear infinite;
-            }
-
-            .scrolling-logos:hover {
-              animation-play-state: paused;
-            }
-
-            @keyframes floatLogo {
-              0%, 100% {
-                transform: translateY(0);
-              }
-              50% {
-                transform: translateY(-10px);
-              }
-            }
-
-            .floating-logo {
-              animation: floatLogo 3s ease-in-out infinite;
-            }
-          `}
-        </style>
       </div>
     </div>
   );
