@@ -40,20 +40,22 @@ export default function MobileQROrderingSystem() {
       {/* Right section with green background and phones */}
       <div className="w-full md:w-1/2 relative h-96 md:h-screen">
         {/* Green circle background that fills the right side */}
-        <div className="absolute inset-0 bg-green-500 rounded-l-full"></div>
+        <div className="absolute inset-0 bg-green-500 rounded-l-full overflow-hidden">
+        <img
+              src="/assets/img/kdscar.jpg"
+              alt="Hand holding two smartphones showing QR code and food ordering app"
+              className={`absolute top-0 z-20 object-contain w-full h-full `}
+            />
+        </div>
 
         {/* Hand and phones container */}
         <div className="relative h-full flex items-center justify-center overflow-hidden">
           <div
             className="relative"
-            style={{ width: '95%', height: '95%', zIndex: 10 }}
+            style={{ width: '100%', height: '100%', zIndex: 10 }}
           >
             {/* Image from the message - showing hand holding phones with QR code and food app */}
-            <img
-              src="/assets/img/kdscar.png"
-              alt="Hand holding two smartphones showing QR code and food ordering app"
-              className={`absolute top-21 z-20 object-contain w-full h-full  ${animate ? 'translate-y-0' : 'translate-y-2'}  duration-1000 ease-in-out`}
-            />
+
           </div>
         </div>
       </div>
