@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           {/* Logo on Left */}
           <div className="mb-6 md:mb-0 md:pl-4 lg:pl-8 transform transition-transform hover:scale-105 w-full md:w-auto flex justify-center md:justify-start">
             <div className="flex items-center">
-              <div className="text-white pt-4 md:pt-10">
+              <div className="text-white pt-4 md:pl-10 md:pt-10">
                 <span className="font-bold text-lg"></span>
                 <img src="/assets/img/Logo_Last.png" alt="V11 logo" className="h-10 w-65  pb-6 pl-16 pr-16 md:pl-0 md:pr-32" />
                 <div className="text-xs"></div>
@@ -65,16 +65,16 @@ const Footer: React.FC = () => {
           <div className="mb-0 md:mb-0 md:absolute md:left-1/2 md:-translate-x-1/2 w-full md:w-auto">
             <div className="list-none flex flex-auto justify-center  md:justify-center space-x-8 md:space-x-8">
               <li>
-                <a href="#" className="hover:underline transition-all duration-200 text-xs md:text-base ">Home</a>
+                <a href="#" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base ">Home</a>
               </li>
               <li>
-                <a href="/Termsandcondition" className="hover:underline transition-all duration-200 text-xs md:text-base">Terms and Condition</a>
+                <a href="/Termsandcondition" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Terms and Condition</a>
               </li>
               <li>
-                <a href="/PrivacyandPolicy" className="hover:underline transition-all duration-200 text-xs md:text-base">Privacy Policy</a>
+                <a href="/PrivacyandPolicy" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Privacy Policy</a>
               </li>
               <li>
-                <a href="/contact-us" className="hover:underline transition-all duration-200 text-xs md:text-base">Contact</a>
+                <a href="/contact-us" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Contact</a>
               </li>
             </div>
           </div>

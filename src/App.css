@@ -130,10 +130,10 @@ button {
   transition: all 0.3s ease;
 }
 
-a:hover {
+/* a:hover {
   text-decoration: none;
   color: #06b453;
-}
+} */
 
 .quickens a {
   text-decoration: none;
