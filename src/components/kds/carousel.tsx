@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export default function MobileQROrderingSystem() {
-  const [animate, setAnimate] = useState(false);
+  const [, setAnimate] = useState(false);
 
   useEffect(() => {
     setAnimate(true);
