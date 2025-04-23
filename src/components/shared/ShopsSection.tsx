@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import '../../styles.1.css';
+import '../../styles.css';
 
 interface ShopItem {
   title: string;

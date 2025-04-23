@@ -1,5 +1,5 @@
-import React from 'react';
-import { Instagram, Facebook, Linkedin, Twitter, MessageCircle } from 'lucide-react';
+import React from 'react'
+import { Instagram, Facebook, Linkedin, Twitter, MessageCircle } from 'lucide-react'
 
 const Footer: React.FC = () => {
   return (
@@ -58,9 +58,9 @@ const Footer: React.FC = () => {
         <div className="relative flex flex-col md:flex-row items-center justify-between mt-6 md:mt-0 pb-8">
           {/* Tagline */}
           <div className="text-center md:text-left mb-4 md:mb-0 md:pl-4 lg:pl-11 w-full md:w-1/3">
-            <p>V11 POS Software simplifies your business <br className="hidden sm:block"/>with smart, efficient, and modern solutions.</p>
+            <p>V11 POS Software simplifies your business <br className="hidden sm:block" />with smart, efficient, and modern solutions.</p>
           </div>
-          
+
           {/* Centered Navigation */}
           <div className="mb-0 md:mb-0 md:absolute md:left-1/2 md:-translate-x-1/2 w-full md:w-auto">
             <div className="list-none flex flex-auto justify-center  md:justify-center space-x-8 md:space-x-8">
@@ -68,13 +68,13 @@ const Footer: React.FC = () => {
                 <a href="#" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base ">Home</a>
               </li>
               <li>
-                <a href="/Termsandcondition" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Terms and Condition</a>
+                <a href="/terms-and-conditions" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Terms and Conditions</a>
               </li>
               <li>
-                <a href="/PrivacyandPolicy" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Privacy Policy</a>
+                <a href="/privacy-policy" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Privacy Policy</a>
               </li>
               <li>
-                <a href="/contact-us" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Contact</a>
+                <a href="/contact-us" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Contact Us</a>
               </li>
             </div>
           </div>
@@ -95,6 +95,6 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
+}
 
-export default Footer;
+export default Footer

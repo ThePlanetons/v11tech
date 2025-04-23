@@ -14,14 +14,10 @@ import ClientLogosSection from '../shared/ClientLogosSection';
 import CTASection from '../shared/CtaSection';
 import Footer from '../shared/Footer';
 
-
 import teaShopImg from '../../assets/img/TeaShops.jpeg';
 import groceryShopImg from '../../assets/img/GroceryShop.jpeg';
 import fashionShopImg from '../../assets/img/FashionsShop.jpeg';
 import stationaryShopImg from '../../assets/img/StationaryShop.jpeg';
-
-
-
 
 const staggeredCards = {
   hidden: {},
@@ -162,8 +158,6 @@ const Landing: React.FC = () => {
       description: 'Quality supplies for work and school',
     },
   ];
-
-
 
   return (
     <>

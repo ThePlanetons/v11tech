@@ -13,7 +13,6 @@ import Customer from './components/customer/QR-Landing'
 import PrivacyPolicy from './components/shared/header/PrivacyandPolicy'
 import Termsandcondition from './components/shared/TermsandConditions'
 
-
 function App() {
   return (
     <>
@@ -33,22 +32,21 @@ function App() {
 
           {/* About */}
           <Route path="/about-us" element={<About />} />
- 
-          {/* service */}
+
+          {/* Services */}
           <Route path="/services" element={<Service />} />
 
-          {/* customer */}
+          {/* Customers */}
           <Route path="/customers" element={<Customer />} />
 
           {/* Contact */}
           <Route path="/contact-us" element={<ContactPage />} />
 
-          {/* Privacy&Policy */}
-          <Route path="/privacyandpolicy" element={<PrivacyPolicy />} />
+          {/* Privacy Policy */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-           {/* Terms&Conditions */}
-           <Route path="/TermsandCondition" element={<Termsandcondition />} />
-
+          {/* Terms Conditions */}
+          <Route path="/terms-and-conditions" element={<Termsandcondition />} />
         </Routes>
       </BrowserRouter>
     </>
