@@ -101,11 +101,11 @@
 // }
 
 import { useState, useEffect } from 'react';
-import { Smartphone, QrCode } from 'lucide-react';
+//import { Smartphone, QrCode } from 'lucide-react';
 
 export default function MobileQROrderingSystem() {
-  const [animate, setAnimate] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [, setAnimate] = useState(false);
+  const [, setIsVisible] = useState(false);
 
   useEffect(() => {
     setAnimate(true);
@@ -143,63 +143,14 @@ export default function MobileQROrderingSystem() {
 
 
       {/* Right section with green background and phones */}
-      <div className="w-full md:w-1/2 relative h-96 md:h-screen bg-white overflow-hidden">
-        {/* Decorative circles */}
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-white opacity-10 rounded-full"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-32 h-32 bg-white opacity-10 rounded-full"></div>
-
-        {/* Floating QR code and devices */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full flex justify-center items-center">
-          {/* Phone mockup 1 - tilted left */}
-          <div className={`transform -rotate-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
-            <div className="relative mx-4 bg-gray-900 rounded-3xl w-56 h-96 shadow-xl border-4 border-gray-800 overflow-hidden">
-              <div className="absolute top-0 w-24 h-6 bg-gray-800 left-1/2 transform -translate-x-1/2 rounded-b-lg"></div>
-              <div className="w-full h-full bg-white p-2">
-                <div className="w-full h-full rounded-2xl bg-green-50 flex items-center justify-center">
-                  <QrCode className="w-32 h-32 text-green-600" strokeWidth={1} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Phone mockup 2 - tilted right */}
-          <div className={`transform rotate-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
-            <div className="relative mx-4 bg-gray-900 rounded-3xl w-56 h-96 shadow-xl border-4 border-gray-800 overflow-hidden">
-              <div className="absolute top-0 w-24 h-6 bg-gray-800 left-1/2 transform -translate-x-1/2 rounded-b-lg"></div>
-              <div className="w-full h-full bg-white p-2">
-                <div className="w-full h-full rounded-2xl bg-green-100 p-4">
-                  <div className="w-full h-6 bg-green-400 rounded mb-3"></div>
-                  <div className="w-2/3 h-4 bg-green-300 rounded mb-2"></div>
-                  <div className="w-full h-20 bg-white rounded mb-3 flex items-center justify-center">
-                    <Smartphone className="text-green-500" size={32} />
-                  </div>
-                  <div className="w-full h-4 bg-green-200 rounded mb-2"></div>
-                  <div className="w-5/6 h-4 bg-green-200 rounded mb-2"></div>
-                  <div className="w-full h-4 bg-green-200 rounded mb-2"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Animated dots pattern */}
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className={`absolute rounded-full bg-white ${animate ? 'animate-pulse' : ''}`}
-              style={{
-                width: `${Math.random() * 10 + 5}px`,
-                height: `${Math.random() * 10 + 5}px`,
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                opacity: Math.random() * 0.2 + 0.1,
-                animationDelay: `${Math.random() * 2}s`
-              }}
-            ></div>
-          ))}
-        </div>
-      </div>
+      <div className="w-full md:w-1/2 relative md:h-auto overflow-hidden">
+        <img 
+                    src= "/assets/img/customers.jpg"
+                    alt= "about" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div/> 
+    </div>
     </div>
   );
 }
