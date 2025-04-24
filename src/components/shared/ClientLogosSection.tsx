@@ -58,7 +58,7 @@ export default function WorldwideCustomers() {
   }, []);
 
   return (
-    <div className="w-full py-12 bg overflow-hidden">
+    <div className="w-full bg overflow-hidden">
       {/* Header */}
       <div className="text-center mb-10">
         <h2 className="text-5xl font-semibold text-gray-800 v11-roboto tracking-wide relative inline-block">
