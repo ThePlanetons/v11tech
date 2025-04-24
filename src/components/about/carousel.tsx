@@ -68,11 +68,11 @@ export default function MobileQROrderingSystem() {
       </div>
 
       {/* Right section with carousel and phones */}
-      <div className="w-full top-20 md:w-1/2 relative  md:h-screen overflow-hidden">
+      <div className="w-full top-20 left-20 md:w-1/2 relative  md:h-screen overflow-hidden">
         <img 
                     src= "/assets/img/about.jpg"
                     alt= "about" 
-                    className="w-3xl object-cover"
+                    className="w-3/4 object-cover"
                   />
                   <div/>     
     </div>
