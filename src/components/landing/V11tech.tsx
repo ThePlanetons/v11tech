@@ -10,11 +10,11 @@ interface ServiceItem {
 
 const V11QRLanding: React.FC = () => {
 
-  
+
   // Refs for elements we want to animate on scroll
   const headerRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
-  
+
   // Service items data
   const serviceItems: ServiceItem[] = [
     { icon: "beer-mug", text: "Bar" },
@@ -43,7 +43,7 @@ const V11QRLanding: React.FC = () => {
             entry.target.classList.add('animate-fadeInUp');
           } else if (entry.target.id === 'service-grid') {
             entry.target.classList.add('animate-scaleIn');
-            
+
             // Animate each service item with a delay
             const items = entry.target.querySelectorAll('.service-item');
             items.forEach((item, index) => {
@@ -63,16 +63,16 @@ const V11QRLanding: React.FC = () => {
       rootMargin: '0px',
       threshold: 0.1
     });
-    
+
     // Observe elements
     if (headerRef.current) {
       observer.observe(headerRef.current);
     }
-    
+
     if (gridRef.current) {
       observer.observe(gridRef.current);
     }
-    
+
     return () => observer.disconnect();
   }, []);
 
@@ -83,106 +83,106 @@ const V11QRLanding: React.FC = () => {
       case "beer-mug":
         return (
           <img
-          src="/assets/img/pos/Bars.png"
-          alt="Icon"
-          className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-        />
+            src="/assets/img/pos/Bars.png"
+            alt="Icon"
+            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+          />
         );
       case "burger":
         return (
           <img
-  src="/assets/img/pos/QSR.png"
-  alt="Icon"
-  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-/>
+            src="/assets/img/pos/QSR.png"
+            alt="Icon"
+            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+          />
         );
       case "hotel":
         return (
           <img
-  src="/assets/img/pos/HotelsResorts.png"
-  alt="Icon"
-  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-/>
+            src="/assets/img/pos/HotelsResorts.png"
+            alt="Icon"
+            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+          />
         );
-        case "bakery":
+      case "bakery":
         return (
           <img
-  src="/assets/img/pos/BakeryShops.png"
-  alt="Icon"
-  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-/>
+            src="/assets/img/pos/BakeryShops.png"
+            alt="Icon"
+            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+          />
         );
 
-        case "chain":
+      case "chain":
         return (
           <img
-  src="/assets/img/pos/Chains.png"
-  alt="Icon"
-  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-/>
+            src="/assets/img/pos/Chains.png"
+            alt="Icon"
+            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+          />
         );
-        case "restaurant":
+      case "restaurant":
         return (
           <img
-  src="/assets/img/pos/FSR.png"
-  alt="Icon"
-  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-/>
+            src="/assets/img/pos/FSR.png"
+            alt="Icon"
+            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+          />
         );
-        case "cloud-kitchen":
+      case "cloud-kitchen":
         return (
           <img
-  src="/assets/img/pos/CloudKitchens.png"
-  alt="Icon"
-  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-/>
-        );
-        
-        case "food-court":
-        return (
-          <img
-  src="/assets/img/pos/FoodCourts.png"
-  alt="Icon"
-  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-/>
+            src="/assets/img/pos/CloudKitchens.png"
+            alt="Icon"
+            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+          />
         );
 
-        case "canteen":
+      case "food-court":
         return (
           <img
-  src="/assets/img/pos/Canteens.png"
-  alt="Icon"
-  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-/>
+            src="/assets/img/pos/FoodCourts.png"
+            alt="Icon"
+            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+          />
         );
-        
-        case "buffet":
+
+      case "canteen":
         return (
           <img
-  src="/assets/img/pos/AIBuffet.png"
-  alt="Icon"
-  className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-/>
+            src="/assets/img/pos/Canteens.png"
+            alt="Icon"
+            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+          />
         );
 
-        case "grocery":
-          return (
-            <img
-    src="/assets/img/pos/FoodRetail.png"
-    alt="Icon"
-    className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-  />
-          );
+      case "buffet":
+        return (
+          <img
+            src="/assets/img/pos/AIBuffet.png"
+            alt="Icon"
+            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+          />
+        );
 
-          case "popup-store":
-            return (
-              <img
-      src="/assets/img/pos/PopUpStores.png"
-      alt="Icon"
-      className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
-    />
-            );
-        
+      case "grocery":
+        return (
+          <img
+            src="/assets/img/pos/FoodRetail.png"
+            alt="Icon"
+            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+          />
+        );
+
+      case "popup-store":
+        return (
+          <img
+            src="/assets/img/pos/PopUpStores.png"
+            alt="Icon"
+            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+          />
+        );
+
       // // For brevity, simplified icons for other cases
       // // default:
       // //   return (
@@ -210,9 +210,9 @@ const V11QRLanding: React.FC = () => {
   // };
 
   return (
-    <div className="bg min-h-screen  relative overflow-hidden">
+    <div className="bg min-h-auto  relative overflow-hidden">
       {/* Background animation */}
-      <div id="bg-animation" className="absolute inset-0 z-0 opacity-10"></div>
+      {/* <div id="bg-animation" className="absolute inset-0 z-0 opacity-10"></div> */}
 
       {/* Scroll-to buttons */}
       {/* <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-20 flex flex-col gap-4">
@@ -230,10 +230,10 @@ const V11QRLanding: React.FC = () => {
 
       <div className="container mx-auto px-4 z-10 relative">
         {/* Header */}
-        <div id="header" ref={headerRef} className="text-center mb-32 pt-16 invisible-element text-gray-800 v11-roboto tracking-wide">
+        <div id="header" ref={headerRef} className="text-center  py-12 invisible-element text-gray-800 v11-roboto tracking-wide">
           <h1 className="text-5xl font-bold inline-block group">
             <span className="text-3xl md:text-5xl relative inline-block transition-all cursor-pointer duration-500 group-hover:text-green-500">
-              V11QR
+              V11-QR
               <span className="absolute left-0 bottom-0 w-full h-1 bg-green-500 transition-all duration-500 group-hover:h-3"></span>
             </span>{" "}
             <span className="text-black text-3xl md:text-5xl transition-all duration-500">is perfect for</span>
@@ -241,23 +241,23 @@ const V11QRLanding: React.FC = () => {
         </div>
 
         {/* Service Grid */}
-        <div 
-          id="service-grid" 
-          ref={gridRef} 
+        <div
+          id="service-grid"
+          ref={gridRef}
           className="lg:pl-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 invisible-element"
         >
           {serviceItems.map((item, index) => (
             <div
               key={index}
               className="service-item flex items-center p-4 rounded-lg cursor-pointer transition-all duration-300 hover:-translate-y-2 group"
-              style={{ 
-                opacity: 0, 
-                transform: 'translateY(20px)', 
-                transition: 'opacity 0.5s ease, transform 0.5s ease' 
+              style={{
+                opacity: 0,
+                transform: 'translateY(20px)',
+                transition: 'opacity 0.5s ease, transform 0.5s ease'
               }}
             >
-             <div
-  className="
+              <div
+                className="
     mr-4 
     text-green-400 
     transition 
@@ -268,9 +268,9 @@ const V11QRLanding: React.FC = () => {
     flex 
     items-center
   "
->
-  {renderIcon(item.icon)}
-</div>
+              >
+                {renderIcon(item.icon)}
+              </div>
 
               <div className="transition-all duration-300 group-hover:translate-x-2">
                 <p className="font-bold text-gray-800 transition-colors duration-300 group-hover:text-green-500">
@@ -282,19 +282,12 @@ const V11QRLanding: React.FC = () => {
         </div>
       </div>
 
-     
+
       {/* </div> */}
     </div>
-    
 
 
-// hai
-// hai
-// hai
-// hai
 
-
-    
   );
 };
 
