@@ -142,7 +142,7 @@ const Comment = () => {
       </motion.div>
 
       {/* Carousel Content */}
-      <div className="w-full h-110 relative z-10">
+      <div className="w-full h-100 relative z-10">
         <div className="group overflow py-5 px-4">
           <div className="runner-track flex gap-6 transition-transform duration-700 ease-out group-hover:pause-animation">
             {[...reviews, ...reviews].map((review, index) => (

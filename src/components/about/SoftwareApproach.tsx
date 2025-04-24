@@ -74,7 +74,7 @@ export default function SoftwareApproach() {
     }, []);
 
     return (
-        <section className="bg-gradient-to-b from-gray-50 to-green-50 pb-24 px-36">
+        <section className="bg-white pb-24 px-36">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-3">
                     <h2 className="text-4xl font-bold text-gray-800 v11-roboto tracking-wide mb-4">
