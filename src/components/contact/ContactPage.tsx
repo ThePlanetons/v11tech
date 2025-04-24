@@ -5,6 +5,7 @@ import Footer from '../shared/Footer';
 declare global {
   interface Window {
     initGoogleMap?: () => void;
+    google?: any;
   }
 }
 
