@@ -4,7 +4,7 @@
 // import groceryShopImg from '../../assets/img/GroceryShop.jpeg';
 // import fashionShopImg from '../../assets/img/FashionsShop.jpeg';
 // import stationaryShopImg from '../../assets/img/StationaryShop.jpeg';
-import NavBar from '../shared/header/NavBar';
+import NavigationBar from '../shared/NavigationBar';
 import ClientLogosSection from '../shared/ClientLogosSection';
 import CTASection from '../shared/CtaSection';
 import Footer from '../shared/Footer';
@@ -155,7 +155,7 @@ const KDSLanding = () => {
 
   return (
     <>
-      <NavBar></NavBar>
+      <NavigationBar></NavigationBar>
       
       {/* <ShopsSection shops={shops}></ShopsSection> */}
 

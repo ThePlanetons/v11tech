@@ -4,7 +4,7 @@ import RetailImg from '../../assets/retails.png';
 import FoodImg from '../../assets/food_img.png';
 import WarehousingImg from '../../assets/warehouse.png';
 import ManufacturingImg from '../../assets/manufac_img.png';
-import NavBar from '../shared/header/NavBar';
+import NavigationBar from '../shared/NavigationBar';
 import ClientLogosSection from '../shared/ClientLogosSection';
 import CTASection from '../shared/CtaSection';
 import Footer from '../shared/Footer';
@@ -68,7 +68,7 @@ const About = () => {
 
   return (
     <>
-      <NavBar></NavBar>
+      <NavigationBar></NavigationBar>
 
       <MobileQROrderingSystem></MobileQROrderingSystem>
       

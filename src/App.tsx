@@ -10,17 +10,16 @@ import About from './components/about/About-Landing'
 import ContactPage from './components/contact/ContactPage'
 import Service from './components/service/service-Landing'
 import Customer from './components/customer/QR-Landing'
-import PrivacyPolicy from './components/shared/header/PrivacyandPolicy'
+import PrivacyPolicy from './components/shared/PrivacyandPolicy'
 import Termsandcondition from './components/shared/TermsandConditions'
 import BookDemo from './components/shared/BookDemo';
-
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          {/* Landing routes */}
+          {/* Home Landing */}
           <Route path="/" element={<Landing />} />
 
           {/* QR Landing */}

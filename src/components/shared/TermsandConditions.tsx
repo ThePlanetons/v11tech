@@ -1,11 +1,11 @@
 import React from 'react';
-import NavBar from './header/NavBar';
+import NavigationBar from './NavigationBar';
 import Footer from '../shared/Footer';
 
 const TermsAndConditions: React.FC = () => {
   return (
     <>
-      <NavBar />
+      <NavigationBar />
       <div className="bg-white min-h-screen">
         {/* Header */}
         <div className="w-full bg-green-200 min-h-[50vh] py-8 px-4 sm:px-6 lg:px-8 border-b border-gray-200">

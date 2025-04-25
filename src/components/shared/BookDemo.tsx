@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MapPin, Phone, Mail, Check, Loader2, Calendar, Lock } from "lucide-react";
-import NavBar from '../shared/header/NavBar';
+import NavigationBar from './NavigationBar';
 import Footer from '../shared/Footer';
 
 const BookDemo = () => {
@@ -181,7 +181,7 @@ const BookDemo = () => {
 
   return (
     <>
-      <NavBar />
+      <NavigationBar />
       <div className="bg-green-100 min-h-screen">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 pt-25">
           <div

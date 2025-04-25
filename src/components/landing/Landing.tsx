@@ -1,9 +1,7 @@
-// src/components/Landing.tsx
-
-
-import React, { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import NavBar from '../shared/header/NavBar';
+
+import NavigationBar from '../shared/NavigationBar';
 import Carousel from './carousel';
 import ShopsSection from '../shared/ShopsSection';
 import TalkUs from './Talkus';
@@ -33,11 +31,10 @@ interface ShopItem {
   description: string;
 }
 
-const Landing: React.FC = () => {
+function Landing() {
+  // const [, setScrolled] = useState(false);
+  const scrolledRef = useRef(false);
 
-  //  this is for Carousel
-
-  const [, setScrolled] = useState(false);
   const [isYearly, setIsYearly] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
@@ -55,7 +52,6 @@ const Landing: React.FC = () => {
 
   // Theme colors (if needed for the header or toggle)
   const themeColor = "#06b453";
-
 
   // Pricing plans data
   const pricingPlans: PricingPlan[] = [
@@ -107,8 +103,9 @@ const Landing: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      scrolledRef.current = currentScrollY > 50;
+      // setScrolled(currentScrollY > 50);
       //setScrollY(currentScrollY);
-      setScrolled(currentScrollY > 50);
     };
 
     const timer = setTimeout(() => {
@@ -117,20 +114,19 @@ const Landing: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    const handleClickOutside = () => {
-      // Placeholder for dropdown close logic
-      console.warn('Click outside detected - dropdown should close');
-    };
+    // const handleClickOutside = () => {
+    //   // Placeholder for dropdown close logic
+    //   console.warn('Click outside detected - dropdown should close');
+    // };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    // document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('mousedown', handleClickOutside);
+      // document.removeEventListener('mousedown', handleClickOutside);
       clearTimeout(timer);
     };
   }, []);
-  //end
 
   const shops: ShopItem[] = [
     {
@@ -161,7 +157,7 @@ const Landing: React.FC = () => {
 
   return (
     <>
-      <NavBar />
+      <NavigationBar />
 
       <Carousel />
 
@@ -257,7 +253,6 @@ const Landing: React.FC = () => {
         </div>
       </section>
 
-
       <Comment />
 
       <ClientLogosSection  />
@@ -266,7 +261,7 @@ const Landing: React.FC = () => {
 
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Landing;
+export default Landing

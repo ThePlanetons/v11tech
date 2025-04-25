@@ -1,8 +1,7 @@
-import React from 'react'
 import { Instagram, Facebook, Linkedin, Twitter, MessageCircle } from 'lucide-react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-const Footer: React.FC = () => {
+function Footer() {
   return (
     <footer className="bg-green-500 text-white pt-6 pb-4">
       <div className="container mx-auto px-4">

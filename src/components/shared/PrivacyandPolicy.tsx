@@ -1,11 +1,12 @@
 import React from 'react';
-import NavBar from './NavBar';
-import Footer from '../Footer';
+import NavigationBar from './NavigationBar';
+import Footer from './Footer';
 
 const PrivacyPolicy: React.FC = () => {
   return (
     <>
-      <NavBar />
+      <NavigationBar />
+
       <div className="bg-white min-h-screen">
         <div className="">
           <div className="w-full bg-green-200 min-h-[50vh] py-8 px-4 sm:px-6 lg:px-8 border-b border-gray-200">

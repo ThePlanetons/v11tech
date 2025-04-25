@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import NavBar from '../shared/header/NavBar';
+import NavigationBar from '../shared/NavigationBar';
 import Footer from '../shared/Footer';
 // Extend the Window interface to include initGoogleMap
 declare global {
@@ -133,7 +133,7 @@ const ContactUsPage = () => {
 
   return (
     <>
-     <NavBar />
+     <NavigationBar />
     <div className="bg-gray-50 min-h-screen">
       {/* Header */}
       <header className="bg-green-200 shadow-sm">

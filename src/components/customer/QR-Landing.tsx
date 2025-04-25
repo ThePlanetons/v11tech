@@ -1,7 +1,7 @@
 import WorldwideCustomers from "../shared/ClientLogosSection";
 import Comment from "../shared/Comment";
 import Footer from "../shared/Footer";
-import NavBar from "../shared/header/NavBar";
+import NavigationBar from "../shared/NavigationBar";
 import MobileQROrderingSystem from "./carousel";
 
 const Customer = () => {
@@ -9,7 +9,7 @@ const Customer = () => {
 
   return (
     <> 
-    <NavBar></NavBar>
+    <NavigationBar></NavigationBar>
     <MobileQROrderingSystem></MobileQROrderingSystem>
     <WorldwideCustomers></WorldwideCustomers>
     <Comment></Comment>
