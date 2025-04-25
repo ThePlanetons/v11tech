@@ -86,7 +86,7 @@ export default function WorldwideCustomers() {
             {customers.concat(customers).map((customer, index) => (
               <div
                 key={`${customer.id}-${index}`}
-                className="customer-logo flex-shrink-0 w-32 h-32 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center p-4"
+                className="customer-logo flex-shrink-0 w-15 h-15 md:w-32 md:h-32 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center p-4"
               >
                 <img
                   src={customer.logo}
