@@ -1,9 +1,9 @@
-import ShopsSection from '../shared/ShopsSection';
+//import ShopsSection from '../shared/ShopsSection';
 
-import teaShopImg from '../../assets/img/TeaShops.jpeg';
-import groceryShopImg from '../../assets/img/GroceryShop.jpeg';
-import fashionShopImg from '../../assets/img/FashionsShop.jpeg';
-import stationaryShopImg from '../../assets/img/StationaryShop.jpeg';
+// import teaShopImg from '../../assets/img/TeaShops.jpeg';
+// import groceryShopImg from '../../assets/img/GroceryShop.jpeg';
+// import fashionShopImg from '../../assets/img/FashionsShop.jpeg';
+// import stationaryShopImg from '../../assets/img/StationaryShop.jpeg';
 import NavBar from '../shared/header/NavBar';
 import ClientLogosSection from '../shared/ClientLogosSection';
 import CTASection from '../shared/CtaSection';
@@ -15,14 +15,15 @@ import TalkUs from './Talkus';
 //import PricingSection, { PricingPlan } from '../shared/PricingSection';
 import { useEffect, useState } from 'react';
 //import { motion } from 'framer-motion';
-import Setup from './Setup';
+//import Setup from './Setup';
 import MobileQROrderingSystem from './carousel';
-interface ShopItem {
-  title: string;
-  imgSrc: string;
-  altText: string;
-  description: string;
-}
+import ServiceFeatures from './box/ServiceFeatures';
+// interface ShopItem {
+//   title: string;
+//   imgSrc: string;
+//   altText: string;
+//   description: string;
+// }
 // const staggeredCards = {
 //   hidden: {},
 //   visible: {
@@ -126,32 +127,32 @@ const Service = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const shops: ShopItem[] = [
-    {
-      title: "Restaurants Shops",
-      imgSrc: teaShopImg,
-      altText: "Restaurants & Tea Shops",
-      description: "Discover local flavors and cozy atmospheres",
-    },
-    {
-      title: "Grocery Shop",
-      imgSrc: groceryShopImg,
-      altText: "Grocery Shop",
-      description: "Fresh produce and everyday essentials",
-    },
-    {
-      title: "Clothing Shop",
-      imgSrc: fashionShopImg,
-      altText: "Clothing & Fashions Shop",
-      description: "Stay trendy with the latest styles",
-    },
-    {
-      title: "Stationary Shop",
-      imgSrc: stationaryShopImg,
-      altText: "Stationary Shop",
-      description: "Quality supplies for work and school",
-    },
-  ];
+  // const shops: ShopItem[] = [
+  //   {
+  //     title: "Restaurants Shops",
+  //     imgSrc: teaShopImg,
+  //     altText: "Restaurants & Tea Shops",
+  //     description: "Discover local flavors and cozy atmospheres",
+  //   },
+  //   {
+  //     title: "Grocery Shop",
+  //     imgSrc: groceryShopImg,
+  //     altText: "Grocery Shop",
+  //     description: "Fresh produce and everyday essentials",
+  //   },
+  //   {
+  //     title: "Clothing Shop",
+  //     imgSrc: fashionShopImg,
+  //     altText: "Clothing & Fashions Shop",
+  //     description: "Stay trendy with the latest styles",
+  //   },
+  //   {
+  //     title: "Stationary Shop",
+  //     imgSrc: stationaryShopImg,
+  //     altText: "Stationary Shop",
+  //     description: "Quality supplies for work and school",
+  //   },
+  // ];
 
 
 
@@ -161,9 +162,11 @@ const Service = () => {
 
       <MobileQROrderingSystem></MobileQROrderingSystem>
 
-      <Setup />
+   
+      <ServiceFeatures></ServiceFeatures>
 
-      <ShopsSection shops={shops}></ShopsSection>
+
+      {/* <ShopsSection shops={shops}></ShopsSection> */}
 
       <TalkUs></TalkUs>
 

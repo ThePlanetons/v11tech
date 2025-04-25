@@ -112,7 +112,7 @@ function TalkUs() {
           <img
             src="/assets/img/illustartion1.png"
             alt="QR code scanning"
-            className="w-full max-w-sm object-cover rounded-lg relative z-10 hover:rotate-3 transition-transform duration-300"
+            className="w-full max-w-sm object-cover rounded-lg relative z-10"
           />
         </div>
       </div>
