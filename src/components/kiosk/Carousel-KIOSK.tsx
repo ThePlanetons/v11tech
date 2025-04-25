@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-export default function MobileQROrderingSystem() {
-  const [, setAnimate] = useState(false);
+function CarouselKIOSK() {
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     setAnimate(true);
@@ -17,9 +17,9 @@ export default function MobileQROrderingSystem() {
       {/* Left section with text content */}
       <div className="w-full md:w-1/2 px-6 py-16 md:px-12 md:py-16">
         <h2 className="text-2xl md:text-6xl  leading-tight mb-8 text-gray-800 v11-roboto">
-          KITCHEN DISPLAY<br />
+          KIOSk SELF-SEVIRES<br />
           SYSTEM INNOVATIVE<br />
-          DIGITAL KITCHEN
+          DIGITAL LIFE
         </h2>
 
         <div className="text-base md:text-lg mb-12 text-gray-600">
@@ -40,25 +40,25 @@ export default function MobileQROrderingSystem() {
       {/* Right section with green background and phones */}
       <div className="w-full md:w-1/2 relative h-96 md:h-screen">
         {/* Green circle background that fills the right side */}
-        <div className="absolute inset-0 bg-green-500 rounded-l-full overflow-hidden">
-        <img
-              src="/assets/img/kdscar.jpg"
-              alt="Hand holding two smartphones showing QR code and food ordering app"
-              className={`absolute top-0 z-20 object-contain w-full h-full `}
-            />
-        </div>
+        <div className="absolute inset-0 bg-green-500 rounded-l-full"></div>
 
         {/* Hand and phones container */}
         <div className="relative h-full flex items-center justify-center overflow-hidden">
           <div
             className="relative"
-            style={{ width: '100%', height: '100%', zIndex: 10 }}
+            style={{ width: '60%', height: '60%', zIndex: 10 }}
           >
             {/* Image from the message - showing hand holding phones with QR code and food app */}
-
+            <img
+              src="/assets/img/kioskcar.png"
+              alt="Hand holding two smartphones showing QR code and food ordering app"
+              className={`absolute top-0 z-20 object-contain w-full h-full  ${animate ? 'translate-y-0' : 'translate-y-4'}  duration-1000 ease-in-out`}
+            />
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
+
+export default CarouselKIOSK

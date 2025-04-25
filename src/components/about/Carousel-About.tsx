@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 //import { Smartphone, QrCode, ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function MobileQROrderingSystem() {
+function CarouselAbout() {
   const [, setAnimate] = useState(false);
   const [, setIsVisible] = useState(false);
   const [, setCurrentSlide] = useState(0);
@@ -69,13 +69,14 @@ export default function MobileQROrderingSystem() {
 
       {/* Right section with carousel and phones */}
       <div className="w-full top-20 left-20 md:w-1/2 relative  md:h-screen overflow-hidden">
-        <img 
-                    src= "/assets/img/about.jpg"
-                    alt= "about" 
-                    className="w-3/4 object-cover"
-                  />
-                  <div/>     
+        <img
+          src="/assets/img/about.jpg"
+          alt="about"
+          className="w-3/4 object-cover"
+        />
+      </div>
     </div>
-    </div>
-  );
+  )
 }
+
+export default CarouselAbout

@@ -16,7 +16,7 @@ import TalkUs from './Talkus';
 import { useEffect, useState } from 'react';
 //import { motion } from 'framer-motion';
 //import Setup from './Setup';
-import MobileQROrderingSystem from './carousel';
+import CarouselServices from './Carousel-Services';
 import ServiceFeatures from './box/ServiceFeatures';
 // interface ShopItem {
 //   title: string;
@@ -31,11 +31,8 @@ import ServiceFeatures from './box/ServiceFeatures';
 //   },
 // };
 
-const Service = () => {
-
-
+function Services() {
   //const themeColor = "#06b453";
-
 
   const [, setIsVisible] = useState(false);
   const [, setScrollY] = useState(0);
@@ -154,22 +151,17 @@ const Service = () => {
   //   },
   // ];
 
-
-
   return (
     <>
       <NavigationBar></NavigationBar>
 
-      <MobileQROrderingSystem></MobileQROrderingSystem>
+      <CarouselServices></CarouselServices>
 
-   
       <ServiceFeatures></ServiceFeatures>
-
 
       {/* <ShopsSection shops={shops}></ShopsSection> */}
 
       <TalkUs></TalkUs>
-
 
       <ClientLogosSection />
 
@@ -180,4 +172,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default Services;

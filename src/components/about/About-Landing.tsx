@@ -10,11 +10,11 @@ import CTASection from '../shared/CtaSection';
 import Footer from '../shared/Footer';
 import Comment from '../shared/Comment';
 
-
 import { useEffect, useState } from 'react';
 import TalkUs from './Talkus';
 import SoftwareApproach from './SoftwareApproach';
-import MobileQROrderingSystem from './carousel';
+import CarouselAbout from './Carousel-About';
+
 interface ShopItem {
   title: string;
   imgSrc: string;
@@ -23,8 +23,6 @@ interface ShopItem {
 }
 
 const About = () => {
- 
-  
   const [, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -63,27 +61,25 @@ const About = () => {
     },
   ];
 
- 
-
 
   return (
     <>
       <NavigationBar></NavigationBar>
 
-      <MobileQROrderingSystem></MobileQROrderingSystem>
-      
-       <ShopsSection shops={shops}></ShopsSection> 
-    
-       <TalkUs></TalkUs>
-       
-       <SoftwareApproach/>
+      <CarouselAbout></CarouselAbout>
 
-      <Comment/>
+      <ShopsSection shops={shops}></ShopsSection>
 
-      <ClientLogosSection  />
+      <TalkUs></TalkUs>
+
+      <SoftwareApproach />
+
+      <Comment />
+
+      <ClientLogosSection />
 
       <CTASection product="V11-Tech" siteIndex="/" />
-      
+
       <Footer></Footer>
     </>
   );

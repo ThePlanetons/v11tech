@@ -8,8 +8,8 @@ import KDSLanding from './components/kds/KDS-Landing'
 import KIOSKLanding from './components/kiosk/KIOSK-Landing'
 import About from './components/about/About-Landing'
 import ContactPage from './components/contact/ContactPage'
-import Service from './components/service/service-Landing'
-import Customer from './components/customer/QR-Landing'
+import Services from './components/service/Landing-Services'
+import Customer from './components/customer/Landing-Customer'
 import PrivacyPolicy from './components/shared/PrivacyandPolicy'
 import Termsandcondition from './components/shared/TermsandConditions'
 import BookDemo from './components/shared/BookDemo';
@@ -35,7 +35,7 @@ function App() {
           <Route path="/about-us" element={<About />} />
 
           {/* Services */}
-          <Route path="/services" element={<Service />} />
+          <Route path="/services" element={<Services />} />
 
           {/* Customers */}
           <Route path="/customers" element={<Customer />} />

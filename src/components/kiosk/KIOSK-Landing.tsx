@@ -10,13 +10,12 @@ import CTASection from '../shared/CtaSection';
 import Footer from '../shared/Footer';
 import Comment from '../shared/Comment';
 
-
 import TalkUs from './Talkus';
 import PricingSection, { PricingPlan } from '../shared/PricingSection';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Setup from './Setup';
-import MobileQROrderingSystem from './carousel';
+import CarouselKIOSK from './Carousel-KIOSK';
 // interface ShopItem {
 //   title: string;
 //   imgSrc: string;
@@ -31,90 +30,87 @@ const staggeredCards = {
 };
 
 const KIOSKLanding = () => {
+  const themeColor = "#06b453";
 
-       
-    const themeColor = "#06b453";
+  const [, setIsVisible] = useState(false);
+  const [, setScrollY] = useState(0);
+  const [, setScrolled] = useState(false);
+  const [isYearly, setIsYearly] = useState<boolean>(false);
+  const [isMobile] = useState<boolean>(false);
 
-    
-      const [, setIsVisible] = useState(false);
-      const [, setScrollY] = useState(0);
-      const [, setScrolled] = useState(false);
-    const [isYearly, setIsYearly] = useState<boolean>(false);
-    const [isMobile] = useState<boolean>(false);
+  const pricingPlans: PricingPlan[] = [
+    {
+      title: "Starter",
+      subtitle: "For small business",
+      monthlyPrice: "4,238.44",
+      yearlyPrice: "50,861.24",
+      features: [
+        { name: "Single Machine", included: true },
+        { name: "Menu management", included: true },
+        { name: "Sales report & analysis", included: true },
+        { name: "Marketing support", included: false },
+        { name: "Daily Profit Report", included: false },
+        { name: "Free 24/7 support", included: false },
+      ],
+    },
+    {
+      title: "Basic",
+      subtitle: "For professionals",
+      monthlyPrice: "6,833.4",
+      yearlyPrice: "82,000.77",
+      features: [
+        { name: "Double Machine", included: true },
+        { name: "Menu management", included: true },
+        { name: "Sales report & analysis", included: true },
+        { name: "Marketing support", included: true },
+        { name: "Daily Profit Report", included: true },
+        { name: "Free 24/7 support", included: false },
+      ],
+      popular: true,
+    },
+    {
+      title: "Pro",
+      subtitle: "For enterprise level",
+      monthlyPrice: "8,563.37",
+      yearlyPrice: "102,760.46",
+      features: [
+        { name: "Tripple Machine", included: true },
+        { name: "Menu management", included: true },
+        { name: "Sales report & analysis", included: true },
+        { name: "Marketing support", included: true },
+        { name: "Daily Profit Report", included: true },
+        { name: "Free 24/7 support", included: true },
+      ],
+    },
+  ];
 
-    const pricingPlans: PricingPlan[] = [
-        {
-          title: "Starter",
-          subtitle: "For small business",
-          monthlyPrice: "4,238.44",
-          yearlyPrice: "50,861.24",
-          features: [
-            { name: "Single Machine", included: true },
-            { name: "Menu management", included: true },
-            { name: "Sales report & analysis", included: true },
-            { name: "Marketing support", included: false },
-            { name: "Daily Profit Report", included: false },
-            { name: "Free 24/7 support", included: false },
-          ],
-        },
-        {
-          title: "Basic",
-          subtitle: "For professionals",
-          monthlyPrice: "6,833.4",
-          yearlyPrice: "82,000.77",
-          features: [
-            { name: "Double Machine", included: true },
-            { name: "Menu management", included: true },
-            { name: "Sales report & analysis", included: true },
-            { name: "Marketing support", included: true },
-            { name: "Daily Profit Report", included: true },
-            { name: "Free 24/7 support", included: false },
-          ],
-          popular: true,
-        },
-        {
-          title: "Pro",
-          subtitle: "For enterprise level",
-          monthlyPrice: "8,563.37",
-          yearlyPrice: "102,760.46",
-          features: [
-            { name: "Tripple Machine", included: true },
-            { name: "Menu management", included: true },
-            { name: "Sales report & analysis", included: true },
-            { name: "Marketing support", included: true },
-            { name: "Daily Profit Report", included: true },
-            { name: "Free 24/7 support", included: true },
-          ],
-        },
-      ];
-    
-      useEffect(() => {
-        const handleScroll = () => {
-          const currentScrollY = window.scrollY;
-          setScrollY(currentScrollY);
-          setScrolled(currentScrollY > 50);
-        };
-    
-        const timer = setTimeout(() => {
-          setIsVisible(true);
-        }, 300);
-    
-        window.addEventListener('scroll', handleScroll);
-    
-        const handleClickOutside = () => {
-          // Placeholder for dropdown close logic
-          console.warn('Click outside detected - dropdown should close');
-        };
-    
-        document.addEventListener('mousedown', handleClickOutside);
-    
-        return () => {
-          window.removeEventListener('scroll', handleScroll);
-          document.removeEventListener('mousedown', handleClickOutside);
-          clearTimeout(timer);
-        };
-      }, []);
-  
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrollY(currentScrollY);
+      setScrolled(currentScrollY > 50);
+    };
+
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 300);
+
+    window.addEventListener('scroll', handleScroll);
+
+    const handleClickOutside = () => {
+      // Placeholder for dropdown close logic
+      console.warn('Click outside detected - dropdown should close');
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+      clearTimeout(timer);
+    };
+  }, []);
+
   // const [scrolled, setScrolled] = useState(false);
 
   // useEffect(() => {
@@ -153,16 +149,14 @@ const KIOSKLanding = () => {
   //   },
   // ];
 
-
-
   return (
     <>
       <NavigationBar></NavigationBar>
-      
-      <MobileQROrderingSystem></MobileQROrderingSystem>
+
+      <CarouselKIOSK></CarouselKIOSK>
       {/* <ShopsSection shops={shops}></ShopsSection> */}
 
-      <Setup/>
+      <Setup />
 
       <TalkUs></TalkUs>
 
@@ -206,8 +200,8 @@ const KIOSKLanding = () => {
             <div className="flex rounded-full overflow-hidden border border-gray-200 shadow-sm">
               <button
                 className={`px-8 py-3 text-base md:text-lg font-medium transition-colors duration-300 ${!isYearly
-                    ? 'bg-green-500 text-white'
-                    : 'bg-gray-100 text-gray-400'
+                  ? 'bg-green-500 text-white'
+                  : 'bg-gray-100 text-gray-400'
                   }`}
                 onClick={() => setIsYearly(false)}
               >
@@ -215,8 +209,8 @@ const KIOSKLanding = () => {
               </button>
               <button
                 className={`px-8 py-3 text-base md:text-lg font-medium transition-colors duration-300 ${isYearly
-                    ? 'bg-green-500 text-white'
-                    : 'bg-gray-100 text-gray-400'
+                  ? 'bg-green-500 text-white'
+                  : 'bg-gray-100 text-gray-400'
                   }`}
                 onClick={() => setIsYearly(true)}
               >
@@ -251,14 +245,14 @@ const KIOSKLanding = () => {
         `}</style>
         </div>
       </section>
-      
 
-      <Comment/>
 
-      <ClientLogosSection  />
+      <Comment />
+
+      <ClientLogosSection />
 
       <CTASection product="V11-KIOSK" siteIndex="/" />
-      
+
       <Footer></Footer>
     </>
   );
