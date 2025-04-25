@@ -83,9 +83,9 @@ export default function WorldwideCustomers() {
           className="relative z-10 flex overflow-x-hidden"
         >
           <div className="flex space-x-8 pt-30 py-12">
-            {customers.concat(customers).map((customer) => (
+            {customers.concat(customers).map((customer, index) => (
               <div
-                key={customer.id}
+                key={`${customer.id}-${index}`}
                 className="customer-logo flex-shrink-0 w-32 h-32 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center p-4"
               >
                 <img

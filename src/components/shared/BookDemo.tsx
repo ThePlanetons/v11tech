@@ -435,7 +435,7 @@ const BookDemo = () => {
                           type="button"
                           onClick={sendOtp}
                           disabled={!formData.mobile || otpVerified}
-                          className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-r-md transition-all duration-300 hover:shadow-md"
+                          className="shrink-0 bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-r-md transition-all duration-300 hover:shadow-md"
                           style={{
                             transform: formData.mobile && !otpVerified ? 'translateY(0)' : 'translateY(0)',
                             transition: 'all 0.3s ease'
