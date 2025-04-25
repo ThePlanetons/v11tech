@@ -1,5 +1,5 @@
 // HomePage.tsx
- import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 // import React, { useState, useRef } from 'react';
 import NavigationBar from './Navigation';
 //import HeroSection from './HeroSection';
@@ -55,15 +55,15 @@ const NavBar: React.FC = () => {
     };
   }, []);
 
-   const toggleMobileMenu = () => {
-     setMobileMenuOpen(!mobileMenuOpen);
-   };
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
   const toggleProductsDropdown = (e: React.MouseEvent) => {
-     e.preventDefault();
-     console.log(e)
-     setProductsDropdownOpen(!productsDropdownOpen);
-   };
+    e.preventDefault();
+    console.log(e)
+    setProductsDropdownOpen(!productsDropdownOpen);
+  };
 
   return (
     <div className=" flex flex-col text-black relative overflow-hidden">
@@ -96,7 +96,7 @@ const NavBar: React.FC = () => {
       />
 
       {/* Hero Section */}
-     {/* <HeroSection isVisible={isVisible} scrollY={scrollY} /> */}
+      {/* <HeroSection isVisible={isVisible} scrollY={scrollY} /> */}
 
       {/* Embedded CSS for Animations */}
       <style>

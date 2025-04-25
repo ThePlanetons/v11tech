@@ -1,5 +1,6 @@
 import React from 'react'
 import { Instagram, Facebook, Linkedin, Twitter, MessageCircle } from 'lucide-react'
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -65,16 +66,16 @@ const Footer: React.FC = () => {
           <div className="mb-0 md:mb-0 md:absolute md:left-1/2 md:-translate-x-1/2 w-full md:w-auto">
             <div className="list-none flex flex-auto justify-center  md:justify-center space-x-8 md:space-x-8">
               <li>
-                <a href="#" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base ">Home</a>
+                <Link to="#" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base ">Home</Link>
               </li>
               <li>
-                <a href="/terms-and-conditions" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Terms and Conditions</a>
+                <Link to="/terms-and-conditions" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Terms and Conditions</Link>
               </li>
               <li>
-                <a href="/privacy-policy" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Privacy Policy</a>
+                <Link to="/privacy-policy" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Privacy Policy</Link>
               </li>
               <li>
-                <a href="/contact-us" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Contact Us</a>
+                <Link to="/contact-us" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Contact Us</Link>
               </li>
             </div>
           </div>

@@ -1,8 +1,6 @@
 // NavigationBar.tsx
 import React, { forwardRef } from 'react';
-import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
-
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 
 
 interface NavigationBarProps {
@@ -14,6 +12,7 @@ interface NavigationBarProps {
   setProductsDropdownOpen: React.Dispatch<React.SetStateAction<boolean>>;
   products: { name: string; image: string, link: string }[];
 }
+// Removed unused MyButton component
 
 const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
   scrolled,
@@ -38,6 +37,11 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
   ];
 
   const isActive = location.pathname.startsWith('/products');
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/Book-Demo');
+  };
+
 
   return (
     <>
@@ -104,8 +108,8 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
               </svg>
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
             </a> */}
-            <a
-              href="#products"
+            <Link
+              to="#products"
               className={`relative group font-medium flex items-center transition-colors duration-300 ${isActive ? 'text-green-500' : 'hover:text-green-400'
                 }`}
               onClick={toggleProductsDropdown}
@@ -128,7 +132,7 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
                 className={`absolute left-0 bottom-0 h-0.5 bg-green-500 transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
               ></span>
-            </a>
+            </Link>
 
             {/* Products Mega Menu Dropdown */}
             <div
@@ -190,27 +194,28 @@ const NavigationBar = forwardRef<HTMLDivElement, NavigationBarProps>(({
             {menuItems.map(({ label, path }) => {
               const isActive = location.pathname === path;
               return (
-                <a
+                <Link
                   key={label}
-                  href={path}
-                  className={`relative group font-medium transition-colors duration-300 ${
-                    isActive ? 'text-green-500' : 'hover:text-green-400'
-                  }`}
+                  to={path}
+                  className={`relative group font-medium transition-colors duration-300 ${isActive ? 'text-green-500' : 'hover:text-green-400'
+                    }`}
                 >
                   {label}
                   <span
-                   className={`absolute left-0 bottom-0 h-0.5 bg-green-500 transition-all duration-300 ${
-                    isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`}
+                    className={`absolute left-0 bottom-0 h-0.5 bg-green-500 transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                      }`}
                   ></span>
-                </a>
+                </Link>
               );
             })}
           </div>
         </nav>
 
         {/* Desktop Book a Demo Button */}
-        <button className="hidden md:block ml-4 font-semibold px-4 py-2 rounded-md text-white bg-green-500 overflow-hidden transition-all duration-300  hover:shadow-lg hover:scale-105 transform hover:-translate-y-1">
+        <button
+          className="hidden md:block ml-4 font-semibold px-4 py-2 rounded-md text-white bg-green-500 overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105 transform hover:-translate-y-1"
+          onClick={handleClick}
+        >
           <span className="z-10 relative">Book a Demo</span>
           <span className="absolute left-0 top-0 w-full h-full bg-green-700 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 z-0"></span>
         </button>

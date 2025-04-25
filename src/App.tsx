@@ -12,6 +12,8 @@ import Service from './components/service/service-Landing'
 import Customer from './components/customer/QR-Landing'
 import PrivacyPolicy from './components/shared/header/PrivacyandPolicy'
 import Termsandcondition from './components/shared/TermsandConditions'
+import BookDemo from './components/shared/BookDemo';
+
 
 function App() {
   return (
@@ -47,6 +49,9 @@ function App() {
 
           {/* Terms Conditions */}
           <Route path="/terms-and-conditions" element={<Termsandcondition />} />
+
+          {/* Book Demo */}
+          <Route path="/Book-Demo" element={<BookDemo />} />
         </Routes>
       </BrowserRouter>
     </>
