@@ -13,12 +13,18 @@ import Customer from './components/customer/Landing-Customer'
 import PrivacyPolicy from './components/shared/PrivacyandPolicy'
 import Termsandcondition from './components/shared/TermsandConditions'
 import BookDemo from './components/shared/BookDemo';
+// import ScrollToTop from './ScrollToTop'
+import ScrollRestoration from './ScrollRestoration'
 
 function App() {
   return (
     <>
       <BrowserRouter>
+      {/* <ScrollToTop /> */}
+      <ScrollRestoration/>
+
         <Routes>
+
           {/* Home Landing */}
           <Route path="/" element={<Landing />} />
 
@@ -51,6 +57,9 @@ function App() {
 
           {/* Book Demo */}
           <Route path="/Book-Demo" element={<BookDemo />} />
+
+          {/* ScrollToTop */}
+
         </Routes>
       </BrowserRouter>
     </>
