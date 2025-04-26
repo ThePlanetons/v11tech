@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { FeatureType } from '../types';
+import { FeatureType } from '../service/types';
 
 interface FeatureCardProps {
   feature: FeatureType;
@@ -42,12 +42,10 @@ const setup: React.FC<FeatureCardProps> = ({ feature }) => {
                 className="object-cover w-full h-full rounded-lg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/0 to-transparent flex flex-col justify-end p-4">
-                <h3 className="text-lg md:text-xl font-bold text-black mb-2">{feature.title}</h3>
+                <h3 className="text-lg md:text-xl font-bold text-black mb-2"></h3>
                 <a href="#" className="inline-flex items-center font-medium">
-                  <span className="text-black transition-colors duration-300">
-                    Learn more
+                  <span className="text-white transition-colors duration-300">
                   </span>
-                  <ArrowUpRight className="ml-1 w-4 h-4 text-gray-800" />
                 </a>
               </div>
             </div>

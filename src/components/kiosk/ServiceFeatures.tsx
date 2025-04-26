@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 //import { ArrowUpRight } from 'lucide-react';
 import FeatureCard from './FeatureCard';
-import { features } from '../Setup';
+import { features } from './Setup';
 
 export default function ServiceFeatures() {
   // Ref for intersection observer
@@ -56,11 +56,11 @@ export default function ServiceFeatures() {
           <div className="text-center">
             <p className="text-green-500 font-medium mb-3 md:mb-4">Grow Your Business With V11 KSSS</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl text-gray-800 v11-roboto tracking-wide font-bold leading-tight">
-              Economical & Cost Effective
+            Delightfully Simple And Deceptively
             </h2>
             <h2 className="text-3xl sm:text-4xl md:text-5xl v11-roboto tracking-wide font-bold mb-8 md:mb-10 leading-tight">
-              <span className="text-green-600">Quality</span>{' '}
-              <span className="text-gray-800">& Fast Delivery</span>
+              <span className="text-green-600">Our Kiosk</span>{' '}
+              <span className="text-gray-800">Self-Service System</span>
             </h2>
           </div>
         </div>
