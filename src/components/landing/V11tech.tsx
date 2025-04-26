@@ -231,13 +231,13 @@ const V11QRLanding: React.FC = () => {
       <div className="container mx-auto px-4 z-10 relative">
         {/* Header */}
         <div id="header" ref={headerRef} className="text-center  md:py-12 invisible-element text-gray-800 v11-roboto tracking-wide">
-          <h1 className="text-5xl font-bold inline-block group">
+          <h2 className="text-5xl font-bold inline-block group">
             <span className="text-3xl md:text-5xl relative inline-block transition-all cursor-pointer duration-500 group-hover:text-green-500">
               V11-QR
               <span className="absolute left-0 bottom-0 w-full h-1 bg-green-500 transition-all duration-500 group-hover:h-3"></span>
             </span>{" "}
             <span className="text-black text-3xl md:text-5xl transition-all duration-500">is perfect for</span>
-          </h1>
+          </h2>
         </div>
 
         {/* Service Grid */}
