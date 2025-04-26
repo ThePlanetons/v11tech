@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavigationBar from './NavigationBar';
-import Footer from '../shared/Footer';
+import Footer from './Footer';
 
-const TermsAndConditions: React.FC = () => {
+const TermsOfService: React.FC = () => {
+  useEffect(() => {
+    document.title = "Terms of Service - V11 TECH - Point of Sale";
+  }, []);
+
   return (
     <>
       <NavigationBar />
+
       <div className="bg-white min-h-screen">
         {/* Header */}
         <div className="w-full bg-green-200 min-h-[50vh] py-8 px-4 sm:px-6 lg:px-8 border-b border-gray-200">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-3xl font-bold text-center mt-20 text-gray-900 mb-2">Terms and Conditions</h1>
+            <h1 className="text-3xl font-bold text-center mt-20 text-gray-900 mb-2">Terms of Service</h1>
             <p className="text-gray-600 text-center">
               Last updated: April 23, 2025
             </p>
@@ -28,7 +33,7 @@ const TermsAndConditions: React.FC = () => {
                   We are V11 tech ( 'Company', 'we', 'us', or 'our' ) , a company registered in India at 27, Sri Lakshmi Nagar , Parasalur,Sembanarkoil,Tharangambadi , Mayiladuthurai , Tamil Nadu 609309 .
                 </p>
                 <p>
-                  We operate the website http://www.v11tech.com (the 'Site' ) , as well as any other related products and services that refer or link to these legal terms (the 'Legal Terms' ) (collectively, the 'Services' ).
+                  We operate the website https://www.v11tech.com (the 'Site' ) , as well as any other related products and services that refer or link to these legal terms (the 'Legal Terms' ) (collectively, the 'Services' ).
                 </p>
                 <p>
                   Our POS Integration will enable door to handle all Online orders , Dine-In orders and Take away orders into one Dashboard to ease your daily sales report.
@@ -92,18 +97,18 @@ const TermsAndConditions: React.FC = () => {
                 <p>
                   Any breach of these Intellectual Property Rights will constitute a material breach of our Legal Terms and your right to use our Services will terminate immediately.
                 </p>
-              <h2 className="text-xl font-semibold text-gray-900">Your submissions</h2>
-              <p>Please review this section and the ' PROHIBITED ACTIVITIES ' section carefully prior to using our Services to understand the (a) rights you give us and (b) obligations you have when you post or upload any content through the Services.</p>
-              <h2 className="text-xl font-semibold text-gray-900">Submissions</h2>
-              <p>By directly sending us any question, comment, suggestion, idea, feedback, or other information about the Services ( 'Submissions' ), you agree to assign to us all intellectual property rights in such Submission. You agree that we shall own this Submission and be entitled to its unrestricted use and dissemination for any lawful purpose, commercial or otherwise, without acknowledgment or compensation to you.</p>
-              <h2 className="text-xl font-semibold text-gray-900">You are responsible for what you post or upload</h2>
-<p>By sending us Submissions through any part of the Services you:</p>
-<ul className="list-disc ml-5 space-y-1">
+                <h2 className="text-xl font-semibold text-gray-900">Your submissions</h2>
+                <p>Please review this section and the ' PROHIBITED ACTIVITIES ' section carefully prior to using our Services to understand the (a) rights you give us and (b) obligations you have when you post or upload any content through the Services.</p>
+                <h2 className="text-xl font-semibold text-gray-900">Submissions</h2>
+                <p>By directly sending us any question, comment, suggestion, idea, feedback, or other information about the Services ( 'Submissions' ), you agree to assign to us all intellectual property rights in such Submission. You agree that we shall own this Submission and be entitled to its unrestricted use and dissemination for any lawful purpose, commercial or otherwise, without acknowledgment or compensation to you.</p>
+                <h2 className="text-xl font-semibold text-gray-900">You are responsible for what you post or upload</h2>
+                <p>By sending us Submissions through any part of the Services you:</p>
+                <ul className="list-disc ml-5 space-y-1">
                   <li>confirm that you have read and agree with our ' PROHIBITED ACTIVITIES ' and will not post, send, publish, upload, or transmit through the Services any Submission that is illegal, harassing, hateful, harmful, defamatory, obscene, bullying, abusive, discriminatory, threatening to any person or group, sexually explicit, false, inaccurate, deceitful, or misleading;</li>
                   <li>to the extent permissible by applicable law, waive any and all moral rights to any such Submission ;</li>
                   <li>warrant that any such Submission are original to you or that you have the necessary rights and licences to submit such Submissions and that you have full authority to grant us the above-mentioned rights in relation to your Submissions ; and</li>
                   <li>warrant and represent that your Submissions do not constitute confidential information.
-                  You are solely responsible for your Submissions and you expressly agree to reimburse us for any and all losses that we may suffer because of your breach of (a) this section, (b) any third party’s intellectual property rights, or (c) applicable law.</li>
+                    You are solely responsible for your Submissions and you expressly agree to reimburse us for any and all losses that we may suffer because of your breach of (a) this section, (b) any third party’s intellectual property rights, or (c) applicable law.</li>
 
                 </ul>
               </div>
@@ -374,7 +379,7 @@ const TermsAndConditions: React.FC = () => {
         <Footer />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default TermsAndConditions;
+export default TermsOfService

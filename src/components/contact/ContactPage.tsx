@@ -10,12 +10,16 @@ declare global {
 }
 
 const ContactUsPage = () => {
+  useEffect(() => {
+    document.title = "Contact Us - V11 TECH - Point of Sale";
+  }, []);
+
   const [selectedLocation, setSelectedLocation] = useState<{ id: number; name: string; position: { lat: number; lng: number; } } | null>(null);
   const mapRef = useRef(null);
   const mapInstanceRef = useRef<google.maps.Map | null>(null);
   const markersRef = useRef<{ marker: google.maps.Marker; location: { id: number; name: string; position: { lat: number; lng: number; }; }; }[]>([]);
   const infoWindowRef = useRef<google.maps.InfoWindow | null>(null);
-  
+
   // Location data
   const locations = [
     { id: 1, name: 'India', position: { lat: 20.5937, lng: 78.9629 } },
@@ -28,7 +32,7 @@ const ContactUsPage = () => {
   useEffect(() => {
     const initMap = () => {
       if (!window.google || !mapRef.current) return;
-      
+
       const mapOptions = {
         center: { lat: 25.276987, lng: 55.296249 },
         zoom: 3,
@@ -133,43 +137,42 @@ const ContactUsPage = () => {
 
   return (
     <>
-     <NavigationBar />
-    <div className="bg-gray-50 min-h-screen">
-      {/* Header */}
-      <header className="bg-green-200 shadow-sm">
-        <div className="container mx-auto py-6 px-4 pt-25">
-          <h1 className="text-2xl md:text-6xl text-center leading-tight text-gray-800 v11-roboto"> CONTACT US</h1>
-          <p className="text-base md:text-lg text-gray-600 text-center mt-2">OUR GLOBAL OFFICES ARE READY TO SERVE YOUR NEEDS</p>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="container mx-auto py-8 px-4">
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          {/* Google Map */}
-          <div ref={mapRef} className="w-full h-100 bg-gray-100"></div>
-
-          {/* Locations Tab Bar */}
-          <div className="flex overflow-x-auto border-b">
-            {locations.map(location => (
-              <button
-                key={location.id}
-                className={`py-4 px-6 font-medium text-sm whitespace-nowrap focus:outline-none ${
-                  selectedLocation?.id === location.id 
-                    ? 'text-green-500 border-b-2 border-green-500'
-                    : 'text-gray-500 hover:text-gray-700'
-                }`}
-                onClick={() => setSelectedLocation(location)}
-              >
-                {location.name}
-              </button>
-            ))}
+      <NavigationBar />
+      <div className="bg-gray-50 min-h-screen">
+        {/* Header */}
+        <header className="bg-green-200 shadow-sm">
+          <div className="container mx-auto py-6 px-4 pt-25">
+            <h1 className="text-2xl md:text-6xl text-center leading-tight text-gray-800 v11-roboto"> CONTACT US</h1>
+            <p className="text-base md:text-lg text-gray-600 text-center mt-2">OUR GLOBAL OFFICES ARE READY TO SERVE YOUR NEEDS</p>
           </div>
-        </div>
-      </main>
-     
-    </div>
-    <Footer />
+        </header>
+
+        {/* Main Content */}
+        <main className="container mx-auto py-8 px-4">
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            {/* Google Map */}
+            <div ref={mapRef} className="w-full h-100 bg-gray-100"></div>
+
+            {/* Locations Tab Bar */}
+            <div className="flex overflow-x-auto border-b">
+              {locations.map(location => (
+                <button
+                  key={location.id}
+                  className={`py-4 px-6 font-medium text-sm whitespace-nowrap focus:outline-none ${selectedLocation?.id === location.id
+                      ? 'text-green-500 border-b-2 border-green-500'
+                      : 'text-gray-500 hover:text-gray-700'
+                    }`}
+                  onClick={() => setSelectedLocation(location)}
+                >
+                  {location.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        </main>
+
+      </div>
+      <Footer />
     </>
   );
 };

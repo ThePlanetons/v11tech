@@ -23,6 +23,10 @@ interface ShopItem {
 }
 
 const About = () => {
+  useEffect(() => {
+    document.title = "About Us - V11 TECH - Point of Sale";
+  }, []);
+
   const [, setScrolled] = useState(false);
 
   useEffect(() => {

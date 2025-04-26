@@ -28,6 +28,10 @@ const staggeredCards = {
 };
 
 const KDSLanding = () => {
+  useEffect(() => {
+    document.title = "Kitchen Display System(KDS) - V11 TECH - Point of Sale";
+  }, []);
+
   const themeColor = "#06b453";
 
   const [, setIsVisible] = useState(false);
@@ -35,8 +39,8 @@ const KDSLanding = () => {
   const [, setScrolled] = useState(false);
 
   const [isYearly, setIsYearly] = useState<boolean>(false);
-  const [isMobile , setIsMobile] = useState<boolean>(false);
-  
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);

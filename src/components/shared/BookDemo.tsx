@@ -29,6 +29,8 @@ const BookDemo = () => {
     setTimeout(() => {
       setPageLoaded(true);
     }, 300);
+
+    document.title = "Book a Demo - V11 TECH - Point of Sale";
   }, []);
 
   // Add custom styles for the select dropdown and animations
@@ -191,9 +193,10 @@ const BookDemo = () => {
               animation: pageLoaded ? 'fadeIn 0.8s ease-out forwards' : 'none'
             }}
           >
-            <h1 className="text-5xl font-extrabold text-gray-900 sm:text-6xl">
-              Book A Demo
+            <h1 className="text-5xl font-extrabold text-gray-900 sm:text-6xl uppercase tracking-tight">
+              Book a Demo
             </h1>
+
             <p className="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
               Experience the power of our cutting-edge POS Sales System tailored to streamline your business operations. Our feature-rich solution helps you manage sales, inventory, billing, and customer transactions effortlessly. Fill out the form now to schedule a free live demo and see how our POS system can transform your business!
             </p>

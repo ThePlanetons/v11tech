@@ -62,7 +62,7 @@ function NavigationBar() {
     setProductsDropdownOpen((prev) => !prev);
   };
 
-  const handleClick = () => navigate('/Book-Demo');
+  const handleClick = () => navigate('/book-a-demo');
 
   const isActive = location.pathname.startsWith('/products');
 
