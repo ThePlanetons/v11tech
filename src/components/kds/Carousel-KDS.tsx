@@ -40,7 +40,7 @@ function CarouselKDS() {
       {/* Right section with green background and phones */}
       <div className="w-full md:w-1/2 relative h-96 md:h-screen">
         {/* Green circle background that fills the right side */}
-        <div className="absolute inset-0 bg-green-500 rounded-l-full overflow-hidden">
+        <div className="absolute inset-0 rounded-l-full overflow-hidden">
         <img
               src="/assets/img/kdscar.jpg"
               alt="Hand holding two smartphones showing QR code and food ordering app"

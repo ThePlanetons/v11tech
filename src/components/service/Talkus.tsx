@@ -75,12 +75,12 @@ function TalkUs() {
                 <span className="inline-block w-12 h-0.5 bg-green-500 mr-3"></span>
                 Product Label Features
               </p>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 v11-roboto tracking-wide leading-tight mb-6">
+              <h2 className="text-2xl md:text-5xl font-bold text-gray-800 v11-roboto tracking-wide leading-tight mb-6">
                 Create and customize product labels easily without design skills.{" "}
                 <span className="text-green-500 relative">
                   <span className="absolute bottom-1 left-0 w-full h-1 bg-emerald-200"></span>
                 </span>
-              </h1>
+              </h2>
               <p className="text-gray-600 text-lg">
               </p>
             </div>

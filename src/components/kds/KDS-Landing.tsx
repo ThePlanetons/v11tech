@@ -33,8 +33,20 @@ const KDSLanding = () => {
   const [, setIsVisible] = useState(false);
   const [, setScrollY] = useState(0);
   const [, setScrolled] = useState(false);
+
   const [isYearly, setIsYearly] = useState<boolean>(false);
-  const [isMobile] = useState<boolean>(false);
+  const [isMobile , setIsMobile] = useState<boolean>(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const pricingPlans: PricingPlan[] = [
     {
@@ -159,7 +171,7 @@ const KDSLanding = () => {
       <TalkUs></TalkUs>
 
       {/* PricingSection */}
-      <section id="pricing" className="py-16 md:py-20 relative overflow-hidden bg">
+      <section id="pricing" className="py-9 md:py-20 relative overflow-hidden bg">
         <div className="container mx-auto px-4 md:px-6">
           {/* Section Header */}
           <motion.div

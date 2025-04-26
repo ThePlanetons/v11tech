@@ -9,7 +9,7 @@ interface FeatureCardProps {
 
 const setup: React.FC<FeatureCardProps> = ({ feature }) => {
   return (
-    <div className="feature-box opacity-0 transform translate-y-8 transition-all duration-700 h-[300px] sm:h-[320px] md:h-[400px]">
+    <div className="feature-box opacity-0 transform translate-y-8 transition-all duration-700 h-[350px] sm:h-[320px] md:h-[400px]">
       <div className="card-flip h-full">
         <div className="card-flip-inner h-full">
           {/* Front of card */}

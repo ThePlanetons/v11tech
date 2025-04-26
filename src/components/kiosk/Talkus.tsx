@@ -51,18 +51,18 @@ function TalkUs() {
                 <span className="inline-block w-12 h-0.5 bg-green-500 mr-3"></span>
                 Kiosk Self-Service System features
               </p>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 v11-roboto tracking-wide leading-tight mb-6">
+              <h2 className="text-2xl md:text-5xl font-bold text-gray-800 v11-roboto tracking-wide leading-tight mb-3 md:mb-6">
                 Specially build for Crowded Business like...{" "}
                 <span className="text-green-500 relative">
                   <span className="absolute bottom-1 left-0 w-full h-1 bg-emerald-200"></span>
                 </span>
-              </h1>
+              </h2>
               <p className="text-gray-600 text-lg">
               </p>
             </div>
 
             {/* Feature grid with hover effects */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
               {features.map((feature, index) => (
                 <div
                   key={index}

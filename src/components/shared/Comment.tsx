@@ -134,7 +134,7 @@ const Comment = () => {
               transition: { type: 'spring', stiffness: 100, delay: 0.2 }
             }
           }}
-          className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-800 v11-roboto tracking-wide"
+          className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-800 v11-roboto tracking-wide"
         >
           Voices of Delights Testimonials That <br />
           Speak to Our Excellence

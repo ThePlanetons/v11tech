@@ -230,7 +230,7 @@ const V11QRLanding: React.FC = () => {
 
       <div className="container mx-auto px-4 z-10 relative">
         {/* Header */}
-        <div id="header" ref={headerRef} className="text-center  py-12 invisible-element text-gray-800 v11-roboto tracking-wide">
+        <div id="header" ref={headerRef} className="text-center  md:py-12 invisible-element text-gray-800 v11-roboto tracking-wide">
           <h1 className="text-5xl font-bold inline-block group">
             <span className="text-3xl md:text-5xl relative inline-block transition-all cursor-pointer duration-500 group-hover:text-green-500">
               V11-QR
@@ -244,7 +244,7 @@ const V11QRLanding: React.FC = () => {
         <div
           id="service-grid"
           ref={gridRef}
-          className="lg:pl-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 invisible-element"
+          className="lg:pl-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0 md:gap-6 invisible-element"
         >
           {serviceItems.map((item, index) => (
             <div

@@ -68,7 +68,7 @@ function CarouselAbout() {
       </div>
 
       {/* Right section with carousel and phones */}
-      <div className="w-full top-20 left-20 md:w-1/2 relative  md:h-screen overflow-hidden">
+      <div className="w-full md:top-20 left-20 md:w-1/2 relative  md:h-screen overflow-hidden">
         <img
           src="/assets/img/about.jpg"
           alt="about"

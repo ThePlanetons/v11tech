@@ -61,16 +61,16 @@ export default function WorldwideCustomers() {
     <div className="w-full pt-7 bg overflow-hidden">
       {/* Header */}
       <div className="text-center mb-10">
-        <h2 className="text-5xl font-semibold text-gray-800 v11-roboto tracking-wide relative inline-block">
+        <h2 className="text-2xl md:text-5xl font-semibold text-gray-800 v11-roboto tracking-wide relative inline-block">
           Our worldwide reputed customers
           <div className="absolute left-0 right-0 mx-auto w-20 h-1  bottom-0"></div>
         </h2>
       </div>
 
       {/* Main content with world map background */}
-      <div className="relative h-90 max-w-full mx-auto px-4">
+      <div className="relative md:h-90 max-w-full mx-auto px-4">
         {/* World map background */}
-        <div className="absolute inset-0 z-0 opacity-50">
+        <div className="absolute inset-0  z-0 opacity-50">
           <div className="w-full h-full bg-contain bg-center bg-no-repeat" style={{
             backgroundImage: 'url("/assets/img/worldmap.png")',
             backgroundSize: 'contain'
@@ -82,11 +82,11 @@ export default function WorldwideCustomers() {
           ref={scrollContainerRef}
           className="relative z-10 flex overflow-x-hidden"
         >
-          <div className="flex space-x-8 pt-30 py-12">
+          <div className="flex space-x-8 md:pt-30 py-12">
             {customers.concat(customers).map((customer, index) => (
               <div
                 key={`${customer.id}-${index}`}
-                className="customer-logo flex-shrink-0 w-15 h-15 md:w-32 md:h-32 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center p-4"
+                className="customer-logo flex-shrink-0 w-20 h-20 md:w-32 md:h-32 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center p-4"
               >
                 <img
                   src={customer.logo}

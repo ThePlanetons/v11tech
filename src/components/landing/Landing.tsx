@@ -168,7 +168,7 @@ function Landing() {
       <V11QRLanding />
 
       {/* PricingSection */}
-      <section id="pricing" className="py-16 md:py-20 relative overflow-hidden bg">
+      <section id="pricing" className="py-9 md:py-20 relative overflow-hidden bg">
         <div className="container mx-auto px-4 md:px-6">
           {/* Section Header */}
           <motion.div

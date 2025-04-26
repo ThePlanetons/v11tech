@@ -20,7 +20,7 @@ function CarouselCustomer() {
     <div className="flex flex-col md:flex-row items-center bg-white min-h-screen overflow-hidden">
       {/* Left section with text content */}
       <div className="w-full md:w-1/2 px-6 py-16 md:px-12 md:py-16">
-        <h2 className="text-2xl md:text-6xl  leading-tight mb-8 text-gray-800 v11-roboto">
+        <h2 className="text-3xl md:text-6xl  leading-tight mb-8 text-gray-800 v11-roboto">
           CUSTOMERS<br />
         </h2>
 

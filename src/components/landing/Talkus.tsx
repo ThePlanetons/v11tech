@@ -52,7 +52,7 @@ function TalkUs() {
                 <span className="inline-block w-12 h-0.5 bg-green-500 mr-3"></span>
                 Our QR Code System reached everywhere
               </p>
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 v11-roboto tracking-wide leading-tight mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-800 v11-roboto tracking-wide leading-tight mb-3 md:mb-6">
                 Our Software platform used by{" "}
                 <span className="text-green-500 text-3xl md:text-5xl relative">
                   Wide Range...
@@ -66,7 +66,7 @@ function TalkUs() {
             </div>
             
             {/* Feature grid with hover effects */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
               {features.map((feature, index) => (
                 <div 
                   key={index} 

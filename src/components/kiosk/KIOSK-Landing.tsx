@@ -36,7 +36,18 @@ const KIOSKLanding = () => {
   const [, setScrollY] = useState(0);
   const [, setScrolled] = useState(false);
   const [isYearly, setIsYearly] = useState<boolean>(false);
-  const [isMobile] = useState<boolean>(false);
+  const [isMobile , setIsMobile] = useState<boolean>(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const pricingPlans: PricingPlan[] = [
     {

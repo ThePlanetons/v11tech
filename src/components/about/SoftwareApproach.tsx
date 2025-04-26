@@ -74,7 +74,7 @@ export default function SoftwareApproach() {
     }, []);
 
     return (
-        <section className="bg-white pb-24 px-36">
+        <section className="bg-white pb-24 md:px-36">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-3">
                     <h2 className="text-4xl font-bold text-gray-800 v11-roboto tracking-wide mb-4">
@@ -107,7 +107,7 @@ export default function SoftwareApproach() {
 
                             <div className="w-full -mx-8 -mt-8 pl-7 py-2">
                                 <div className="  p-4 flex items-center">
-                                    <span className="text-3xl text-gray-700 font-bold mr-2">{step.highlightText}</span>
+                                    <span className="text-xl md:text-3xl text-gray-700 font-bold mr-2">{step.highlightText}</span>
                                     <span className="text-xl text-green-500">{step.highlightSubtext}</span>
                                 </div>
                             </div>
