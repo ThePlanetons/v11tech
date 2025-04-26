@@ -53,7 +53,7 @@ function TalkUs() {
               </p>
               <h2 className="text-5xl font-bold inline-block group v11-roboto tracking-wide leading-tight">
                 <span className="text-gray-800 text-3xl md:text-5xl transition-all duration-500">Our Software platform used by</span>{" "}
-                <span className="text-3xl md:text-5xl relative inline-block transition-all cursor-pointer duration-500 group-hover:text-green-500">
+                <span className=" text-gray-800 text-3xl md:text-5xl relative inline-block transition-all cursor-pointer duration-500 group-hover:text-green-500">
                  wide range
                   <span className="absolute left-0 bottom-0 w-full h-1 bg-green-500 transition-all duration-500 group-hover:h-3"></span>
                 </span>

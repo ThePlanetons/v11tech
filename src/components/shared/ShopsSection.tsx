@@ -37,7 +37,7 @@ function ShopsSection({ shops }: { shops: ShopItem[] }) {
     <section ref={sectionRef} className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800 v11-roboto tracking-wide">
-          Featured Shops
+        Hot Picks
         </h2>
 
         {/* Mobile view (horizontal scroll) */}
