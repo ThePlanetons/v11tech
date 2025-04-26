@@ -14,8 +14,9 @@ import TalkUs from './Talkus';
 import PricingSection, { PricingPlan } from '../shared/PricingSection';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import Setup from './Setup';
+//import Setup from './Setup';
 import CarouselKIOSK from './Carousel-KIOSK';
+import ServiceFeatures from './ServiceFeatures';
 // interface ShopItem {
 //   title: string;
 //   imgSrc: string;
@@ -30,14 +31,18 @@ const staggeredCards = {
 };
 
 const KIOSKLanding = () => {
+  useEffect(() => {
+    document.title = "Kiosk -Ordering - V11 TECH - Point of Sale";
+  }, []);
+
   const themeColor = "#06b453";
 
   const [, setIsVisible] = useState(false);
   const [, setScrollY] = useState(0);
   const [, setScrolled] = useState(false);
   const [isYearly, setIsYearly] = useState<boolean>(false);
-  const [isMobile , setIsMobile] = useState<boolean>(false);
-  
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -167,7 +172,7 @@ const KIOSKLanding = () => {
       <CarouselKIOSK></CarouselKIOSK>
       {/* <ShopsSection shops={shops}></ShopsSection> */}
 
-      <Setup />
+      <ServiceFeatures></ServiceFeatures>
 
       <TalkUs></TalkUs>
 

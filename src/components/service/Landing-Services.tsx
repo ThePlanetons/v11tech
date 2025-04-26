@@ -32,6 +32,10 @@ import ServiceFeatures from './box/ServiceFeatures';
 // };
 
 function Services() {
+  useEffect(() => {
+    document.title = "Services - V11 TECH - Point of Sale";
+  }, []);
+
   //const themeColor = "#06b453";
 
   const [, setIsVisible] = useState(false);

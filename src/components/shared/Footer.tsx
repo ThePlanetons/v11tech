@@ -68,7 +68,7 @@ function Footer() {
                 <Link to="#" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base ">Home</Link>
               </li>
               <li>
-                <Link to="/terms-and-conditions" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Terms and Conditions</Link>
+                <Link to="/terms-of-service" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Terms of Service</Link>
               </li>
               <li>
                 <Link to="/privacy-policy" className="inline-block transform transition-all hover:scale-110 duration-200 text-xs md:text-base">Privacy Policy</Link>

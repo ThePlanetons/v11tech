@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 // Paths where you want to always scroll to top
-const alwaysScrollToTopPaths = ['/contact-us', '/Book-Demo'];
+const alwaysScrollToTopPaths = ['/contact-us', '/book-a-demo'];
 
 const scrollPositions = new Map<string, number>();
 
