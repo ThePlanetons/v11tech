@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 import NavigationBar from './NavigationBar';
 import Footer from './Footer';
 
 const PrivacyPolicy: React.FC = () => {
+  useEffect(() => {
+    document.title = "Privacy Policy - V11 TECH - Point of Sale";
+  }, []);
+  
   return (
     <>
       <NavigationBar />
@@ -11,7 +16,7 @@ const PrivacyPolicy: React.FC = () => {
         <div className="">
           <div className="w-full bg-green-200 min-h-[50vh] py-8 px-4 sm:px-6 lg:px-8 border-b border-gray-200">
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-3xl font-bold text-center mt-20 text-gray-900 mb-2">Privacy & Policy</h1>
+              <h1 className="text-3xl font-bold text-center mt-20 text-gray-900 mb-2">Privacy Policy</h1>
               <p className="text-gray-600 text-center">
                 Last updated: April 23, 2025
               </p>

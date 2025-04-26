@@ -10,15 +10,21 @@ import About from './components/about/About-Landing'
 import ContactPage from './components/contact/ContactPage'
 import Services from './components/service/Landing-Services'
 import Customer from './components/customer/Landing-Customer'
-import PrivacyPolicy from './components/shared/PrivacyandPolicy'
-import Termsandcondition from './components/shared/TermsandConditions'
+import PrivacyPolicy from './components/shared/PrivacyPolicy'
+import Termsandcondition from './components/shared/TermsOfService'
 import BookDemo from './components/shared/BookDemo';
+// import ScrollToTop from './ScrollToTop'
+import ScrollRestoration from './ScrollRestoration'
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        {/* <ScrollToTop /> */}
+        <ScrollRestoration />
+
         <Routes>
+
           {/* Home Landing */}
           <Route path="/" element={<Landing />} />
 
@@ -46,11 +52,11 @@ function App() {
           {/* Privacy Policy */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-          {/* Terms Conditions */}
-          <Route path="/terms-and-conditions" element={<Termsandcondition />} />
+          {/* Terms of Service */}
+          <Route path="/terms-of-service" element={<Termsandcondition />} />
 
-          {/* Book Demo */}
-          <Route path="/Book-Demo" element={<BookDemo />} />
+          {/* Book a Demo */}
+          <Route path="/book-a-demo" element={<BookDemo />} />
         </Routes>
       </BrowserRouter>
     </>

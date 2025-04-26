@@ -4,6 +4,15 @@ import { useLocation, useNavigate, Link } from 'react-router-dom'
 function NavigationBar() {
   const productsDropdownRef = useRef<HTMLDivElement>(null);
 
+  const handleLogoClick = () => {
+    navigate('/', { replace: true }); // Navigate to landing page
+
+    // Scroll to top after a slight delay to allow page render
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+  };
+  
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
@@ -53,7 +62,7 @@ function NavigationBar() {
     setProductsDropdownOpen((prev) => !prev);
   };
 
-  const handleClick = () => navigate('/Book-Demo');
+  const handleClick = () => navigate('/book-a-demo');
 
   const isActive = location.pathname.startsWith('/products');
 
@@ -62,7 +71,8 @@ function NavigationBar() {
       <div className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-6 py-4 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg backdrop-blur-sm' : 'bg-transparent'}`}>
         <Link to="/">
           <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
-            <img src="/assets/img/Logo_Last.png" alt="logo" className="w-36 md:w-52 pl-2 md:pl-20" />
+            <img src="/assets/img/Logo_Last.png" alt="logo" className="w-36 md:w-52 pl-2 md:pl-20 cursor-pointer"
+             onClick={handleLogoClick} />
           </div>
         </Link>
 
@@ -198,4 +208,4 @@ function NavigationBar() {
   );
 }
 
-export default NavigationBar
+export default NavigationBar;
