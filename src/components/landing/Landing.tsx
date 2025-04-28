@@ -158,7 +158,7 @@ function Landing() {
   return (
     <>
        {/* 🛠 Reset Popup Button for Testing */}
-  {/* <button
+  <button
     onClick={() => {
       localStorage.removeItem('hasVisited');
       window.location.reload();
@@ -166,7 +166,7 @@ function Landing() {
     className="fixed bottom-4 right-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg z-50"
   >
     Reset Popup
-  </button> */}
+  </button>
 
       <NavigationBar />
 

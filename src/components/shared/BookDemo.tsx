@@ -333,9 +333,9 @@ const BookDemo: React.FC = () => {
         transition: all 0.3s ease;
       }
 
-      .form-field:hover {
-        transform: translateY(-2px);
-      }
+      // .form-field:hover {
+      //   transform: translateY(-2px);
+      // }
       
       .error-message {
         color: #ef4444;
