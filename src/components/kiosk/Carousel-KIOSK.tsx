@@ -22,11 +22,10 @@ function CarouselKIOSK() {
           DIGITAL LIFE
         </h2>
 
-        <div className="text-base md:text-lg mb-12 text-gray-600">
-          <p className="mb-1">WE BUILD PLATFORM TO REDUCE FOR RESTAURANDS,</p>
-          <p className="mb-1">CAFE, BUS TICKET, TRAIN TICKET, CINEMA TICKET</p>
-          <p className="mb-1">WITH COST-EFFECTIVE SUBSCRIPTION MODEL</p>
-          <p>TO BOOST BUSINESS.</p>
+        <div className="text-xs md:text-lg mb-12 text-gray-600">
+        <p className="mb-1">we build a platform to reduce costs for restaurants, cafes,</p>
+          <p className="mb-1"> bus tickets, train tickets, and cinema tickets with a</p>
+          <p className="mb-1"> cost-effective subscription model to boost business.</p>
         </div>
 
         <button className="bg-green-500 hover:bg-green-600 hover:scale-110 text-white py-3 px-8 rounded-md flex items-center font-medium ">

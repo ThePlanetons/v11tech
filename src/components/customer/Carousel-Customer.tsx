@@ -25,10 +25,10 @@ function CarouselCustomer() {
         </h2>
 
         <div className="text-base md:text-lg mb-12 text-gray-600">
-          <p className="mb-1">SOFTWARE DEVELOPMENT, IT CONSULTING,</p>
-          <p className="mb-1">PRODUCT LABLE DESIGNING,</p>
-          <p className="mb-1">DIGITAL MARKETTING GOOGLE ADS</p>
-          <p className="mb-1">FACEBOOK ADS, INSTA ADS.</p>
+          <p className="mb-1">software development, IT consulting, product label designing</p>
+          <p className="mb-1">digital marketing, google ads, facebook ads, insta ads.</p>
+          {/* <p className="mb-1">DIGITAL MARKETTING GOOGLE ADS</p>
+          <p className="mb-1">FACEBOOK ADS, INSTA ADS.</p> */}
         </div>
 
         <button className=" bg-green-500 overflow-hidden transition-all duration-300 hover:bg-green-500 hover:shadow-lg hover:scale-105 transform hover:-translate-y-1 text-white  py-3 px-8 rounded-md flex items-center font-medium ">

@@ -193,12 +193,12 @@ const BookDemo = () => {
               animation: pageLoaded ? 'fadeIn 0.8s ease-out forwards' : 'none'
             }}
           >
-            <h1 className="text-2xl md:text-6xl text-center leading-tight text-gray-800 v11-roboto">
+            <h2 className="text-3xl md:text-6xl text-center leading-tight text-gray-800 v11-roboto">
               BOOK A DEMO
-            </h1>
+            </h2>
 
-            <p className="text-base md:text-lg text-gray-600 text-center mt-2">
-              EXPERIENCE THE POWER OD UOR CUTTING-EDGE POS SALES SALES SYSTEM TAILORED TO STEAMLINE YOUR BUSINESS OPRATIONS. OUR FEATURE-RICH SOLUTION HELPS YOU MANAGE SALES, INVENTORY, BILLING, AND CUSTOMER TRANSACTIONS EFFORTLESSLY. FILL OUT THE FORM NOW TO SCHEDULE A FREE LIVE DEMO AND SEE HOW OUR POS SYSTEM CAN TRANSFORM YOUR BUSINESS!
+            <p className="text-xs md:text-lg text-gray-600 text-center mt-2">
+            experience the power of our cutting-edge pos sales system tailored to streamline your business operations. our feature-rich solution helps you manage sales, inventory, billing, and customer transactions effortlessly. fill out the form now to schedule a free live demo and see how our pos system can transform your business!
             </p>
           </div>
 
