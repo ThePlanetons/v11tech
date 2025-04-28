@@ -110,6 +110,7 @@ export default function SoftwareApproach() {
                                     <span className="text-xl md:text-3xl text-gray-700 font-bold mr-2">{step.highlightText}</span>
                                     <span className="text-xl text-green-500">{step.highlightSubtext}</span>
                                 </div>
+                                
                             </div>
 
                             <ul className="space-y-3 flex-1 w-full">
