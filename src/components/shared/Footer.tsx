@@ -10,7 +10,7 @@ function Footer() {
           {/* Logo on Left */}
           <div className="mb-6 md:mb-0 md:pl-4 lg:pl-8 transform transition-transform hover:scale-105 w-full md:w-auto flex justify-center md:justify-start">
             <div className="flex items-center">
-              <div className="text-white pt-4 md:pl-10 md:pt-10">
+              <div className="text-white pt-4 md:pl-3 md:pt-10">
                 <span className="font-bold text-lg"></span>
                 <img src="/assets/img/Logo_Last.png" alt="V11 logo" className="h-10 w-65  pb-6 pl-16 pr-16 md:pl-0 md:pr-32" />
                 <div className="text-xs"></div>

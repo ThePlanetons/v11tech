@@ -152,7 +152,7 @@ const V11QRLanding: React.FC = () => {
           <img
             src="/assets/img/pos/Canteens.png"
             alt="Icon"
-            className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
+            className="w-12 h-12  md:w-16 md:h-16 lg:w-20 lg:h-20"
           />
         );
 
@@ -257,17 +257,7 @@ const V11QRLanding: React.FC = () => {
               }}
             >
               <div
-                className="
-    mr-4 
-    text-green-400 
-    transition 
-    duration-200 
-    transform 
-    group-hover:text-green-600 
-    group-hover:scale-95 
-    flex 
-    items-center
-  "
+                className="mr-4 text-green-400 transition duration-200 transform  group-hover:text-green-600 group-hover:scale-95 flex items-center"
               >
                 {renderIcon(item.icon)}
               </div>
