@@ -157,6 +157,17 @@ function Landing() {
 
   return (
     <>
+       {/* 🛠 Reset Popup Button for Testing */}
+  {/* <button
+    onClick={() => {
+      localStorage.removeItem('hasVisited');
+      window.location.reload();
+    }}
+    className="fixed bottom-4 right-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg z-50"
+  >
+    Reset Popup
+  </button> */}
+
       <NavigationBar />
 
       <Carousel />
@@ -207,8 +218,8 @@ function Landing() {
             <div className="flex rounded-full overflow-hidden border border-gray-200 shadow-sm">
               <button
                 className={`px-8 py-3 text-base md:text-lg font-medium transition-colors duration-300 ${!isYearly
-                    ? 'bg-green-500 text-white'
-                    : 'bg-gray-100 text-gray-400'
+                  ? 'bg-green-500 text-white'
+                  : 'bg-gray-100 text-gray-400'
                   }`}
                 onClick={() => setIsYearly(false)}
               >
@@ -216,8 +227,8 @@ function Landing() {
               </button>
               <button
                 className={`px-8 py-3 text-base md:text-lg font-medium transition-colors duration-300 ${isYearly
-                    ? 'bg-green-500 text-white'
-                    : 'bg-gray-100 text-gray-400'
+                  ? 'bg-green-500 text-white'
+                  : 'bg-gray-100 text-gray-400'
                   }`}
                 onClick={() => setIsYearly(true)}
               >
@@ -255,7 +266,7 @@ function Landing() {
 
       <Comment />
 
-      <ClientLogosSection  />
+      <ClientLogosSection />
 
       <CTASection product="V11-QR" siteIndex="/" />
 
