@@ -483,11 +483,11 @@ const BookDemo: React.FC = () => {
               animation: pageLoaded ? 'fadeIn 0.8s ease-out forwards' : 'none'
             }}
           >
-            <h1 className="text-2xl md:text-6xl text-center leading-tight text-gray-800 v11-roboto">
+            <h2 className="text-3xl md:text-6xl text-center leading-tight text-gray-800 v11-roboto">
               BOOK A DEMO
-            </h1>
+            </h2>
 
-            <p className="text-base md:text-base text-gray-600 text-center mt-2 lowercase">
+            <p className="text-sm md:text-base text-gray-600 text-center mt-2 lowercase">
               EXPERIENCE THE POWER OF OUR CUTTING-EDGE POS SALES SYSTEM TAILORED TO STREAMLINE YOUR BUSINESS OPERATIONS. OUR FEATURE-RICH SOLUTION HELPS YOU MANAGE SALES, INVENTORY, BILLING, AND CUSTOMER TRANSACTIONS EFFORTLESSLY. FILL OUT THE FORM NOW TO SCHEDULE A FREE LIVE DEMO AND SEE HOW OUR POS SYSTEM CAN TRANSFORM YOUR BUSINESS!
             </p>
           </div>

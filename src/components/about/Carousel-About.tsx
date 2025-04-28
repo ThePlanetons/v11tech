@@ -52,11 +52,11 @@ function CarouselAbout() {
           MEDIUM ENTERPRISES
         </h2>
 
-        <div className="text-base md:text-lg mb-12 text-gray-600">
-          <p className="mb-1">OUR VISION IS TO BUILD SOFTWARE FOR PEOPLE TO USE</p>
-          <p className="mb-1">OUR SYSTEM FOR DAY TO DAY OPERATION.</p>
-          <p className="mb-1">WITH ITS POWERFUL FEATURES AND USER-FRIENDLY</p>
-          <p>INTERFACE.</p>
+        <div className="text-xs md:text-lg mb-12 text-gray-600">
+          <p className="mb-1">our vision is to build software for people to use our system</p>
+          <p className="mb-1">for day-to-day operations, with powerful features</p>
+          <p className="mb-1">and a user-friendly interface</p>
+          <p></p>
         </div>
 
         <button className="bg-green-500 overflow-hidden transition-all duration-300 hover:bg-green-500 hover:shadow-lg hover:scale-105 transform hover:-translate-y-1 text-white py-3 px-8 rounded-md flex items-center font-medium">

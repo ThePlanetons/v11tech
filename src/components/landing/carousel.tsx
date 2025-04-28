@@ -22,11 +22,11 @@ export default function MobileQROrderingSystem() {
           THROUGH QR CODE
         </h2>
 
-        <div className="text-base md:text-lg mb-12 text-gray-600">
-          <p className="mb-1">WE BUILD A PLATFORM FOR SMALL BUSINESS OWNERS,</p>
-          <p className="mb-1">HOUSEWIVES, AND STUDENTS TO RUN BUSINESS WITH A</p>
-          <p className="mb-1">COST-EFFECTIVE SUBSCRIPTION MODEL TO BOOST YOUR</p>
-          <p>OVERALL REVENUE.</p>
+        <div className="text-xs md:text-lg mb-12 text-gray-600">
+          <p className="mb-1">we build a platform for small business owners, housewives,</p>
+          <p className="mb-1">and students to run businesses with a cost-effective</p>
+          <p className="mb-1">subscription  model to boost their overall revenue.</p>
+          <p></p>
         </div>
 
         <button className=" bg-green-500 overflow-hidden transition-all duration-300 hover:bg-green-500 hover:shadow-lg hover:scale-105 transform hover:-translate-y-1 text-white  py-3 px-8 rounded-md flex items-center font-medium ">
