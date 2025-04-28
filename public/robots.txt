@@ -1,0 +1,9 @@
+# robots.txt for your React website
+
+# Allow all crawlers access to everything
+User-agent: *
+Allow: /
+
+# Block access to unnecessary files/folders
+Disallow: /assets/
+Disallow: /favicon.ico

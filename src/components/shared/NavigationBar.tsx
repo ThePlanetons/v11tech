@@ -67,7 +67,7 @@ function NavigationBar() {
   const isActive = location.pathname.startsWith('/products');
 
   return (
-    <div className="flex flex-col text-black relative overflow-hidden">
+    <div className="flex flex-col text-black  relative overflow-hidden">
       <div className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-6 py-4 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg backdrop-blur-sm' : 'bg-transparent'}`}>
         <Link to="/">
           <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
@@ -130,7 +130,12 @@ function NavigationBar() {
           </div>
         </nav>
 
-        <button className="hidden md:block ml-4 font-semibold px-4 py-2 rounded-md text-white bg-green-500 overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105 transform hover:-translate-y-1" onClick={handleClick}>
+        <button className={`hidden md:block ml-4 font-semibold px-4 py-2 rounded-md overflow-hidden transition-all duration-300 transform hover:shadow-lg hover:scale-105 ${
+    scrolled
+      ? 'bg-green-500 text-white hover:bg-green-600'
+      : 'bg-white text-green-500 border border-green-500 hover:bg-green-50'
+  }`}
+ onClick={handleClick}>
           <span className="z-10 relative">Book a Demo</span>
         </button>
       </div>
