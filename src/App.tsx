@@ -15,6 +15,8 @@ import Termsandcondition from './components/shared/TermsOfService'
 import BookDemo from './components/shared/BookDemo';
 // import ScrollToTop from './ScrollToTop'
 import ScrollRestoration from './ScrollRestoration'
+import PopupForm from './components/shared/PopupForm';
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
       <BrowserRouter>
         {/* <ScrollToTop /> */}
         <ScrollRestoration />
+        <PopupForm />
 
         <Routes>
 
