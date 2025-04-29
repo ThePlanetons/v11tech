@@ -65,19 +65,19 @@ const citiesData: { [key: string]: { [key: string]: string[] } } = {
 const businessTypes = [
   "Restaurant", 
   "Coffee/Tea Shop",
-  "Cafe", 
-  "Bakery",
-  "Fast Food", 
-  "Fine Dining",
-  "Food Truck",
   "Cake Shop", 
   "Cloud Kitchen",
-  "Pub/Bar",
-  "Pizzeria",
-  "Ice Cream Parlor",
-  "Juice Bar",
-  "Breakfast & Brunch",
-  "Food Delivery Service"
+  // "Fast Food", 
+  // "Fine Dining",
+  // "Food Truck",
+  // "Cake Shop", 
+  // "Cloud Kitchen",
+  // "Pub/Bar",
+  // "Pizzeria",
+  // "Ice Cream Parlor",
+  // "Juice Bar",
+  // "Breakfast & Brunch",
+  // "Food Delivery Service"
 ];
 
 interface FormData {
@@ -105,6 +105,25 @@ const PopupForm: React.FC = () => {
   const [availableStates, setAvailableStates] = useState<string[]>([]);
   const [availableCities, setAvailableCities] = useState<string[]>([]);
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+
+  // Handle ESC key press
+  useEffect(() => {
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+
+    // Add event listener when component mounts and popup is open
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscKey);
+    }
+
+    // Cleanup the event listener when component unmounts or popup closes
+    return () => {
+      document.removeEventListener('keydown', handleEscKey);
+    };
+  }, [isOpen]); // Re-run effect when isOpen changes
 
   useEffect(() => {
     const hasVisited = localStorage.getItem('hasVisited');
@@ -188,7 +207,7 @@ const PopupForm: React.FC = () => {
       {/* Dark overlay without backdrop-blur */}
       <div className="fixed inset-0 bg-black/40 backdrop-blur z-0"></div>
       
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center ">
         <div className="bg-white rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg max-h-[90vh] relative animate-fade-in overflow-y-auto z-10">
           {/* Close Button */}
           <button
