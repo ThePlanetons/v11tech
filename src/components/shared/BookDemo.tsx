@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { MapPin, Phone, Mail, Check, Calendar, Loader2 } from 'lucide-react';
 import NavigationBar from '../shared/NavigationBar';
 import Footer from '../shared/Footer';
+// import axios from 'axios';
 
 // Country data
 interface Country {
@@ -400,6 +401,18 @@ const BookDemo: React.FC = () => {
 
     return isValidEmail && isValidPhone;
   };
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     await axios.post('http://localhost:5000/api/send-enquiry', formData);
+  //     alert('Message sent!');
+  //   } catch (error) {
+  //     console.error('Error sending message', error);
+  //     alert('Failed to send message.');
+  //   }
+  // };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
