@@ -153,7 +153,7 @@ const FormFields: React.FC<FormFieldsProps> = ({
           value={formData.additionalInfo}
           onChange={onChange}
           placeholder="Please provide any additional details about your business"
-          className="w-full border border-green-400 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-green-500 transition text-sm h-12 resize-none"
+          className="w-full border border-green-400 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-green-500 transition text-sm h-16 md:h-12 resize-none"
         />
       </div>
       

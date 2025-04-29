@@ -16,6 +16,7 @@ import BookDemo from './components/shared/BookDemo';
 // import ScrollToTop from './ScrollToTop'
 import ScrollRestoration from './ScrollRestoration'
 import PopupForm from './components/shared/PopupForm';
+import ComingSoonPage from './components/comingsoon/comingsoon'
 
 
 function App() {
@@ -39,6 +40,11 @@ function App() {
 
           {/* KIOSK Landing */}
           <Route path="/products/kiosk" element={<KIOSKLanding />} />
+
+          {/* KIOSK Landing */}
+          <Route path="products/coming-soon" element={<ComingSoonPage />} />
+          <Route path="products/coming-soon" element={<ComingSoonPage />} />
+          <Route path="products/coming-soon" element={<ComingSoonPage />} />
 
           {/* About */}
           <Route path="/about-us" element={<About />} />

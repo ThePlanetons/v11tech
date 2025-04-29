@@ -113,7 +113,7 @@ const PopupForm: React.FC = () => {
             </div>
           ) : (
             <>
-              <div className="text-center mb-6 overflow-hidden">
+              <div className="text-center overflow-hidden">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-800">🚀 Book a Demo</h2>
               </div>
 
