@@ -1,10 +1,19 @@
-import { useState, useEffect } from 'react';
-import {  CheckCircle, ArrowUpRight, MessageSquare } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { CheckCircle, ArrowUpRight, MessageSquare, X } from 'lucide-react';
+
+declare global {
+  interface Window {
+    Calendly?: any;
+  }
+}
 
 function TalkUs() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeFeature, setActiveFeature] = useState<number | null>(null);
   const [animateQR, setAnimateQR] = useState(false);
+  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
+  const [showCalendly, setShowCalendly] = useState(false);
+  const calendlyContainerRef = useRef<HTMLDivElement>(null);
   
 
   useEffect(() => {
@@ -18,6 +27,48 @@ function TalkUs() {
     
     return () => clearInterval(qrInterval);
   }, []);
+
+  useEffect(() => {
+    if (!document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]')) {
+      const script = document.createElement("script");
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      script.onload = () => {
+        console.log("Calendly script loaded successfully.");
+        setCalendlyLoaded(true);
+      };
+      script.onerror = () => {
+        console.error("Failed to load Calendly script.");
+      };
+      document.body.appendChild(script);
+    } else {
+      setCalendlyLoaded(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (calendlyLoaded && showCalendly && calendlyContainerRef.current && window.Calendly) {
+      window.Calendly.initInlineWidget({
+        url: "https://calendly.com/saravanan-gunasekaran/30min",
+        parentElement: calendlyContainerRef.current,
+        prefill: {},
+        utm: {}
+      });
+    }
+  }, [calendlyLoaded, showCalendly]);
+
+  const handleTalkToUsClick = () => {
+    setShowCalendly(true);
+    setTimeout(() => {
+      if (calendlyContainerRef.current) {
+        calendlyContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
+  const handleCancelClick = () => {
+    setShowCalendly(false);
+  };
 
   const features = [
     { text: 'Fully Integrated KDS', icon: CheckCircle },
@@ -85,10 +136,13 @@ function TalkUs() {
             
             {/* Call to action button with animation */}
             <div className="transition-all duration-700 delay-700">
-              <button className="group relative bg-green-500 text-white px-8 py-4 rounded-lg  flex items-center space-x-2 overflow-hidden transition-all duration-300 hover:bg-green-500 hover:shadow-lg hover:scale-105 transform hover:-translate-y-1">
-                <span className="text-white relative z-10">Talk to Us</span>
-                <MessageSquare className="w-5 h-5 relative z-10 text-white transition-transform group-hover:rotate-12" />
-                <div className=""></div>
+            <button
+                onClick={handleTalkToUsClick}
+                disabled={!calendlyLoaded}
+                className="group relative bg-green-500 text-white px-8 py-4 rounded-lg flex items-center space-x-2 overflow-hidden transition-all duration-300 hover:bg-green-600 hover:shadow-lg hover:scale-105 transform hover:-translate-y-1 disabled:opacity-50"
+              >
+                <span className="relative z-10">Talk to Us</span>
+                <MessageSquare className="w-5 h-5 relative z-10 transition-transform group-hover:rotate-12" />
               </button>
             </div>
           </div>
@@ -145,7 +199,29 @@ function TalkUs() {
               </div>
             </div>
           </div>
+          </div>
+        {showCalendly && (
+        <div className="fixed inset-0 bg-transparent bg-opacity-100 flex items-center justify-center z-50">
+
+          <div
+          
+            ref={calendlyContainerRef}
+            className="w-full h-full bg-black/40 backdrop-blur rounded-2xl shadow-xl p-4 pt-14 mt-6 transition-all animate-fade-in"
+            style={{ minHeight: '800px' }}
+          >
+
+            {/* Calendly will be loaded here */}
+          </div>
+                        <button
+              onClick={handleCancelClick}
+              className="absolute top-4 right-4 text-white hover:text-gray-600 transition-colors duration-200"
+              aria-label="Close"
+            >
+              <X className="w-6 h-6 z-50" />
+            </button>
         </div>
+      )}  
+
       </div>
     </div>
   );
