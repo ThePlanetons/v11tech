@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import NavigationBar from '../shared/NavigationBar';
-import CarouselLanding from './Carousel';
 import ShopsSection from '../shared/ShopsSection';
 import TalkUs from './Talkus';
 import PricingSection, { PricingPlan } from '../shared/PricingSection';
@@ -16,6 +15,7 @@ import teaShopImg from '../../assets/img/TeaShops.jpeg';
 import groceryShopImg from '../../assets/img/GroceryShop.jpeg';
 import fashionShopImg from '../../assets/img/FashionsShop.jpeg';
 import stationaryShopImg from '../../assets/img/StationaryShop.jpeg';
+import CarouselLanding from './CarouselLanding';
 
 const staggeredCards = {
   hidden: {},
