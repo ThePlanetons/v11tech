@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+// import Razorpay from 'razorpay'; // Optional for types, but we'll use window.Razorpay
+
 
 export interface Feature {
   name: string;
@@ -41,8 +43,52 @@ const pricingCardVariant = {
   },
 };
 
+
+
 const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isMobile }) => {
   const [expandedFeatures, setExpandedFeatures] = useState<boolean>(!isMobile);
+  // const themeColor = '#06b453';
+  // const themeColorLight = '#daf7e3';
+  // const greyText = '#4A5568';
+
+
+  const handlePayment = () => {
+    const rawPrice = isYearly ? plan.yearlyPrice : plan.monthlyPrice;
+    const amount = parseFloat(rawPrice.replace(/[^0-9.]/g, '')) * 100;
+
+    if (!(window as any).Razorpay) {
+      alert('Razorpay SDK failed to load. Please check your internet connection.');
+      return;
+    }
+
+    const options = {
+      key: 'rzp_live_nejqX35sR3t8v4', // ✅ Your public Razorpay key (safe for frontend)
+      amount: amount,
+      currency: 'INR',
+      name: 'V11Tech',
+      description: `${plan.title} Plan`,
+      image: '/assets/img/Logo_Last.png', // optional
+      handler: function (response: any) {
+        alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+        // You can trigger a confirmation email via third-party service (like EmailJS) here
+      },
+      prefill: {
+        name: '',
+        email: '',
+        contact: '',
+      },
+      notes: {
+        plan_type: plan.title,
+      },
+      theme: {
+        color: themeColor,
+      },
+    };
+
+    const rzp = new (window as any).Razorpay(options);
+    rzp.open();
+  };
+
 
   // Update mobile specific state when viewport changes if needed
   useEffect(() => {
@@ -227,13 +273,9 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isMobile }) =
         </div>
       </div>
 
-      <motion.div
-        className="px-6 pb-6 md:px-10 md:pb-10"
-        whileHover={{ scale: 1.05 }}
-        transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-      >
-        <a
-          href="https://v11tech.com/book-a-demo"
+      <motion.div className="px-6 pb-6 md:px-10 md:pb-10" whileHover={{ scale: 1.05 }} transition={{ type: 'spring', stiffness: 400, damping: 10 }}>
+        <button
+          onClick={handlePayment}
           className="block w-full py-3 md:py-4 text-center rounded-xl font-semibold transition-colors duration-300"
           style={{
             backgroundColor: plan.popular ? themeColor : 'white',
@@ -242,7 +284,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isMobile }) =
           }}
         >
           Buy Now
-        </a>
+        </button>
       </motion.div>
     </motion.div>
   );
