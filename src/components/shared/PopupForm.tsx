@@ -41,7 +41,7 @@ const PopupForm: React.FC = () => {
         if (!localStorage.getItem('hasVisited')) {
           setIsOpen(true);
         }
-      }, 12000);
+      }, 18000);
       return () => {
         clearTimeout(openTimer);
         clearInterval(reopenInterval);
@@ -89,7 +89,7 @@ const PopupForm: React.FC = () => {
       <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-0"></div>
       
       <div className="flex items-center justify-center h-full">
-        <div className="bg-white rounded-2xl shadow-2xl p-4 md:p-6 md:pt-2 lg:p-8 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg max-h-[90vh] relative animate-fade-in overflow-y-auto z-10">
+        <div className="bg-white rounded-2xl shadow-2xl p-4 md:p-6 md:pt-0 lg:p-8 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg max-h-[90vh] relative animate-fade-in overflow-y-auto z-10">
           <div className="sticky top-0 right-0 z-20 flex justify-end w-full">
             <button
               onClick={handleClose}
