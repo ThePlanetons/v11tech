@@ -24,11 +24,12 @@ function App() {
     <>
       <BrowserRouter>
         {/* <ScrollToTop /> */}
+
         <ScrollRestoration />
+
         <PopupForm />
 
         <Routes>
-
           {/* Home Landing */}
           <Route path="/" element={<Landing />} />
 

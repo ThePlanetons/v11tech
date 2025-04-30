@@ -149,12 +149,13 @@ function NavigationBar() {
           <span className="z-10 relative">Book a Demo</span>
         </button>
       </div>
+
       {/* Mobile Menu */}
       <div className={`fixed top-0 left-0 w-full h-full bg-white z-40 transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col h-full px-6 py-20 overflow-y-auto">
           <button onClick={toggleMobileMenu} className="absolute top-4 right-4 p-2 rounded-md text-gray-800 hover:text-green-500 focus:outline-none">
-            {/* Add icon here if needed */}
           </button>
+
           <div className="flex flex-col space-y-6">
             <div className="border-b border-gray-200">
               <button className="flex justify-between items-center w-full py-3 text-xl font-medium hover:text-green-500 transition-colors duration-300" onClick={(e) => {
@@ -166,6 +167,7 @@ function NavigationBar() {
                   <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </button>
+
               <div className={`overflow-hidden transition-all duration-300 ${productsDropdownOpen ? 'max-h-96' : 'max-h-0'}`}>
                 <div className="grid grid-cols-2 gap-4 pl-4 pb-3">
                   {products.map((product, index) => (
@@ -185,20 +187,21 @@ function NavigationBar() {
                 </div>
               </div>
             </div>
+
             {menuItems.map(({ label, path }) => (
               <a key={label} href={path} className="text-xl font-medium border-b border-gray-200 py-3 hover:text-green-500 transition-colors duration-300" onClick={toggleMobileMenu}>
                 {label}
               </a>
             ))}
           </div>
-          <button className="mt-8 font-semibold px-4 py-3 rounded-md bg-green-500 text-white hover:bg-green-600 transition-all duration-300">
+
+          <button className="mt-8 font-semibold px-4 py-3 rounded-md bg-green-500 text-white hover:bg-green-600 transition-all duration-300" onClick={handleClick}>
             Book a Demo
           </button>
         </div>
       </div>
-      {/* Mobile Menu remains unchanged */}
     </div>
   );
 }
 
-export default NavigationBar;
+export default NavigationBar

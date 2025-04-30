@@ -32,7 +32,6 @@ interface ShopItem {
 }
 
 function Landing() {
-  // const [, setScrolled] = useState(false);
   const scrolledRef = useRef(false);
 
   const [isYearly, setIsYearly] = useState<boolean>(false);
@@ -104,27 +103,12 @@ function Landing() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       scrolledRef.current = currentScrollY > 50;
-      // setScrolled(currentScrollY > 50);
-      //setScrollY(currentScrollY);
     };
-
-    const timer = setTimeout(() => {
-      //setIsVisible(true);
-    }, 300);
 
     window.addEventListener('scroll', handleScroll);
 
-    // const handleClickOutside = () => {
-    //   // Placeholder for dropdown close logic
-    //   console.warn('Click outside detected - dropdown should close');
-    // };
-
-    // document.addEventListener('mousedown', handleClickOutside);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      // document.removeEventListener('mousedown', handleClickOutside);
-      clearTimeout(timer);
     };
   }, []);
 
@@ -157,16 +141,16 @@ function Landing() {
 
   return (
     <>
-       {/* 🛠 Reset Popup Button for Testing */}
-  {/* <button
-    onClick={() => {
-      localStorage.removeItem('hasVisited');
-      window.location.reload();
-    }}
-    className="fixed bottom-4 right-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg z-50"
-  >
-    Reset Popup
-  </button> */}
+      {/* 🛠 Reset Popup Button for Testing */}
+      {/* <button
+        onClick={() => {
+          localStorage.removeItem('hasVisited');
+          window.location.reload();
+        }}
+        className="fixed bottom-4 right-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg z-50"
+      >
+        Reset Popup
+      </button> */}
 
       <NavigationBar />
 

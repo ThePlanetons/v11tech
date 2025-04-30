@@ -7,14 +7,14 @@ function ScrollToTop() {
 
   useEffect(() => {
     if (isFirstLoad.current) {
-      isFirstLoad.current = false; // Skip scroll on first load
+      isFirstLoad.current = false;  // Skip scroll on first load
       return;
     }
 
-    window.scrollTo(0, 0); // Scroll to top on navigation
+    window.scrollTo(0, 0);  // Scroll to top on navigation
   }, [pathname]);
 
   return null;
 }
 
-export default ScrollToTop;
+export default ScrollToTop
