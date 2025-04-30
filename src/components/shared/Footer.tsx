@@ -8,11 +8,12 @@ function Footer() {
         {/* Main Footer Content */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo on Left */}
-          <div className="mb-6 md:mb-0 md:pl-4 lg:pl-8 transform transition-transform hover:scale-105 w-full md:w-auto flex justify-center md:justify-start">
+          <div className="mb-2 md:mb-0 md:pl-4 lg:pl-8 transform transition-transform hover:scale-105 w-full md:w-auto flex justify-center md:justify-start">
             <div className="flex items-center">
-              <div className="text-white pt-4 md:pl-3 md:pt-10">
+              <div className="text-white pt-4">
                 <span className="font-bold text-lg"></span>
-                <img src="/assets/img/Logo_Last.png" alt="V11 logo" className="h-10 w-65  pb-6 pl-16 pr-16 md:pl-0 md:pr-32" />
+                <img src="/assets/img/Logo_Last.png" alt="V11 logo" className="h-10 w-65 pb-4 px-12 md:px-10 lg:px-14" />
+                {/* <img src="/assets/img/Logo_Last.png" alt="V11 logo" className="h-10 w-65 pb-6 pl-16 pr-16 md:pl-0 md:pr-32" /> */}
                 <div className="text-xs"></div>
               </div>
             </div>
@@ -21,7 +22,7 @@ function Footer() {
           {/* Center - Follow and Social Links */}
           <div className="mb-6 md:mb-0 text-center w-full md:w-auto">
             <p className="text-center font-medium mb-3">Follow V11 Tech®</p>
-            <div className="flex space-x-2 md:space-x-3 justify-center">
+            <div className="flex space-x-2 lg:space-x-3 justify-center">
               <a href="https://www.instagram.com/v11tech/" target="_blank" className="rounded-full p-1 md:p-2 transform transition-all hover:scale-110 duration-200">
                 <Instagram size={24} className="md:w-8 md:h-8 text-white" />
               </a>
@@ -41,12 +42,13 @@ function Footer() {
           </div>
 
           {/* Right - App Download */}
-          <div className="text-center md:text-right w-auto md:w-auto">
-            <p className="font-medium mb-3 md:pr-6 lg:pr-24">Download our App</p>
-            <div className="flex flex-col sm:flex-row justify-center md:justify-end space-y-2 sm:space-y-0 sm:space-x-2">
+          <div className="text-center w-auto md:w-auto">
+            <p className="font-medium mb-3">Download our App</p>
+            <div className="flex flex-row justify-center md:justify-end space-x-2 sm:space-x-2">
               <a href="#" className="inline-block transform transition-transform hover:scale-105">
                 <img src="/assets/img/playstore.png" alt="Google Play" className="h-8 w-32 md:w-40" />
               </a>
+
               <a href="#" className="inline-block transform transition-transform hover:scale-105">
                 <img src="/assets/img/appstore.png" alt="App Store" className="h-7 w-32 md:w-40" />
               </a>
@@ -57,7 +59,7 @@ function Footer() {
         {/* Middle section with tagline, navigation and payment */}
         <div className="relative flex flex-col md:flex-row items-center justify-between mt-6 md:mt-0 pb-8">
           {/* Tagline */}
-          <div className="text-center md:text-left mb-4 md:mb-0 md:pl-4 lg:pl-11 w-full md:w-1/3">
+          <div className="text-center md:text-left mb-4 md:mb-0 md:pl-4 lg:pl-8 w-full md:w-1/3">
             <p>V11 POS Software simplifies your business <br className="hidden sm:block" />with smart, efficient, and modern solutions.</p>
           </div>
 

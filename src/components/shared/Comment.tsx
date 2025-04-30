@@ -102,7 +102,7 @@ const Comment = () => {
 
       {/* Heading */}
       <motion.div
-        className="text-center mb-16"
+        className="text-center mb-10 md:mb-16"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -120,7 +120,7 @@ const Comment = () => {
               transition: { type: 'spring', stiffness: 100 }
             }
           }}
-          className="font-semibold text-lg mb-2 bg-dark"
+          className="font-semibold text-4xl md:text-5xl mb-4 bg-dark"
         >
           Clients Feedback
         </motion.p>

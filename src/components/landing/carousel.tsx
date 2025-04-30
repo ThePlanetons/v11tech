@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
-export default function MobileQROrderingSystem() {
+export default function CarouselLanding() {
   const [animate, setAnimate] = useState(false);
   const navigate = useNavigate();
 
@@ -18,29 +17,29 @@ export default function MobileQROrderingSystem() {
   return (
     <div className="flex flex-col md:flex-row items-center bg-white min-h-screen">
       {/* Left section with text content */}
-      <div className="w-full md:w-1/2 px-6 py-16 md:px-12 md:py-16">
-        <h2 className="text-2xl md:text-6xl pt-11 md:pt-0 leading-tight mb-8 text-gray-800 v11-roboto">
+      <div className="w-full md:w-1/2 px-6 md:px-12 py-14 md:py-16">
+        <h2 className="text-4xl lg:text-5xl xl:text-6xl mb-4 md:mb-8 pt-10 md:pt-0 leading-tight text-gray-800 v11-roboto">
           INNOVATIVE MOBILE<br />
           ORDERING SYSTEM<br />
           THROUGH QR CODE
         </h2>
 
-        <div className="text-xs md:text-lg mb-12 text-gray-600">
-          <p className="mb-1">we build a platform for small business owners, housewives,</p>
+        <div className="text-xs md:text-lg mb-8 md:mb-12 text-gray-600">
+          <p className="mb-1">We build a platform for small business owners, housewives,</p>
           <p className="mb-1">and students to run businesses with a cost-effective</p>
           <p className="mb-1">subscription  model to boost their overall revenue.</p>
           <p></p>
         </div>
 
         <button
-      onClick={() => navigate('/book-a-demo')} // ✅ Use the hook result here
-      className="bg-green-500 overflow-hidden transition-all duration-300 hover:bg-green-500 hover:shadow-lg hover:scale-105 transform hover:-translate-y-1 text-white py-3 px-8 rounded-md flex items-center font-medium"
-    >
-      Get Started
-      <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-      </svg>
-    </button>
+          onClick={() => navigate('/book-a-demo')}
+          className="bg-green-500 overflow-hidden transition-all duration-300 hover:bg-green-500 hover:shadow-lg hover:scale-105 transform hover:-translate-y-1 text-white py-3 px-8 rounded-md flex items-center font-medium"
+        >
+          Get Started
+          <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </button>
       </div>
 
       {/* Right section with green background and phones */}
@@ -66,8 +65,8 @@ export default function MobileQROrderingSystem() {
               alt="Hand holding two smartphones showing QR code and food ordering app"
               className={`absolute top-0 left-16 md:left-36 z-10 object-contain w-full h-full  ${animate ? 'translate-y-0' : 'translate-y-2 '}  duration-1000 ease-in-out`}
             />
-
           </div>
+
           <img
             src="/assets/img/hand.png"
             alt="Hand holding two smartphones showing QR code and food ordering app"
@@ -76,5 +75,5 @@ export default function MobileQROrderingSystem() {
         </div>
       </div>
     </div>
-  );
+  )
 }

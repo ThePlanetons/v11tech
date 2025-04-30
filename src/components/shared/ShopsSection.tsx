@@ -34,10 +34,10 @@ function ShopsSection({ shops }: { shops: ShopItem[] }) {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 bg-white">
+    <section ref={sectionRef} className="py-10 md:py-16 bg-white">
       <div className="container mx-auto px-4 md:px-28">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-800 v11-roboto tracking-wide">
-        Hot Picks
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 md:mb-12 text-gray-800 v11-roboto tracking-wide">
+          Hot Picks
         </h2>
 
         {/* Mobile view (horizontal scroll) */}
@@ -52,16 +52,18 @@ function ShopsSection({ shops }: { shops: ShopItem[] }) {
                   animationFillMode: 'forwards'
                 }}
               >
-                <div className=" relative overflow-hidden h-80">
+                <div className="relative overflow-hidden h-80">
                   <img
                     src={shop.imgSrc}
                     alt={shop.altText}
-                    className=" w-auto h-auto object-cover transition-transform duration-700 hover:scale-110"
+                    className="w-auto h-auto object-cover transition-transform duration-700 hover:scale-110"
                   />
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
                     <p className="text-white text-xs font-bold">{shop.description}</p>
                   </div>
                 </div>
+
                 <div className="p-6">
                   <p className="text-xl font-semibold text-gray-800 mb-2">
                     {shop.title}
@@ -89,10 +91,12 @@ function ShopsSection({ shops }: { shops: ShopItem[] }) {
                   alt={shop.altText}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
                   <p className="text-white text-base font-bold">{shop.description}</p>
                 </div>
               </div>
+
               <div className="p-6">
                 <p className="text-2xl font-semibold text-gray-800 mb-2">
                   {shop.title}
@@ -103,7 +107,7 @@ function ShopsSection({ shops }: { shops: ShopItem[] }) {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ShopsSection;
+export default ShopsSection

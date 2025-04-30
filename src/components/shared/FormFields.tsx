@@ -34,8 +34,6 @@ const FormFields: React.FC<FormFieldsProps> = ({
 }) => {
   return (
     <form onSubmit={onSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      
-      
       <div className="sm:col-span-2">
         <label className="block text-gray-600 mb-1 text-sm font-medium">
           Full Name <span className="text-red-500">*</span>
@@ -125,7 +123,7 @@ const FormFields: React.FC<FormFieldsProps> = ({
           className="w-full border border-green-400 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-green-500 transition text-sm"
         />
       </div>
-     
+
       <div>
         <label className="block text-gray-600 mb-1 text-sm font-medium">
           Business Type <span className="text-red-500">*</span>
@@ -176,4 +174,4 @@ const FormFields: React.FC<FormFieldsProps> = ({
   );
 };
 
-export default FormFields;
+export default FormFields

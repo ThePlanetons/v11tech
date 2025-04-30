@@ -9,8 +9,6 @@ interface ServiceItem {
 }
 
 const V11QRLanding: React.FC = () => {
-
-
   // Refs for elements we want to animate on scroll
   const headerRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -210,7 +208,7 @@ const V11QRLanding: React.FC = () => {
   // };
 
   return (
-    <div className="bg min-h-auto  relative overflow-hidden">
+    <div className="bg min-h-auto relative overflow-hidden">
       {/* Background animation */}
       {/* <div id="bg-animation" className="absolute inset-0 z-0 opacity-10"></div> */}
 
@@ -230,7 +228,7 @@ const V11QRLanding: React.FC = () => {
 
       <div className="container mx-auto px-4 z-10 relative">
         {/* Header */}
-        <div id="header" ref={headerRef} className="text-center  md:py-12 invisible-element text-gray-800 v11-roboto tracking-wide">
+        <div id="header" ref={headerRef} className="text-center py-5 md:py-12 invisible-element text-gray-800 v11-roboto tracking-wide">
           <h2 className="text-5xl font-bold inline-block group">
             <span className="text-3xl md:text-5xl text-gray-800 relative inline-block transition-all cursor-pointer duration-500 group-hover:text-green-500">
               V11-QR
@@ -271,15 +269,8 @@ const V11QRLanding: React.FC = () => {
           ))}
         </div>
       </div>
-
-
-      {/* </div> */}
     </div>
+  )
+}
 
-
-
-  );
-};
-
-
-export default V11QRLanding;
+export default V11QRLanding

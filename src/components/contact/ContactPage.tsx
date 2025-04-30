@@ -142,7 +142,7 @@ const ContactUsPage = () => {
         {/* Header */}
         <header className="bg-green-200 shadow-sm">
           <div className="container mx-auto py-6 px-4 pt-25">
-            <h2 className="text-3xl md:text-6xl text-center leading-tight text-gray-800 v11-roboto"> CONTACT US</h2>
+            <h2 className="text-4xl lg:text-5xl xl:text-6xl text-center leading-tight text-gray-800 v11-roboto">CONTACT US</h2>
             <p className="text-xs md:text-lg text-gray-600 text-center mt-2">our global offices are ready to serve your needs</p>
           </div>
         </header>

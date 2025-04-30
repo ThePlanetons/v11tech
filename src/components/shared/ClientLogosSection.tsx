@@ -58,12 +58,12 @@ export default function WorldwideCustomers() {
   }, []);
 
   return (
-    <div className="w-full pt-7 bg overflow-hidden">
+    <div className="w-full pt-6 bg overflow-hidden">
       {/* Header */}
       <div className="text-center mb-10">
-        <h2 className="text-2xl md:text-5xl font-semibold text-gray-800 v11-roboto tracking-wide relative inline-block">
+        <h2 className="text-3xl md:text-5xl font-semibold text-gray-800 v11-roboto tracking-wide relative inline-block">
           Our worldwide reputed customers
-          <div className="absolute left-0 right-0 mx-auto w-20 h-1  bottom-0"></div>
+          <div className="absolute left-0 right-0 mx-auto w-20 h-1 bottom-0"></div>
         </h2>
       </div>
 

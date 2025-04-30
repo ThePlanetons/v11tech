@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function CarouselKDS() {
   const [, setAnimate] = useState(false);
-  const navigate = useNavigate(); // ✅ Call the hook here
+  const navigate = useNavigate();
 
   useEffect(() => {
     setAnimate(true);
@@ -18,7 +18,7 @@ function CarouselKDS() {
     <div className="flex flex-col md:flex-row items-center bg-white min-h-screen">
       {/* Left section with text content */}
       <div className="w-full md:w-1/2 px-6 py-16 md:px-12 md:py-16">
-        <h2 className="text-2xl md:text-6xl pt-11 md:pt-0 leading-tight mb-8 text-gray-800 v11-roboto">
+        <h2 className="text-4xl lg:text-5xl xl:text-6xl pt-11 md:pt-0 leading-tight mb-8 text-gray-800 v11-roboto">
           KITCHEN DISPLAY<br />
           SYSTEM INNOVATIVE<br />
           DIGITAL KITCHEN

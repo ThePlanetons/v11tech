@@ -82,18 +82,17 @@ function TalkUs() {
     <div className="min-h-screen bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-1 pb-11 relative">
         <div
-          className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
 
           {/* Left column */}
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             <div className="transition-all duration-700 delay-300">
               <p className="text-green-500 font-medium mb-4 flex items-center">
                 <span className="inline-block w-12 h-0.5 bg-green-500 mr-3"></span>
                 Our QR Code System reached everywhere
               </p>
+
               <h2 className="text-5xl font-bold inline-block group tracking-wide leading-tight">
                 <span className="text-gray-800 text-3xl md:text-5xl transition-all duration-500">
                   Our Software platform used by
@@ -115,20 +114,18 @@ function TalkUs() {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 cursor-pointer ${
-                    activeFeature === index
-                      ? 'bg-emerald-50 border-l-4 border-green-500'
-                      : 'hover:bg-emerald-50 border-l-4 border-transparent'
-                  }`}
+                  className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 cursor-pointer ${activeFeature === index
+                    ? 'bg-emerald-50 border-l-4 border-green-500'
+                    : 'hover:bg-emerald-50 border-l-4 border-transparent'
+                    }`}
                   onMouseEnter={() => setActiveFeature(index)}
                   onMouseLeave={() => setActiveFeature(null)}
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   <feature.icon
-                    className={`w-5 h-5 text-green-500 transition-transform duration-300 ${
-                      activeFeature === index ? 'scale-125' : ''
-                    }`}
+                    className={`w-5 h-5 text-green-500 transition-transform duration-300 ${activeFeature === index ? 'scale-125' : ''}`}
                   />
+
                   <span className="text-gray-700 font-medium">{feature.text}</span>
                 </div>
               ))}
@@ -142,6 +139,7 @@ function TalkUs() {
                 className="group relative bg-green-500 text-white px-8 py-4 rounded-lg flex items-center space-x-2 overflow-hidden transition-all duration-300 hover:bg-green-600 hover:shadow-lg hover:scale-105 transform hover:-translate-y-1 disabled:opacity-50"
               >
                 <span className="relative z-10">Talk to Us</span>
+
                 <MessageSquare className="w-5 h-5 relative z-10 transition-transform group-hover:rotate-12" />
               </button>
             </div>
@@ -153,11 +151,13 @@ function TalkUs() {
 
             <div className="bg-gradient-to-br from-teal-700 to-teal-900 rounded-2xl p-8 text-white shadow-2xl transform transition-all duration-300 relative z-10">
               <div className="absolute top-0 right-0 w-32 h-32 bg-teal-400 rounded-full opacity-10 blur-2xl"></div>
+
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-emerald-400 rounded-full opacity-10 blur-2xl"></div>
 
               <div className="space-y-8">
                 <div>
                   <p className="text-3xl font-bold mb-2 tracking-tight text-teal-100">V11 TECH</p>
+
                   <h2 className="text-5xl font-bold text-yellow-400 mb-8 tracking-tight flex items-center">
                     QR - Ordering
                     <ArrowUpRight className="w-8 h-8 ml-2 animate-pulse" />
@@ -172,6 +172,7 @@ function TalkUs() {
                       style={{ transitionDelay: `${(index + 5) * 100}ms` }}
                     >
                       <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+
                       <p className="text-xl text-teal-50">{item}</p>
                     </div>
                   ))}
@@ -189,11 +190,11 @@ function TalkUs() {
                       alt="QR code scanning"
                       className="w-80 h-44 object-cover rounded-lg relative z-10 transition-transform duration-300"
                     />
+
                     <div
-                      className={`absolute left-0 w-full h-1 bg-yellow-400 opacity-70 blur-sm z-20 transition-all duration-1500 ease-in-out ${
-                        animateQR ? 'top-0' : 'top-full'
-                      }`}
-                    ></div>
+                      className={`absolute left-0 w-full h-1 bg-yellow-400 opacity-70 blur-sm z-20 transition-all duration-1500 ease-in-out ${animateQR ? 'top-0' : 'top-full'}`}
+                    >
+                    </div>
                   </div>
                 </div>
               </div>
@@ -201,32 +202,31 @@ function TalkUs() {
           </div>
 
           {/* Calendly widget container - conditionally rendered */}
-                
         </div>
+
         {showCalendly && (
-        <div className="fixed inset-0 bg-transparent bg-opacity-100 flex items-center justify-center z-50">
+          <div className="fixed inset-0 bg-transparent bg-opacity-100 flex items-center justify-center z-50">
+            <div
+              ref={calendlyContainerRef}
+              className="w-full h-full bg-black/40 backdrop-blur rounded-2xl shadow-xl p-4 pt-14 mt-6 transition-all animate-fade-in"
+              style={{ minHeight: '800px' }}
+            >
 
-          <div
-          
-            ref={calendlyContainerRef}
-            className="w-full h-full bg-black/40 backdrop-blur rounded-2xl shadow-xl p-4 pt-14 mt-6 transition-all animate-fade-in"
-            style={{ minHeight: '800px' }}
-          >
+              {/* Calendly will be loaded here */}
+            </div>
 
-            {/* Calendly will be loaded here */}
-          </div>
-                        <button
+            <button
               onClick={handleCancelClick}
               className="absolute top-4 right-4 text-white hover:text-gray-600 transition-colors duration-200"
               aria-label="Close"
             >
               <X className="w-6 h-6 z-50" />
             </button>
-        </div>
-      )}
+          </div>
+        )}
       </div>
     </div>
-  );
+  )
 }
 
-export default TalkUs;
+export default TalkUs
