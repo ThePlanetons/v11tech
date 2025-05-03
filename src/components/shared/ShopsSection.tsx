@@ -9,6 +9,7 @@ interface ShopItem {
   description: string;
 }
 
+
 function ShopsSection({ shops }: { shops: ShopItem[] }) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
