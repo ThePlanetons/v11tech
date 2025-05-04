@@ -43,7 +43,7 @@ export default function CarouselLanding() {
       </div>
 
       {/* Right section with green background and phones */}
-      <div className="w-full md:w-1/2 relative h-96 md:h-185">
+      <div className="w-full md:w-1/2 relative h-96 md:h-185 lg:h-237">
         {/* Green circle background that fills the right side */}
         <div className="absolute inset-0 bg-green-500 rounded-l-full"></div>
 
