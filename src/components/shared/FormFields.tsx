@@ -5,18 +5,18 @@ const businessTypes = [
   "Restaurant", 
   "Coffee/Tea Shop",
   "Cake Shop", 
-  "Cloud Kitchen",
+  "Cloud Kitchen"
 ];
 
 export interface FormData {
-  fullName: string;
+  name: string;
   email: string;
   phone: string;
   country: string;
   state: string;
   city: string;
-  businessType: string;
-  additionalInfo: string;
+  product: string;
+  message: string;
 }
 
 interface FormFieldsProps {
@@ -40,8 +40,8 @@ const FormFields: React.FC<FormFieldsProps> = ({
         </label>
         <input
           type="text"
-          name="fullName"
-          value={formData.fullName}
+          name="name"
+          value={formData.name}
           onChange={onChange}
           required
           placeholder="Enter your full name"
@@ -129,8 +129,8 @@ const FormFields: React.FC<FormFieldsProps> = ({
           Business Type <span className="text-red-500">*</span>
         </label>
         <select
-          name="businessType"
-          value={formData.businessType}
+          name="product"
+          value={formData.product}
           onChange={onChange}
           required
           className="w-full border border-green-400 rounded-lg p-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-green-500 text-sm"
@@ -147,8 +147,8 @@ const FormFields: React.FC<FormFieldsProps> = ({
           Additional Information
         </label>
         <textarea
-          name="additionalInfo"
-          value={formData.additionalInfo}
+          name="message"
+          value={formData.message}
           onChange={onChange}
           placeholder="Please provide any additional details about your business"
           className="w-full border border-green-400 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-green-500 transition text-sm h-16 md:h-12 resize-none"

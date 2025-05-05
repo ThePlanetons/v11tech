@@ -4,14 +4,14 @@ import FormFields, { FormData } from './FormFields';
 const PopupForm: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData>({
-    fullName: '',
+    name: '',
     email: '',
     phone: '',
     country: '',
     state: '',
     city: '',
-    businessType: '',
-    additionalInfo: '',
+    product: '',
+    message: ''
   });
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
 
