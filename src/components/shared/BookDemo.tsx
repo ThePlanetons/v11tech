@@ -3,28 +3,18 @@ import { MapPin, Phone, Mail, Check } from 'lucide-react';
 import FormFields from './FormFields';
 import NavigationBar from '../shared/NavigationBar';
 import Footer from '../shared/Footer';
-
-interface FormData {
-  fullName: string;
-  email: string;
-  phone: string;
-  country: string;
-  state: string;
-  city: string;
-  businessType: string;
-  additionalInfo: string;
-}
+import axios from 'axios';
 
 const BookDemo: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    fullName: "",
+  const [formData, setFormData] = useState({
+    name: "",
     email: "",
     phone: "",
     country: "",
     state: "",
     city: "",
-    businessType: "",
-    additionalInfo: ""
+    product: "",
+    message: ""
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -46,27 +36,27 @@ const BookDemo: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    setTimeout(() => {
+    try {
+      await axios.post('http://localhost:3000/leads', formData);
+
       setIsSubmitted(true);
 
       setFormData({
-        fullName: "",
+        name: "",
         email: "",
         phone: "",
         country: "",
         state: "",
         city: "",
-        businessType: "",
-        additionalInfo: ""
+        product: "",
+        message: ""
       });
-
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 3000);
-    }, 1500);
+    } catch (error) {
+      alert('There was an error submitting the form. Please try again later.');
+    }
   };
 
   return (
@@ -198,14 +188,25 @@ const BookDemo: React.FC = () => {
                   <div
                     className="py-12 flex flex-col items-center justify-center text-center"
                     style={{
-                      animation: 'pulse 1.5s ease-in-out infinite'
+                      animation: 'pulse 1.5s ease-in-out infinite',
                     }}
                   >
                     <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
                       <Check className="h-6 w-6 text-green-600" />
                     </div>
                     <h3 className="text-lg font-medium text-gray-900">Demo request submitted!</h3>
-                    <p className="mt-2 text-gray-600">Our team will contact you shortly to confirm your demo appointment.</p>
+                    <p className="mt-2 text-gray-600">
+                      Our team will contact you shortly to confirm your demo appointment.
+                    </p>
+                    <p className="mt-5 text-blue-600 underline">
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.v11tech.mobkms"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Open in Play Store
+                      </a>
+                    </p>
                   </div>
                 ) : (
                   <FormFields
