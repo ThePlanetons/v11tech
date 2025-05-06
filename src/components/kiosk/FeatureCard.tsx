@@ -9,9 +9,7 @@ interface FeatureCardProps {
 }
 
 const setup: React.FC<FeatureCardProps> = ({ feature }) => {
-  const [flipped, setFlipped] = useState(false);
-  const handleMouseEnter = () => setFlipped(true);
-  const handleMouseLeave = () => setFlipped(false);
+  const [flipped] = useState(false);
   const navigate = useNavigate();
 
   const handleCardClick = () => {
@@ -21,14 +19,11 @@ const setup: React.FC<FeatureCardProps> = ({ feature }) => {
   return (
     <div
       className="feature-box opacity-0 transform translate-y-8 transition-all duration-700 h-[350px] sm:h-[320px] md:h-[400px]"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       onClick={handleCardClick}
     >
       <div className="card-flip h-full">
         <div
-          className={`card-flip-inner h-full ${flipped ? 'flipped' : ''
-            }`}
+          className={`card-flip-inner h-full ${flipped ? 'flipped' : ''}`}
         >
           {/* Front */}
           <div className="card-front bg-white p-5 md:p-6 rounded-lg shadow-lg flex flex-col h-full">
@@ -44,7 +39,6 @@ const setup: React.FC<FeatureCardProps> = ({ feature }) => {
               {feature.description}
             </p>
             <a
-              href="/book-a-demo"
               className="mt-auto inline-flex items-center font-medium justify-center sm:justify-start group"
               onClick={(e) => e.stopPropagation()} // Prevent card flip
             >

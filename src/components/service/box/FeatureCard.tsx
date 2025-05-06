@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { FeatureType } from '../types';
+import { useNavigate } from 'react-router-dom';
 
 interface FeatureCardProps {
   feature: FeatureType;
@@ -8,10 +9,20 @@ interface FeatureCardProps {
 }
 
 const setup: React.FC<FeatureCardProps> = ({ feature }) => {
+  const [flipped] = useState(false);
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate('/book-a-demo');
+  };
+
   return (
-    <div className="feature-box opacity-0 transform translate-y-8 transition-all duration-700 h-[350px] sm:h-[320px] md:h-[400px]">
+    <div className="feature-box opacity-0 transform translate-y-8 transition-all duration-700 h-[350px] sm:h-[320px] md:h-[400px]"
+      onClick={handleCardClick}>
       <div className="card-flip h-full">
-        <div className="card-flip-inner h-full">
+        <div
+          className={`card-flip-inner h-full ${flipped ? 'flipped' : ''}`}
+        >
           {/* Front of card */}
           <div className="card-front bg-white p-5 md:p-6 rounded-lg shadow-lg flex flex-col h-full">
             <div className="mb-4 flex items-center justify-center">
@@ -25,19 +36,21 @@ const setup: React.FC<FeatureCardProps> = ({ feature }) => {
             <p className="text-gray-600 mb-4 flex-grow text-center sm:text-left text-sm md:text-base">
               {feature.description}
             </p>
-            <a href="#" className="mt-auto inline-flex items-center font-medium justify-center sm:justify-start group">
+            <a className="mt-auto inline-flex items-center font-medium justify-center sm:justify-start group"
+              onClick={(e) => e.stopPropagation()} // Prevent card flip
+            >
               <span className="text-green-500 group-hover:text-green-700 transition-colors duration-300">
                 Book a call
               </span>
               <ArrowUpRight className="ml-1 w-4 h-4 text-green-500 group-hover:text-green-700 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
           </div>
-          
+
           {/* Back of card (shown on flip) */}
           <div className="card-back shadow-lg p-4">
             <div className="relative w-full h-full overflow-hidden rounded-lg">
-              <img 
-                src={feature.imageUrl} 
+              <img
+                src={feature.imageUrl}
                 alt={feature.title}
                 className="object-cover w-full h-full rounded-lg"
               />

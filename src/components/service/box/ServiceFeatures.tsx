@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-//import { ArrowUpRight } from 'lucide-react';
 import FeatureCard from './FeatureCard';
 import { features } from '../Setup';
 

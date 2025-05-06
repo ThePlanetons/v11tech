@@ -1,94 +1,20 @@
-//import ShopsSection from '../shared/ShopsSection';
-
-// import teaShopImg from '../../assets/img/TeaShops.jpeg';
-// import groceryShopImg from '../../assets/img/GroceryShop.jpeg';
-// import fashionShopImg from '../../assets/img/FashionsShop.jpeg';
-// import stationaryShopImg from '../../assets/img/StationaryShop.jpeg';
 import NavigationBar from '../shared/NavigationBar';
 import ClientLogosSection from '../shared/ClientLogosSection';
 import CTASection from '../shared/CtaSection';
 import Footer from '../shared/Footer';
-//import Comment from '../shared/Comment';
-
-
 import TalkUs from './Talkus';
-//import PricingSection, { PricingPlan } from '../shared/PricingSection';
 import { useEffect, useState } from 'react';
-//import { motion } from 'framer-motion';
-//import Setup from './Setup';
 import CarouselServices from './Carousel-Services';
 import ServiceFeatures from './box/ServiceFeatures';
-// interface ShopItem {
-//   title: string;
-//   imgSrc: string;
-//   altText: string;
-//   description: string;
-// }
-// const staggeredCards = {
-//   hidden: {},
-//   visible: {
-//     transition: { staggerChildren: 0.2 },
-//   },
-// };
 
 function Services() {
   useEffect(() => {
     document.title = "Services - V11 TECH - Point of Sale";
   }, []);
 
-  //const themeColor = "#06b453";
-
   const [, setIsVisible] = useState(false);
   const [, setScrollY] = useState(0);
   const [, setScrolled] = useState(false);
-  // const [isYearly, setIsYearly] = useState<boolean>(false);
-  //const [isMobile] = useState<boolean>(false);
-
-  // const pricingPlans: PricingPlan[] = [
-  //     {
-  //       title: "Starter",
-  //       subtitle: "For small business",
-  //       monthlyPrice: "4,238.44",
-  //       yearlyPrice: "50,861.24",
-  //       features: [
-  //         { name: "Single Machine", included: true },
-  //         { name: "Menu management", included: true },
-  //         { name: "Sales report & analysis", included: true },
-  //         { name: "Marketing support", included: false },
-  //         { name: "Daily Profit Report", included: false },
-  //         { name: "Free 24/7 support", included: false },
-  //       ],
-  //     },
-  //     {
-  //       title: "Basic",
-  //       subtitle: "For professionals",
-  //       monthlyPrice: "6,833.4",
-  //       yearlyPrice: "82,000.77",
-  //       features: [
-  //         { name: "Double Machine", included: true },
-  //         { name: "Menu management", included: true },
-  //         { name: "Sales report & analysis", included: true },
-  //         { name: "Marketing support", included: true },
-  //         { name: "Daily Profit Report", included: true },
-  //         { name: "Free 24/7 support", included: false },
-  //       ],
-  //       popular: true,
-  //     },
-  //     {
-  //       title: "Pro",
-  //       subtitle: "For enterprise level",
-  //       monthlyPrice: "8,563.37",
-  //       yearlyPrice: "102,760.46",
-  //       features: [
-  //         { name: "Tripple Machine", included: true },
-  //         { name: "Menu management", included: true },
-  //         { name: "Sales report & analysis", included: true },
-  //         { name: "Marketing support", included: true },
-  //         { name: "Daily Profit Report", included: true },
-  //         { name: "Free 24/7 support", included: true },
-  //       ],
-  //     },
-  //   ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,8 +43,6 @@ function Services() {
     };
   }, []);
 
-  // const [scrolled, setScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10); // Add border when scrolling
@@ -128,33 +52,6 @@ function Services() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // const shops: ShopItem[] = [
-  //   {
-  //     title: "Restaurants Shops",
-  //     imgSrc: teaShopImg,
-  //     altText: "Restaurants & Tea Shops",
-  //     description: "Discover local flavors and cozy atmospheres",
-  //   },
-  //   {
-  //     title: "Grocery Shop",
-  //     imgSrc: groceryShopImg,
-  //     altText: "Grocery Shop",
-  //     description: "Fresh produce and everyday essentials",
-  //   },
-  //   {
-  //     title: "Clothing Shop",
-  //     imgSrc: fashionShopImg,
-  //     altText: "Clothing & Fashions Shop",
-  //     description: "Stay trendy with the latest styles",
-  //   },
-  //   {
-  //     title: "Stationary Shop",
-  //     imgSrc: stationaryShopImg,
-  //     altText: "Stationary Shop",
-  //     description: "Quality supplies for work and school",
-  //   },
-  // ];
-
   return (
     <>
       <NavigationBar></NavigationBar>
@@ -162,8 +59,6 @@ function Services() {
       <CarouselServices></CarouselServices>
 
       <ServiceFeatures></ServiceFeatures>
-
-      {/* <ShopsSection shops={shops}></ShopsSection> */}
 
       <TalkUs></TalkUs>
 
