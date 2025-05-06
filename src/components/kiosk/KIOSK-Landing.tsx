@@ -12,11 +12,19 @@ import Comment from '../shared/Comment';
 
 import TalkUs from './Talkus';
 import PricingSection, { PricingPlan } from '../shared/PricingSection';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo  } from 'react';
 import { motion } from 'framer-motion';
 //import Setup from './Setup';
 import CarouselKIOSK from './Carousel-KIOSK';
 import ServiceFeatures from './ServiceFeatures';
+
+const formatCurrency = (amount: number, currency: string) => {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency,
+    maximumFractionDigits: 2,
+  }).format(amount);
+};
 // interface ShopItem {
 //   title: string;
 //   imgSrc: string;
@@ -31,35 +39,49 @@ const staggeredCards = {
 };
 
 const KIOSKLanding = () => {
-  useEffect(() => {
-    document.title = "Kiosk -Ordering - V11 TECH - Point of Sale";
-  }, []);
-
-  const themeColor = "#06b453";
-
-  const [, setIsVisible] = useState(false);
+  const [isYearly, setIsYearly] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [userCurrency, setUserCurrency] = useState('INR');
+  const [conversionRate, setConversionRate] = useState(1);
   const [, setScrollY] = useState(0);
   const [, setScrolled] = useState(false);
-  const [isYearly, setIsYearly] = useState<boolean>(false);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    document.title = "Kitchen Display System(KDS) - V11 TECH - Point of Sale";
     checkMobile();
     window.addEventListener('resize', checkMobile);
-
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  useEffect(() => {
+    const fetchCurrency = async () => {
+      try {
+        const geoRes = await fetch('https://ipapi.co/json/');
+        const geoData = await geoRes.json();
+        const currency = geoData.currency || 'INR';
+        setUserCurrency(currency);
+
+        if (currency !== 'INR') {
+          const exRes = await fetch('https://api.exchangerate-api.com/v4/latest/INR');
+          const exData = await exRes.json();
+          const rate = exData.rates[currency] || 1;
+          setConversionRate(rate);
+        }
+      } catch (error) {
+        console.error('Failed to fetch currency info', error);
+      }
+    };
+
+    fetchCurrency();
+  }, []);
   const pricingPlans: PricingPlan[] = [
     {
       title: "Starter",
       subtitle: "For small business",
-      monthlyPrice: "4,238.44",
-      yearlyPrice: "50,861.24",
+      monthlyPrice: "4238.44",
+      yearlyPrice: "50861.24",
       features: [
         { name: "Single Machine", included: true },
         { name: "Menu management", included: true },
@@ -72,8 +94,8 @@ const KIOSKLanding = () => {
     {
       title: "Basic",
       subtitle: "For professionals",
-      monthlyPrice: "6,833.4",
-      yearlyPrice: "82,000.77",
+      monthlyPrice: "6833.4",
+      yearlyPrice: "82000.77",
       features: [
         { name: "Double Machine", included: true },
         { name: "Menu management", included: true },
@@ -87,8 +109,8 @@ const KIOSKLanding = () => {
     {
       title: "Pro",
       subtitle: "For enterprise level",
-      monthlyPrice: "8,563.37",
-      yearlyPrice: "102,760.46",
+      monthlyPrice: "8563.37",
+      yearlyPrice: "102760.46",
       features: [
         { name: "Tripple Machine", included: true },
         { name: "Menu management", included: true },
@@ -99,6 +121,14 @@ const KIOSKLanding = () => {
       ],
     },
   ];
+
+  const adjustedPlans = useMemo(() => {
+    return pricingPlans.map(plan => ({
+      ...plan,
+      monthlyPrice: formatCurrency(parseFloat(plan.monthlyPrice) * conversionRate, userCurrency),
+      yearlyPrice: formatCurrency(parseFloat(plan.yearlyPrice) * conversionRate, userCurrency),
+    }));
+  }, [conversionRate, userCurrency]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -126,7 +156,7 @@ const KIOSKLanding = () => {
       clearTimeout(timer);
     };
   }, []);
-
+const themeColor = "#06b453";
   // const [scrolled, setScrolled] = useState(false);
 
   // useEffect(() => {
@@ -243,7 +273,7 @@ const KIOSKLanding = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {pricingPlans.map((plan, index) => (
+            {adjustedPlans.map((plan, index) => (
               <PricingSection key={index} plan={plan} isYearly={isYearly} isMobile={isMobile} />
             ))}
           </motion.div>
