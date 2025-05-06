@@ -1,5 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import FormFields, { FormData } from './FormFields';
+import axios from 'axios';
 
 const PopupForm: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -66,16 +67,43 @@ const PopupForm: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form Submitted:', formData);
-    localStorage.setItem('hasVisited', 'true');
-    setFormSubmitted(true);
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   console.log('Form Submitted:', formData);
+  //   localStorage.setItem('hasVisited', 'true');
+  //   setFormSubmitted(true);
     
-    setTimeout(() => {
-      setIsOpen(false);
-      setFormSubmitted(false);
-    }, 3000);
+  //   setTimeout(() => {
+  //     setIsOpen(false);
+  //     setFormSubmitted(false);
+  //   }, 3000);
+  // };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    try {
+      await axios.post('http://localhost:3000/leads', formData);
+
+      localStorage.setItem('hasVisited', 'true');
+      setFormSubmitted(true);
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        country: "",
+        state: "",
+        city: "",
+        product: "",
+        message: ""
+      });
+
+      // setIsOpen(false);
+      // setFormSubmitted(false);
+    } catch (error) {
+      alert('There was an error submitting the form. Please try again later.');
+    }
   };
 
   const handleClose = () => {
