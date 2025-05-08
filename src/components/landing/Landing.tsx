@@ -63,20 +63,30 @@ function Landing() {
         const geoData = await geoRes.json();
         const currency = geoData.currency || 'INR';
         setUserCurrency(currency);
-
+  
         if (currency !== 'INR') {
           const exRes = await fetch('https://api.exchangerate-api.com/v4/latest/INR');
           const exData = await exRes.json();
-          const rate = exData.rates[currency] || 1;
-          setConversionRate(rate);
+          const rate = exData.rates[currency];
+  
+          if (rate) {
+            setConversionRate(rate);
+          } else {
+            console.warn(`Currency rate for ${currency} not found. Falling back to INR.`);
+            setUserCurrency('INR');
+            setConversionRate(1);
+          }
         }
       } catch (error) {
         console.error('Failed to fetch currency info', error);
+        setUserCurrency('INR');
+        setConversionRate(1);
       }
     };
-
+  
     fetchCurrency();
   }, []);
+  
 
   const pricingPlans: PricingPlan[] = [
     {
@@ -125,12 +135,20 @@ function Landing() {
   ];
 
   const adjustedPlans = useMemo(() => {
-    return pricingPlans.map(plan => ({
-      ...plan,
-      monthlyPrice: formatCurrency(parseFloat(plan.monthlyPrice) * conversionRate, userCurrency),
-      yearlyPrice: formatCurrency(parseFloat(plan.yearlyPrice) * conversionRate, userCurrency),
-    }));
+    return pricingPlans.map(plan => {
+      const monthly = parseFloat(plan.monthlyPrice);
+      const yearly = parseFloat(plan.yearlyPrice);
+      const convertedMonthly = userCurrency === 'INR' ? monthly : monthly * conversionRate;
+      const convertedYearly = userCurrency === 'INR' ? yearly : yearly * conversionRate;
+  
+      return {
+        ...plan,
+        monthlyPrice: formatCurrency(convertedMonthly, userCurrency),
+        yearlyPrice: formatCurrency(convertedYearly, userCurrency),
+      };
+    });
   }, [conversionRate, userCurrency]);
+  
 
   const themeColor = "#06b453";
 
