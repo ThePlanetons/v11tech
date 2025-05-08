@@ -11,8 +11,8 @@ export interface Feature {
 export interface PricingPlan {
   title: string;
   subtitle: string;
-  monthlyPrice: string;
-  yearlyPrice: string;
+  monthlyPrice: number;
+  yearlyPrice: number;
   features: Feature[];
   popular?: boolean;
 }
@@ -54,7 +54,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isMobile }) =
 
   const handlePayment = () => {
     const rawPrice = isYearly ? plan.yearlyPrice : plan.monthlyPrice;
-    const amount = parseFloat(rawPrice.replace(/[^0-9.]/g, '')) * 100;
+    const amount = rawPrice
 
     if (!(window as any).Razorpay) {
       alert('Razorpay SDK failed to load. Please check your internet connection.');
