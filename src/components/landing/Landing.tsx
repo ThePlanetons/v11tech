@@ -17,6 +17,14 @@ import fashionShopImg from '../../assets/img/FashionsShop.jpeg';
 import stationaryShopImg from '../../assets/img/StationaryShop.jpeg';
 import CarouselLanding from './CarouselLanding';
 
+const formatCurrency = (amount: number, currency: string) => {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency,
+    maximumFractionDigits: 2,
+  }).format(amount);
+};
+
 const staggeredCards = {
   hidden: {},
   visible: {
@@ -60,7 +68,7 @@ function Landing() {
           const exRes = await fetch('https://api.exchangerate-api.com/v4/latest/INR');
           const exData = await exRes.json();
           const rate = exData.rates[currency] || 1;
-          setConversionRate(parseFloat(rate.toFixed(5))); // rounding for precision
+          setConversionRate(rate);
         }
       } catch (error) {
         console.error('Failed to fetch currency info', error);
@@ -74,8 +82,8 @@ function Landing() {
     {
       title: "Starter",
       subtitle: "For small business",
-      monthlyPrice: 1297.48,
-      yearlyPrice: 15569.77,
+      monthlyPrice: "1297.48",
+      yearlyPrice: "15569.77",
       features: [
         { name: "Only for one user", included: true },
         { name: "Inventory management", included: true },
@@ -88,8 +96,8 @@ function Landing() {
     {
       title: "Basic",
       subtitle: "For professionals",
-      monthlyPrice: 2162.47,
-      yearlyPrice: 25949.61,
+      monthlyPrice: "2162.47",
+      yearlyPrice: "25949.61",
       features: [
         { name: "Two users", included: true },
         { name: "Inventory management", included: true },
@@ -103,8 +111,8 @@ function Landing() {
     {
       title: "Pro",
       subtitle: "For enterprise level",
-      monthlyPrice: 3027.45,
-      yearlyPrice: 36329.45,
+      monthlyPrice: "3027.45",
+      yearlyPrice: "36329.45",
       features: [
         { name: "1 to 3 users", included: true },
         { name: "Inventory management", included: true },
@@ -117,15 +125,11 @@ function Landing() {
   ];
 
   const adjustedPlans = useMemo(() => {
-    return pricingPlans.map(plan => {
-      const convert = (price: number) =>
-        userCurrency === 'INR' ? price : parseFloat((price * conversionRate).toFixed(2));
-      return {
-        ...plan,
-        monthlyPrice: convert(plan.monthlyPrice),
-        yearlyPrice: convert(plan.yearlyPrice),
-      };
-    });
+    return pricingPlans.map(plan => ({
+      ...plan,
+      monthlyPrice: formatCurrency(parseFloat(plan.monthlyPrice) * conversionRate, userCurrency),
+      yearlyPrice: formatCurrency(parseFloat(plan.yearlyPrice) * conversionRate, userCurrency),
+    }));
   }, [conversionRate, userCurrency]);
 
   const themeColor = "#06b453";

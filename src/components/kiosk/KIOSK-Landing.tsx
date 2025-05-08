@@ -18,13 +18,13 @@ import { motion } from 'framer-motion';
 import CarouselKIOSK from './Carousel-KIOSK';
 import ServiceFeatures from './ServiceFeatures';
 
-// const formatCurrency = (amount: number, currency: string) => {
-//   return new Intl.NumberFormat('en-US', {
-//     style: 'currency',
-//     currency,
-//     maximumFractionDigits: 2,
-//   }).format(amount);
-// };
+const formatCurrency = (amount: number, currency: string) => {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency,
+    maximumFractionDigits: 2,
+  }).format(amount);
+};
 // interface ShopItem {
 //   title: string;
 //   imgSrc: string;
@@ -80,8 +80,8 @@ const KIOSKLanding = () => {
     {
       title: "Starter",
       subtitle: "For small business",
-      monthlyPrice: 4238.44,
-      yearlyPrice: 50861.24,
+      monthlyPrice: "4238.44",
+      yearlyPrice: "50861.24",
       features: [
         { name: "Single Machine", included: true },
         { name: "Menu management", included: true },
@@ -94,8 +94,8 @@ const KIOSKLanding = () => {
     {
       title: "Basic",
       subtitle: "For professionals",
-      monthlyPrice: 6833.4,
-      yearlyPrice: 82000.77,
+      monthlyPrice: "6833.4",
+      yearlyPrice: "82000.77",
       features: [
         { name: "Double Machine", included: true },
         { name: "Menu management", included: true },
@@ -109,8 +109,8 @@ const KIOSKLanding = () => {
     {
       title: "Pro",
       subtitle: "For enterprise level",
-      monthlyPrice: 8563.37,
-      yearlyPrice: 102760.46,
+      monthlyPrice: "8563.37",
+      yearlyPrice: "102760.46",
       features: [
         { name: "Tripple Machine", included: true },
         { name: "Menu management", included: true },
@@ -123,15 +123,11 @@ const KIOSKLanding = () => {
   ];
 
   const adjustedPlans = useMemo(() => {
-    return pricingPlans.map(plan => {
-      const convert = (price: number) =>
-        userCurrency === 'INR' ? price : parseFloat((price * conversionRate).toFixed(2));
-      return {
-        ...plan,
-        monthlyPrice: convert(plan.monthlyPrice),
-        yearlyPrice: convert(plan.yearlyPrice),
-      };
-    });
+    return pricingPlans.map(plan => ({
+      ...plan,
+      monthlyPrice: formatCurrency(parseFloat(plan.monthlyPrice) * conversionRate, userCurrency),
+      yearlyPrice: formatCurrency(parseFloat(plan.yearlyPrice) * conversionRate, userCurrency),
+    }));
   }, [conversionRate, userCurrency]);
 
   useEffect(() => {
