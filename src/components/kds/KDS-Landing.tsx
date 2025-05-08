@@ -67,8 +67,8 @@ const KDSLanding = () => {
     {
       title: "Starter",
       subtitle: "For small business",
-      monthlyPrice: "4238.44",
-      yearlyPrice: "50861.24",
+      monthlyPrice: 4238.44,
+      yearlyPrice: 50861.24,
       features: [
         { name: "Only for one user", included: true },
         { name: "Menu management", included: true },
@@ -81,8 +81,8 @@ const KDSLanding = () => {
     {
       title: "Basic",
       subtitle: "For professionals",
-      monthlyPrice: "6833.4",
-      yearlyPrice: "82000.77",
+      monthlyPrice: 6833.4,
+      yearlyPrice: 82000.77,
       features: [
         { name: "Two users", included: true },
         { name: "Menu management", included: true },
@@ -96,8 +96,8 @@ const KDSLanding = () => {
     {
       title: "Pro",
       subtitle: "For enterprise level",
-      monthlyPrice: "8563.37",
-      yearlyPrice: "102760.46",
+      monthlyPrice: 8563.37,
+      yearlyPrice: 102760.46,
       features: [
         { name: "1 to 3 users", included: true },
         { name: "Menu management", included: true },
@@ -112,8 +112,8 @@ const KDSLanding = () => {
   const adjustedPlans = useMemo(() => {
     return pricingPlans.map(plan => ({
       ...plan,
-      monthlyPrice: formatCurrency(parseFloat(plan.monthlyPrice) * conversionRate, userCurrency),
-      yearlyPrice: formatCurrency(parseFloat(plan.yearlyPrice) * conversionRate, userCurrency),
+      monthlyPrice: parseFloat(formatCurrency(plan.monthlyPrice * conversionRate, userCurrency)),
+      yearlyPrice: parseFloat(formatCurrency(plan.yearlyPrice * conversionRate, userCurrency)),
     }));
   }, [conversionRate, userCurrency]);
 
@@ -151,7 +151,6 @@ const KDSLanding = () => {
       <CarouselKDS />
       <TalkUs />
 
-      {/* PricingSection */}
       <section id="pricing" className="py-9 md:py-20 relative overflow-hidden bg">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div className="text-center mb-12 md:mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggeredCards}>
@@ -204,7 +203,6 @@ const KDSLanding = () => {
               <PricingSection key={index} plan={plan} isYearly={isYearly} isMobile={isMobile} />
             ))}
           </motion.div>
-
           <style>{`
             @keyframes blob-animation {
               0% { transform: translate(0px, 0px) scale(1); }
@@ -214,8 +212,8 @@ const KDSLanding = () => {
             }
             .animate-blob { animation: blob-animation 7s infinite; }
             .animation-delay-2000 { animation-delay: 2s; }
-          `}</style>
-        </div>
+          `}</style>    
+              </div>
       </section>
 
       <Comment />
