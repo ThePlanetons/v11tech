@@ -9,13 +9,13 @@ import TalkUs from './Talkus';
 import CarouselKDS from './Carousel-KDS';
 import PricingSection, { PricingPlan } from '../shared/PricingSection';
 
-const formatCurrency = (amount: number, currency: string) => {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency,
-    maximumFractionDigits: 2,
-  }).format(amount);
-};
+// const formatCurrency = (amount: number, currency: string) => {
+//   return new Intl.NumberFormat('en-US', {
+//     style: 'currency',
+//     currency,
+//     maximumFractionDigits: 2,
+//   }).format(amount);
+// };
 
 const staggeredCards = {
   hidden: {},
@@ -110,11 +110,15 @@ const KDSLanding = () => {
   ];
 
   const adjustedPlans = useMemo(() => {
-    return pricingPlans.map(plan => ({
-      ...plan,
-      monthlyPrice: parseFloat(formatCurrency(plan.monthlyPrice * conversionRate, userCurrency)),
-      yearlyPrice: parseFloat(formatCurrency(plan.yearlyPrice * conversionRate, userCurrency)),
-    }));
+    return pricingPlans.map(plan => {
+      const convert = (price: number) =>
+        userCurrency === 'INR' ? price : parseFloat((price * conversionRate).toFixed(2));
+      return {
+        ...plan,
+        monthlyPrice: convert(plan.monthlyPrice),
+        yearlyPrice: convert(plan.yearlyPrice),
+      };
+    });
   }, [conversionRate, userCurrency]);
 
   useEffect(() => {
