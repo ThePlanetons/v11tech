@@ -36,11 +36,13 @@ const BookDemo: React.FC = () => {
     }));
   };
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:3000/leads', formData);
+      await axios.post(API_BASE_URL + 'leads', formData);
 
       setIsSubmitted(true);
 

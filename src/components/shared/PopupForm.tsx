@@ -67,23 +67,13 @@ const PopupForm: React.FC = () => {
     }
   };
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   console.log('Form Submitted:', formData);
-  //   localStorage.setItem('hasVisited', 'true');
-  //   setFormSubmitted(true);
-    
-  //   setTimeout(() => {
-  //     setIsOpen(false);
-  //     setFormSubmitted(false);
-  //   }, 3000);
-  // };
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:3000/leads', formData);
+      await axios.post(API_BASE_URL + 'leads', formData);
 
       localStorage.setItem('hasVisited', 'true');
       setFormSubmitted(true);
