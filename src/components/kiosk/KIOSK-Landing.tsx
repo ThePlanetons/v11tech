@@ -12,11 +12,27 @@ import Comment from '../shared/Comment';
 
 import TalkUs from './Talkus';
 import PricingSection, { PricingPlan } from '../shared/PricingSection';
-import { useEffect, useState, useMemo  } from 'react';
+import { useEffect, useState  } from 'react';
 import { motion } from 'framer-motion';
 //import Setup from './Setup';
 import CarouselKIOSK from './Carousel-KIOSK';
 import ServiceFeatures from './ServiceFeatures';
+import axios from 'axios';
+
+interface Subscription {
+  id: number;
+  name: string;
+  product: string;
+  plan_a: string;
+  price_a: number;
+  plan_b: string;
+  price_b: number;
+  plan_c: string;
+  price_c: number;
+  status: number;
+  created_at: string;
+  updated_at: string | null;
+}
 
 const formatCurrency = (amount: number, currency: string) => {
   return new Intl.NumberFormat('en-US', {
@@ -47,6 +63,40 @@ const KIOSKLanding = () => {
   const [, setScrolled] = useState(false);
   const [, setIsVisible] = useState(false);
 
+  const [subscriptions, setSubscriptions] = useState<Subscription[]>([]);
+  const [exchangeRate, setExchangeRate] = useState<number | null>(null);
+  const [adjustedPlans, setAdjustedPlans] = useState<PricingPlan[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const VITE_API_BASE_URL = import.meta.env.VITE_VITE_API_BASE_URL;
+
+  useEffect(() => {
+    const fetchSubscriptions = async () => {
+      try {
+        const response = await axios.post(VITE_API_BASE_URL + 'subscriptions', {
+          product: 'V11-Kiosk',
+        });
+        setSubscriptions(response.data);
+      } catch (error) {
+        console.error('Error fetching subscriptions:', error);
+      }
+    };
+
+    const fetchExchangeRate = async () => {
+      try {
+        const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+        const data = await response.json();
+        setExchangeRate(data.rates.INR);
+      } catch (error) {
+        console.error('Error fetching exchange rate:', error);
+      }
+    };
+
+    Promise.all([fetchSubscriptions(), fetchExchangeRate()]).finally(() => {
+      // Nothing here; actual loading completion is handled in second useEffect
+    });
+  }, []);
+
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     document.title = "Kitchen Display System(KDS) - V11 TECH - Point of Sale";
@@ -76,12 +126,26 @@ const KIOSKLanding = () => {
 
     fetchCurrency();
   }, []);
+
+  useEffect(() => {
+    if (
+      subscriptions.length > 0 &&
+      exchangeRate !== null &&
+      conversionRate !== null &&
+      userCurrency
+    ) {
+      const price = (subscriptions[0]?.price_a ?? 0) * exchangeRate;
+      const price1 = (subscriptions[0]?.price_b ?? 0) * exchangeRate;
+      const price2 = (subscriptions[0]?.price_c ?? 0) * exchangeRate;
+
   const pricingPlans: PricingPlan[] = [
     {
       title: "Starter",
       subtitle: "For small business",
-      monthlyPrice: "4238.44",
-      yearlyPrice: "50861.24",
+      monthlyPriceINR: price,
+      yearlyPriceINR: price * 12,
+      monthlyPrice: price.toString(),
+      yearlyPrice: (price * 12).toString(),
       features: [
         { name: "Single Machine", included: true },
         { name: "Menu management", included: true },
@@ -94,8 +158,10 @@ const KIOSKLanding = () => {
     {
       title: "Basic",
       subtitle: "For professionals",
-      monthlyPrice: "6833.4",
-      yearlyPrice: "82000.77",
+      monthlyPriceINR: price1,
+      yearlyPriceINR: price1 * 12,
+      monthlyPrice: price1.toString(),
+      yearlyPrice: (price1 * 12).toString(),
       features: [
         { name: "Double Machine", included: true },
         { name: "Menu management", included: true },
@@ -109,8 +175,10 @@ const KIOSKLanding = () => {
     {
       title: "Pro",
       subtitle: "For enterprise level",
-      monthlyPrice: "8563.37",
-      yearlyPrice: "102760.46",
+      monthlyPriceINR: price2,
+      yearlyPriceINR: price2 * 12,
+      monthlyPrice: price2.toString(),
+      yearlyPrice: (price2 * 12).toString(),
       features: [
         { name: "Tripple Machine", included: true },
         { name: "Menu management", included: true },
@@ -121,14 +189,16 @@ const KIOSKLanding = () => {
       ],
     },
   ];
+    const adjusted = pricingPlans.map(plan => ({
+        ...plan,
+        monthlyPrice: formatCurrency(parseFloat(plan.monthlyPrice) * conversionRate, userCurrency),
+        yearlyPrice: formatCurrency(parseFloat(plan.yearlyPrice) * conversionRate, userCurrency),
+      }));
 
-  const adjustedPlans = useMemo(() => {
-    return pricingPlans.map(plan => ({
-      ...plan,
-      monthlyPrice: formatCurrency(parseFloat(plan.monthlyPrice) * conversionRate, userCurrency),
-      yearlyPrice: formatCurrency(parseFloat(plan.yearlyPrice) * conversionRate, userCurrency),
-    }));
-  }, [conversionRate, userCurrency]);
+      setAdjustedPlans(adjusted);
+      setIsLoading(false);
+    }
+  }, [subscriptions, exchangeRate, conversionRate, userCurrency]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -220,24 +290,11 @@ const themeColor = "#06b453";
               visible: { transition: { staggerChildren: 0.2 } },
             }}
           >
-            <motion.p
-              variants={{
-                hidden: { opacity: 0, x: -50 },
-                visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 100 } },
-              }}
-              className="font-semibold text-lg mb-2"
-              style={{ color: themeColor }}
-            >
+             <motion.p className="font-semibold text-4xl md:text-5xl mb-4 v11-roboto tracking-wide" style={{ color: themeColor }}>
               Our Pricing
             </motion.p>
-            <motion.h2
-              variants={{
-                hidden: { opacity: 0, x: 50 },
-                visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 100, delay: 0.2 } },
-              }}
-              className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-800 v11-roboto tracking-wide"
-            >
-              Transparent Pricing Plans, Find the Perfect Fit for Your Needs
+            <motion.h2 className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-800 tracking-wide v11-roboto">
+              Transparent Pricing Plans, Find the Perfect <br /> Fit for Your Needs
             </motion.h2>
           </motion.div>
 
@@ -266,17 +323,17 @@ const themeColor = "#06b453";
           </div>
 
           {/* Pricing Cards */}
-          <motion.div
-            className="flex flex-col md:flex-row justify-center gap-6 md:gap-10"
-            variants={staggeredCards}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {adjustedPlans.map((plan, index) => (
-              <PricingSection key={index} plan={plan} isYearly={isYearly} isMobile={isMobile} />
-            ))}
-          </motion.div>
+          {isLoading ? (
+            <div className="flex justify-center items-center h-screen">
+              <div className="loader">Loading...</div>
+            </div>
+          ) : (
+            <motion.div className="flex flex-col md:flex-row justify-center gap-6 md:gap-10" variants={staggeredCards} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              {adjustedPlans.map((plan: PricingPlan, index: number) => (
+                <PricingSection key={index} plan={plan} isYearly={isYearly} isMobile={isMobile} />
+              ))}
+            </motion.div>
+          )}
 
           {/* Optional: Blob Animation Styles or any extra styling */}
           <style>{`

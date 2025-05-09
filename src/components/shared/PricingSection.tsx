@@ -9,13 +9,16 @@ export interface Feature {
 }
 
 export interface PricingPlan {
-  title: string;
-  subtitle: string;
-  monthlyPrice: string;
-  yearlyPrice: string;
-  features: Feature[];
-  popular?: boolean;
+  title: string
+  subtitle: string
+  monthlyPriceINR: number    // new: raw INR
+  yearlyPriceINR: number     // new: raw INR
+  monthlyPrice: string       // formatted string for display
+  yearlyPrice: string
+  features: Feature[]
+  popular?: boolean
 }
+
 
 interface PricingCardProps {
   plan: PricingPlan;
@@ -53,9 +56,9 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isMobile }) =
 
 
   const handlePayment = () => {
-    const rawPrice = isYearly ? plan.yearlyPrice : plan.monthlyPrice;
-    const amount = parseFloat(rawPrice.replace(/[^0-9.]/g, '')) * 100;
-
+    const rawPrice = isYearly ? plan.yearlyPriceINR : plan.monthlyPriceINR;
+    const amount = rawPrice * 100;
+    
     if (!(window as any).Razorpay) {
       alert('Razorpay SDK failed to load. Please check your internet connection.');
       return;
@@ -192,7 +195,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isMobile }) =
         <div className="h-0.5 mb-5 md:mb-6" style={{ backgroundColor: themeColorLight }}></div>
         <div className="mb-6 md:mb-8">
           <p className="text-xs md:text-sm mb-1" style={{ color: greyText }}>
-            INR
+            
           </p>
           <h3
             className="text-4xl md:text-5xl font-extrabold flex items-baseline"
