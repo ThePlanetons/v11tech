@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MapPin, Phone, Mail, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import FormFields from './FormFields';
 import NavigationBar from '../shared/NavigationBar';
 import Footer from '../shared/Footer';
@@ -140,7 +140,7 @@ const BookDemo: React.FC = () => {
                   </li>
                 </ul>
 
-                <div className="mt-8 space-y-4">
+                {/* <div className="mt-8 space-y-4">
                   <h3 className="text-lg font-medium text-gray-900">Contact Information</h3>
 
                   <div className="flex items-center">
@@ -170,7 +170,7 @@ const BookDemo: React.FC = () => {
                       <p>Tech Park, City 12345</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
