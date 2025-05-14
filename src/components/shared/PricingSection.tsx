@@ -220,7 +220,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isMobile }) =
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
               }}
             >
-              {!expandedFeatures ? 'Hide Features' : 'Show Features'}
+              {expandedFeatures ?   'Show Features' : 'Hide Features'}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 ml-2 transition-transform duration-300 ease-in-out"
@@ -228,7 +228,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, isYearly, isMobile }) =
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 style={{
-                  transform: expandedFeatures ? 'rotate(0deg)' : 'rotate(1800deg)'
+                  transform: expandedFeatures ? 'rotate(0deg)' : 'rotate(180deg)'
                 }}
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
